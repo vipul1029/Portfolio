@@ -177,7 +177,11 @@ const About = ({ isDarkMode }) => {
                     className='flex-1'
                 >
                     <p className='mb-10 max-w-2xl font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-relaxed'>
-                        I'm a passionate frontend developer with a deep love for building beautiful and functional web experiences. With a strong background in web technologies, I thrive on turning ideas into reality through code.
+                        About Me
+
+I am a dedicated 3rd-year B.Tech student in Computer Science and Engineering at Vellore Institute of Technology, Vellore. My technical foundation spans a diverse set of programming languages, including Python, C, C++, Java, HTML, CSS, JavaScript, React, and Node.js. My academic journey has been complemented by hands-on experience in data structures, algorithms, artificial intelligence, and machine learning, equipping me with the skills required to tackle complex real-world problems.
+
+As a Campus Ambassador at IIT Guwahati, IIT Kanpur, NIT Trichy, and NIT Nagpur, I have developed strong leadership, networking, and communication skills, connecting with peers and professionals in the tech community. My passion for coding and technology drives me to constantly explore new tools, frameworks, and methodologies, while my problem-solving mindset fuels my commitment to building impactful solutions.
                     </p>
 
                     {/* Info Cards */}

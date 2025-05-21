@@ -379,7 +379,7 @@ function Work({ isDarkMode }) {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className='text-center mb-2 text-lg font-Ovo'
             >
-                My Portfolio
+                My Projects
             </motion.h4>
             <motion.h2 
                 initial={{ opacity: 0, y: -20 }}
@@ -395,7 +395,8 @@ function Work({ isDarkMode }) {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300'
             >
-                Welcome to my web development portfolio. Explore a collection of projects showcasing my expertise in Full Stack development.
+                Welcome to my project portfolio  a curated showcase of my skills, creativity, and technical expertise. Explore a diverse collection of projects that reflect my passion for innovation and problem-solving.
+
             </motion.p>
 
             {/* Work Grid */}

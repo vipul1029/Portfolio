@@ -201,7 +201,7 @@ const Header = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         className='flex items-end gap-2 text-xl md:text-2xl font-Ovo'>
-        Hi! I'm William Mark
+        Hi! I'm Vipul Kumar
         <Image src={assets.hand_icon} alt="Hand Icon" className='w-6' />
       </motion.h3>
 
@@ -211,7 +211,7 @@ const Header = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
         className='text-3xl sm:text-5xl lg:text-[64px] font-Ovo leading-tight'>
-        Frontend Web Developer based in London.
+        Driven by Curiosity, Powered by Code.
       </motion.h1>
 
       {/* Bio Animation */}
@@ -220,7 +220,7 @@ const Header = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
         className='max-w-2xl mx-auto text-lg font-Ovo text-gray-700 dark:text-gray-300'>
-        I am a frontend developer from <span className="font-semibold">California, USA</span> with <span className="font-semibold">10 years</span> of experience in top companies like Microsoft and Tesla.
+         <span className="font-semibold">3rd</span> year student at Vellore Institute of Technology ,vellore | <span className="font-semibold">pursuing Btech in CSE Core</span>,Campus ambassador <span className="font-semibold">@|IT Guwahati, lIT Kanpur, Nit Trichy, Nit Nagpur| Python | C |C++ |Java | HTML | CSS |JAVA Sctipt|React | Node | DSA | AI ML</span>
       </motion.p>
 
       {/* Buttons */}
@@ -242,7 +242,7 @@ const Header = () => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          href="/sample-resume.pdf" download
+          href="sample-resume.pdf" download
         className=
         // 'px-8 py-3 border border-gray-500 rounded-full bg-white text-black dark:text-white flex items-center gap-2 font-semibold shadow-md hover:scale-105 transition-all duration-300  dark:bg-darkHover'
         
