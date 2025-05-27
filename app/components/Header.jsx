@@ -71,7 +71,7 @@
 
 
 
-//2nd
+// 2nd
 // import { assets } from '@/assets/assets'
 // import React from 'react'
 // import Image from 'next/image'
@@ -177,7 +177,7 @@
 
 
 
-// // laga hua jo tha
+// laga hua jo tha
 import { assets } from '@/assets/assets'
 import React from 'react'
 import Image from 'next/image'
@@ -220,7 +220,7 @@ const Header = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
         className='max-w-2xl mx-auto text-lg font-Ovo text-gray-700 dark:text-gray-300'>
-         <span className="font-semibold">3rd</span> year student at Vellore Institute of Technology ,vellore | <span className="font-semibold">pursuing Btech in CSE Core</span>,Campus ambassador <span className="font-semibold">@|IT Guwahati, lIT Kanpur, Nit Trichy, Nit Nagpur| Python | C |C++ |Java | HTML | CSS |JAVA Sctipt|React | Node | DSA | AI ML</span>
+         3rd year student at Vellore Institute of Technology ,vellore | pursuing Btech in CSE Core<span className="font-semibold"></span>,Campus ambassador @|IT Guwahati, lIT Kanpur, Nit Trichy, Nit Nagpur| Python | C |C++ |Java | HTML | CSS |JAVA Sctipt|React | Node | DSA | AI ML.
       </motion.p>
 
       {/* Buttons */}

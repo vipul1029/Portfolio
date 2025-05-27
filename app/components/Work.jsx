@@ -347,6 +347,332 @@
 
 
 
+// import React from 'react';
+// import Image from 'next/image';
+// import { assets } from '@/assets/assets';
+// import { motion } from "framer-motion";
+
+// function Work({ isDarkMode }) {
+//     const workData = [
+//         { title: 'Food ordering platform', description: '', bgImage: '/work-1.png' },
+//         { title: 'Geo based app', description: '', bgImage: '/work-2.png' },
+//         { title: 'Photography site', description: '', bgImage: '/work-3.png' },
+//         { title: 'UI/UX designing', description: '', bgImage: '/work-4.png' },
+//         { title: 'E-commerce site', description: '', bgImage: '/work-5.png' },
+//         //{ title: 'Portfolio site', description: '', bgImage: '/work-2.png' },
+//        // { title: 'Dashboard UI', description: '', bgImage: '/work-3.png' },
+//         // { title: 'Travel Blog', description: '', bgImage: '/work-4.png' }
+//     ];
+
+//     return (
+//         <motion.div 
+//             id='work' 
+//             className='relative w-full px-[12%] py-20 scroll-mt-20 bg-gradient-to-b from-gray-100 to-white dark:from-darkTheme dark:to-darkHover'
+//             initial={{ opacity: 0 }}
+//             whileInView={{ opacity: 1 }}
+//             transition={{ duration: 1 }}
+//         >
+//             {/* Title Section */}
+//             <motion.h4
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.3 }}
+//                 className='text-center mb-2 text-lg font-Ovo'
+//             >
+//                 My Projects
+//             </motion.h4>
+//             <motion.h2 
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.5 }}
+//                 className="text-center text-5xl font-Ovo"
+//             >
+//                 My Latest Work
+//             </motion.h2>
+//             <motion.p
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.7 }}
+//                 className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300'
+//             >
+//                 Welcome to my project portfolio  a curated showcase of my skills, creativity, and technical expertise. Explore a diverse collection of projects that reflect my passion for innovation and problem-solving.
+
+//             </motion.p>
+
+//             {/* Work Grid */}
+//             <motion.div 
+//                 initial={{ opacity: 0 }}
+//                 whileInView={{ opacity: 1 }}
+//                 transition={{ duration: 0.6, delay: 0.9 }}
+//                 className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 my-10 dark:text-black'
+//             >
+//                 {workData.map((project, index) => (
+//                     <motion.div 
+//                         whileHover={{ scale: 1.05 }}
+//                         transition={{ duration: 0.3 }}
+//                         key={index} 
+//                         className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group'
+//                         style={{ backgroundImage: `url(${project.bgImage})` }}
+//                     >
+//                         <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between 
+//                             duration-500 group-hover:bottom-7 dark:bg-darkHover/50 dark:text-white'
+//                         >
+//                             <div>
+//                                 <h2 className='font-semibold'>{project.title}</h2>
+//                                 <p className='text-sm text-gray-700 dark:text-gray-300'>{project.description}</p>
+//                             </div>
+//                             <div className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000]
+//                                 group-hover:bg-lime-300 transition dark:border-white'
+//                             >
+//                                 <Image src={assets.send_icon} alt='send icon' width={20} height={20} />
+//                             </div>
+//                         </div>
+//                     </motion.div>
+//                 ))}
+//             </motion.div>
+
+//             {/* Show More Button */}
+//             <motion.a 
+//                 initial={{ opacity: 0 }}
+//                 whileInView={{ opacity: 1 }}
+//                 transition={{ duration: 0.5, delay: 1.1 }}
+//                 href="#" 
+//                 className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 
+//                     rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'
+//             >
+//                 Show more 
+//                 <Image src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold} alt='Right arrow' className='w-4' />
+//             </motion.a>
+//         </motion.div>
+//     );
+// }
+
+// export default Work;
+
+
+
+
+
+
+
+// import React from 'react';
+// import Image from 'next/image';
+// import { assets } from '@/assets/assets';
+// import { motion } from "framer-motion";
+
+// function Work({ isDarkMode }) {
+//     const workData = [
+//         { title: 'Food ordering platform', description: '', bgImage: '/work-1.png' },
+//         { title: 'Geo based app', description: '', bgImage: '/work-2.png' },
+//         { title: 'Photography site', description: '', bgImage: '/work-3.png' },
+//         { title: 'UI/UX designing', description: '', bgImage: '/work-4.png' },
+//         { title: 'E-commerce site', description: '', bgImage: '/work-5.png' },
+//     ];
+
+//     return (
+//         <motion.div 
+//             id='work' 
+//             className='relative w-full px-[12%] py-20 scroll-mt-20 bg-gradient-to-b from-gray-100 to-white dark:from-darkTheme dark:to-darkHover'
+//             initial={{ opacity: 0 }}
+//             whileInView={{ opacity: 1 }}
+//             transition={{ duration: 1 }}
+//         >
+//             {/* Title Section */}
+//             <motion.h4
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.3 }}
+//                 className='text-center mb-2 text-lg font-Ovo'
+//             >
+//                 My Projects
+//             </motion.h4>
+//             <motion.h2 
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.5 }}
+//                 className="text-center text-5xl font-Ovo"
+//             >
+//                 My Latest Work
+//             </motion.h2>
+//             <motion.p
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.7 }}
+//                 className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300'
+//             >
+//                 Welcome to my project portfolio — a curated showcase of my skills, creativity, and technical expertise. Explore a diverse collection of projects that reflect my passion for innovation and problem-solving.
+//             </motion.p>
+
+//             {/* Work Grid */}
+//             <motion.div 
+//                 initial={{ opacity: 0 }}
+//                 whileInView={{ opacity: 1 }}
+//                 transition={{ duration: 0.6, delay: 0.9 }}
+//                 className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 my-10 dark:text-black'
+//             >
+//                 {workData.map((project, index) => (
+//                     <motion.div 
+//                         whileHover={{ scale: 1.05 }}
+//                         transition={{ duration: 0.3 }}
+//                         key={index}
+//                         className='relative rounded-lg overflow-hidden cursor-pointer group'
+//                     >
+//                         <div
+//                             className='w-full'
+//                             style={{
+//                                 paddingTop: '56.25%', // 16:9 Aspect Ratio
+//                                 backgroundImage: `url(${project.bgImage})`,
+//                                 backgroundSize: 'cover',
+//                                 backgroundPosition: 'center',
+//                             }}
+//                         ></div>
+//                         <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between 
+//                             duration-500 group-hover:bottom-7 dark:bg-darkHover/50 dark:text-white'
+//                         >
+//                             <div>
+//                                 <h2 className='font-semibold'>{project.title}</h2>
+//                                 <p className='text-sm text-gray-700 dark:text-gray-300'>{project.description}</p>
+//                             </div>
+//                             <div className='border rounded-full border-black w-9 h-9 flex items-center justify-center shadow-[2px_2px_0_#000]
+//                                 group-hover:bg-lime-300 transition dark:border-white'
+//                             >
+//                                 <Image src={assets.send_icon} alt='send icon' width={20} height={20} />
+//                             </div>
+//                         </div>
+//                     </motion.div>
+//                 ))}
+//             </motion.div>
+
+//             {/* Show More Button */}
+//             <motion.a 
+//                 initial={{ opacity: 0 }}
+//                 whileInView={{ opacity: 1 }}
+//                 transition={{ duration: 0.5, delay: 1.1 }}
+//                 href="#" 
+//                 className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 
+//                     rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'
+//             >
+//                 Show more 
+//                 <Image src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold} alt='Right arrow' className='w-4' />
+//             </motion.a>
+//         </motion.div>
+//     );
+// }
+
+// export default Work;
+
+
+
+
+// import React from 'react';
+// import Image from 'next/image';
+// import { assets } from '@/assets/assets';
+// import { motion } from "framer-motion";
+
+// function Work({ isDarkMode }) {
+//     const workData = [
+//         { title: 'Food ordering platform', description: '', bgImage: '/work-1.png' },
+//         { title: 'NVZ - Tesla Design', description: '', bgImage: '/work-2.png' },
+//         { title: 'Lazarev - Design Agency', description: '', bgImage: '/work-3.png' },
+//         { title: 'Sidcup - Family Golf', description: '', bgImage: '/work-4.png' },
+//         { title: 'Gaming -Tutorial Site', description: '', bgImage: '/work-5.png' },
+//     ];
+
+//     return (
+//         <motion.div 
+//             id='work' 
+//             className='relative w-full px-[12%] py-20 scroll-mt-20 bg-gradient-to-b from-gray-100 to-white dark:from-darkTheme dark:to-darkHover'
+//             initial={{ opacity: 0 }}
+//             whileInView={{ opacity: 1 }}
+//             transition={{ duration: 1 }}
+//         >
+//             {/* Title Section */}
+//             <motion.h4
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.3 }}
+//                 className='text-center mb-2 text-lg font-Ovo'
+//             >
+//                 My Projects
+//             </motion.h4>
+//             <motion.h2 
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.5 }}
+//                 className="text-center text-5xl font-Ovo"
+//             >
+//                 My Latest Work
+//             </motion.h2>
+//             <motion.p
+//                 initial={{ opacity: 0, y: -20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.7 }}
+//                 className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300'
+//             >
+//                 Welcome to my project portfolio — a curated showcase of my skills, creativity, and technical expertise. Explore a diverse collection of projects that reflect my passion for innovation and problem-solving.
+//             </motion.p>
+
+//             {/* Work Grid */}
+//             <motion.div 
+//                 initial={{ opacity: 0 }}
+//                 whileInView={{ opacity: 1 }}
+//                 transition={{ duration: 0.6, delay: 0.9 }}
+//                 className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 my-10 dark:text-black'
+//             >
+//                 {workData.map((project, index) => (
+//                     <motion.div 
+//                         whileHover={{ scale: 1.05 }}
+//                         transition={{ duration: 0.3 }}
+//                         key={index}
+//                         className='relative rounded-lg overflow-hidden cursor-pointer group'
+//                     >
+//                         <div
+//                             className='w-full'
+//                             style={{
+//                                 paddingTop: '65%', // Slightly taller rectangle
+//                                 backgroundImage: `url(${project.bgImage})`,
+//                                 backgroundSize: 'cover',
+//                                 backgroundPosition: 'center',
+//                             }}
+//                         ></div>
+//                         <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between 
+//                             duration-500 group-hover:bottom-7 dark:bg-darkHover/50 dark:text-white'
+//                         >
+//                             <div>
+//                                 <h2 className='font-semibold'>{project.title}</h2>
+//                                 <p className='text-sm text-gray-700 dark:text-gray-300'>{project.description}</p>
+//                             </div>
+//                             <div className='border rounded-full border-black w-9 h-9 flex items-center justify-center shadow-[2px_2px_0_#000]
+//                                 group-hover:bg-lime-300 transition dark:border-white'
+//                             >
+//                                 <Image src={assets.send_icon} alt='send icon' width={20} height={20} />
+//                             </div>
+//                         </div>
+//                     </motion.div>
+//                 ))}
+//             </motion.div>
+
+//             {/* Show More Button */}
+//             <motion.a 
+//                 initial={{ opacity: 0 }}
+//                 whileInView={{ opacity: 1 }}
+//                 transition={{ duration: 0.5, delay: 1.1 }}
+//                 href="#" 
+//                 className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 
+//                     rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'
+//             >
+//                 Show more 
+//                 <Image src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold} alt='Right arrow' className='w-4' />
+//             </motion.a>
+//         </motion.div>
+//     );
+// }
+
+// export default Work;
+
+
+
+
 import React from 'react';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
@@ -354,14 +680,11 @@ import { motion } from "framer-motion";
 
 function Work({ isDarkMode }) {
     const workData = [
-        { title: 'Frontend project', description: 'Web Design', bgImage: '/work-1.png' },
-        { title: 'Geo based app', description: 'Mobile App', bgImage: '/work-2.png' },
-        { title: 'Photography site', description: 'Web Design', bgImage: '/work-3.png' },
-        { title: 'UI/UX designing', description: 'UI/UX Design', bgImage: '/work-4.png' },
-        { title: 'E-commerce site', description: 'Web Development', bgImage: '/work-1.png' },
-        { title: 'Portfolio site', description: 'Personal Branding', bgImage: '/work-2.png' },
-        { title: 'Dashboard UI', description: 'Web App', bgImage: '/work-3.png' },
-        { title: 'Travel Blog', description: 'Content Website', bgImage: '/work-4.png' }
+        { title: 'Food ordering platform', link: 'https://food-delivery-site-vipul1007s-projects.vercel.app/', bgImage: '/work-1.png' },
+        { title: 'NVZ - Tesla Design', link: 'https://nvz-vipul1007s-projects.vercel.app/', bgImage: '/work-2.png' },
+        { title: 'Lazarev - Design Agency', link: 'https://vipul1029.github.io/Lazarev/', bgImage: '/work-3.png' },
+        { title: 'Sidcup - Family Golf', link: 'https://vipul1029.github.io/sidcup-gaming-site/', bgImage: '/work-4.png' },
+        { title: 'Gaming -Tutorial Site', link: 'https://vipul1029.github.io/Miniproject/', bgImage: '/work-5.png' },
     ];
 
     return (
@@ -395,8 +718,7 @@ function Work({ isDarkMode }) {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300'
             >
-                Welcome to my project portfolio  a curated showcase of my skills, creativity, and technical expertise. Explore a diverse collection of projects that reflect my passion for innovation and problem-solving.
-
+                Welcome to my project portfolio — a curated showcase of my skills, creativity, and technical expertise. Explore a diverse collection of projects that reflect my passion for innovation and problem-solving.
             </motion.p>
 
             {/* Work Grid */}
@@ -404,30 +726,40 @@ function Work({ isDarkMode }) {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
-                className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 my-10 dark:text-black'
+                className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 my-10 dark:text-black'
             >
                 {workData.map((project, index) => (
-                    <motion.div 
+                    <motion.a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
-                        key={index} 
-                        className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group'
-                        style={{ backgroundImage: `url(${project.bgImage})` }}
+                        key={index}
+                        className='relative rounded-lg overflow-hidden cursor-pointer group block'
                     >
+                        <div
+                            className='w-full'
+                            style={{
+                                paddingTop: '65%',
+                                backgroundImage: `url(${project.bgImage})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
+                        ></div>
                         <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between 
                             duration-500 group-hover:bottom-7 dark:bg-darkHover/50 dark:text-white'
                         >
                             <div>
                                 <h2 className='font-semibold'>{project.title}</h2>
-                                <p className='text-sm text-gray-700 dark:text-gray-300'>{project.description}</p>
                             </div>
-                            <div className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000]
+                            <div className='border rounded-full border-black w-9 h-9 flex items-center justify-center shadow-[2px_2px_0_#000]
                                 group-hover:bg-lime-300 transition dark:border-white'
                             >
                                 <Image src={assets.send_icon} alt='send icon' width={20} height={20} />
                             </div>
                         </div>
-                    </motion.div>
+                    </motion.a>
                 ))}
             </motion.div>
 
