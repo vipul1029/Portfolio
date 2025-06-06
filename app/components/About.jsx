@@ -102,140 +102,140 @@
 
 
 
-// import { assets } from '@/assets/assets'
-// import React from 'react'
-// import Image from 'next/image'
-// import { motion } from "framer-motion"
+import { assets } from '@/assets/assets'
+import React from 'react'
+import Image from 'next/image'
+import { motion } from "framer-motion"
 
-// const About = ({ isDarkMode }) => {
-//     const infoList = [  
-//         { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML,CSS,JavaScript,C, C++,Java,Python.' },
-//         { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
-//         { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
-//     ];
+const About = ({ isDarkMode }) => {
+    const infoList = [  
+        { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML,CSS,JavaScript,C, C++,Java,Python.' },
+        { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
+        { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    ];
     
-//     const toolsData = [
-//         assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
-//     ];
+    const toolsData = [
+        assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    ];
 
-//     return (
-//         <motion.div 
-//             id='about' 
-//             className='relative w-full px-[12%] py-20 scroll-mt-20 bg-gradient-to-b from-gray-100 to-white dark:from-darkTheme dark:to-darkHover'
-//             initial={{ opacity: 0 }}
-//             whileInView={{ opacity: 1 }}
-//             transition={{ duration: 1 }}
-//         >
-//             {/* Subtle Floating Background Element */}
-//             <motion.div 
-//                 className="absolute -top-10 right-10 w-32 h-32 bg-blue-400 opacity-20 rounded-full blur-3xl"
-//                 animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-//                 transition={{ repeat: Infinity, duration: 6 }}
-//             ></motion.div>
+    return (
+        <motion.div 
+            id='about' 
+            className='relative w-full px-[12%] py-20 scroll-mt-20 bg-gradient-to-b from-gray-100 to-white dark:from-darkTheme dark:to-darkHover'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+        >
+            {/* Subtle Floating Background Element */}
+            <motion.div 
+                className="absolute -top-10 right-10 w-32 h-32 bg-blue-400 opacity-20 rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+                transition={{ repeat: Infinity, duration: 6 }}
+            ></motion.div>
 
-//             {/* Title Section */}
-//             <motion.h4
-//                 initial={{ opacity: 0, y: -20 }}
-//                 whileInView={{ opacity: 1, y: 0 }}
-//                 transition={{ duration: 0.5, delay: 0.3 }}
-//                 className='text-center mb-2 text-lg font-Ovo'
-//             >
-//                 Introduction
-//             </motion.h4>
-//             <motion.h2 
-//                 initial={{ opacity: 0, y: -20 }}
-//                 whileInView={{ opacity: 1, y: 0 }}
-//                 transition={{ duration: 0.5, delay: 0.5 }}
-//                 className="text-center text-5xl font-Ovo"
-//             >
-//                 About Me
-//             </motion.h2>
+            {/* Title Section */}
+            <motion.h4
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className='text-center mb-2 text-lg font-Ovo'
+            >
+                Introduction
+            </motion.h4>
+            <motion.h2 
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="text-center text-5xl font-Ovo"
+            >
+                About Me
+            </motion.h2>
 
-//             {/* Content Section */}
-//             <motion.div 
-//                 initial={{ opacity: 0 }}
-//                 whileInView={{ opacity: 1 }}
-//                 transition={{ duration: 0.8 }}
-//                 className='flex flex-col lg:flex-row items-center gap-20 my-20'
-//             >
-//                 {/* Profile Image with Hover Effect */}
-//                 <motion.div 
-//                     initial={{ opacity: 0, scale: 0.9 }}
-//                     whileInView={{ opacity: 1, scale: 1 }}
-//                     transition={{ duration: 0.4 }}
-//                     whileHover={{ scale: 1.05, rotate: 2 }}
-//                     className='w-64 sm:w-80 rounded-3xl shadow-lg transform transition-all duration-300'
-//                 >
-//                     <Image src={assets.user_image} alt='user' className='w-full rounded-3xl' />
-//                 </motion.div>
+            {/* Content Section */}
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className='flex flex-col lg:flex-row items-center gap-20 my-20'
+            >
+                {/* Profile Image with Hover Effect */}
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4 }}
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                    className='w-64 sm:w-80 rounded-3xl shadow-lg transform transition-all duration-300'
+                >
+                    <Image src={assets.user_image} alt='user' className='w-full rounded-3xl' />
+                </motion.div>
 
-//                 {/* Text & Information Section */}
-//                 <motion.div 
-//                     initial={{ opacity: 0 }}
-//                     whileInView={{ opacity: 1 }}
-//                     transition={{ duration: 0.8, delay: 1 }}
-//                     className='flex-1'
-//                 >
-//                     <p className='mb-10 max-w-2xl font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-relaxed'>
-//                         About Me
+                {/* Text & Information Section */}
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                    className='flex-1'
+                >
+                    <p className='mb-10 max-w-2xl font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-relaxed'>
+                        About Me
 
-// I am a dedicated 3rd-year B.Tech student in Computer Science and Engineering at Vellore Institute of Technology, Vellore. My technical foundation spans a diverse set of programming languages, including Python, C, C++, Java, HTML, CSS, JavaScript, React, and Node.js. My academic journey has been complemented by hands-on experience in data structures, algorithms, artificial intelligence, and machine learning, equipping me with the skills required to tackle complex real-world problems.
+I am a dedicated 3rd-year B.Tech student in Computer Science and Engineering at Vellore Institute of Technology, Vellore. My technical foundation spans a diverse set of programming languages, including Python, C, C++, Java, HTML, CSS, JavaScript, React, and Node.js. My academic journey has been complemented by hands-on experience in data structures, algorithms, artificial intelligence, and machine learning, equipping me with the skills required to tackle complex real-world problems.
 
-// As a Campus Ambassador at IIT Guwahati, IIT Kanpur, NIT Trichy, and NIT Nagpur, I have developed strong leadership, networking, and communication skills, connecting with peers and professionals in the tech community. My passion for coding and technology drives me to constantly explore new tools, frameworks, and methodologies, while my problem-solving mindset fuels my commitment to building impactful solutions.
-//                     </p>
+As a Campus Ambassador at IIT Guwahati, IIT Kanpur, NIT Trichy, and NIT Nagpur, I have developed strong leadership, networking, and communication skills, connecting with peers and professionals in the tech community. My passion for coding and technology drives me to constantly explore new tools, frameworks, and methodologies, while my problem-solving mindset fuels my commitment to building impactful solutions.
+                    </p>
 
-//                     {/* Info Cards */}
-//                     <motion.ul
-//                         initial={{ opacity: 0 }}
-//                         whileInView={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 0.5, delay: 0.3 }}
-//                         className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'
-//                     >
-//                         {infoList.map(({ icon, iconDark, title, description }, index) => (
-//                             <motion.li
-//                                 whileHover={{ scale: 1.05 }}
-//                                 className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-lg dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50'
-//                                 key={index}
-//                             >
-//                                 <Image src={isDarkMode ? iconDark : icon} alt={title} className='w-10 h-10' />
-//                                 <h3 className='my-4 font-semibold text-gray-700 dark:text-white'>{title}</h3>
-//                                 <p className='text-gray-600 text-sm dark:text-white/80'>{description}</p>
-//                             </motion.li>
-//                         ))}
-//                     </motion.ul>
+                    {/* Info Cards */}
+                    <motion.ul
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'
+                    >
+                        {infoList.map(({ icon, iconDark, title, description }, index) => (
+                            <motion.li
+                                whileHover={{ scale: 1.05 }}
+                                className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-lg dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50'
+                                key={index}
+                            >
+                                <Image src={isDarkMode ? iconDark : icon} alt={title} className='w-10 h-10' />
+                                <h3 className='my-4 font-semibold text-gray-700 dark:text-white'>{title}</h3>
+                                <p className='text-gray-600 text-sm dark:text-white/80'>{description}</p>
+                            </motion.li>
+                        ))}
+                    </motion.ul>
 
-//                     {/* Tools Section */}
-//                     <motion.h4 
-//                         initial={{ opacity: 0, y: -20 }}
-//                         whileInView={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 1.3, delay: 0.5 }}
-//                         className='my-6 text-gray-700 font-Ovo dark:text-white/80 text-xl'
-//                     >
-//                         Tools I Use
-//                     </motion.h4>
-//                     <motion.ul
-//                         initial={{ opacity: 0 }}
-//                         whileInView={{ opacity: 1 }}
-//                         transition={{ duration: 1.5, delay: 0.6 }}
-//                         className='flex flex-wrap justify-center items-center gap-4 sm:gap-5'
-//                     >
-//                         {toolsData.map((tool, index) => (
-//                             <motion.li 
-//                                 whileHover={{ scale: 1.1, rotate: 5 }}
-//                                 className='flex items-center justify-center w-14 sm:w-16 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 bg-gray-50 dark:bg-darkHover/50 dark:border-white/50'
-//                                 key={index}
-//                             >
-//                                 <Image src={tool} alt='Tool' className='w-8 sm:w-10' />
-//                             </motion.li>
-//                         ))}
-//                     </motion.ul>
-//                 </motion.div>
-//             </motion.div>
-//         </motion.div>
-//     );
-// };
+                    {/* Tools Section */}
+                    <motion.h4 
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.3, delay: 0.5 }}
+                        className='my-6 text-gray-700 font-Ovo dark:text-white/80 text-xl'
+                    >
+                        Tools I Use
+                    </motion.h4>
+                    <motion.ul
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 1.5, delay: 0.6 }}
+                        className='flex flex-wrap justify-center items-center gap-4 sm:gap-5'
+                    >
+                        {toolsData.map((tool, index) => (
+                            <motion.li 
+                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                className='flex items-center justify-center w-14 sm:w-16 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 bg-gray-50 dark:bg-darkHover/50 dark:border-white/50'
+                                key={index}
+                            >
+                                <Image src={tool} alt='Tool' className='w-8 sm:w-10' />
+                            </motion.li>
+                        ))}
+                    </motion.ul>
+                </motion.div>
+            </motion.div>
+        </motion.div>
+    );
+};
 
-// export default About;
+export default About;
 
 
 
@@ -1182,128 +1182,128 @@
 
 
 
-"use client";
+// "use client";
 
-import { assets } from '@/assets/assets';
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+// import { assets } from '@/assets/assets';
+// import React from 'react';
+// import Image from 'next/image';
+// import { motion } from 'framer-motion';
 
-const About = ({ isDarkMode }) => {
-  const infoList = [
-    {
-      icon: assets.code_icon,
-      iconDark: assets.code_icon_dark,
-      title: 'Languages',
-      description: 'HTML, CSS, JavaScript, C, C++, Java, Python',
-    },
-    {
-      icon: assets.edu_icon,
-      iconDark: assets.edu_icon_dark,
-      title: 'Education',
-      description: 'B.Tech in Computer Science',
-    },
-    {
-      icon: assets.project_icon,
-      iconDark: assets.project_icon_dark,
-      title: 'Projects',
-      description: 'Built more than 5 projects',
-    },
-  ];
+// const About = ({ isDarkMode }) => {
+//   const infoList = [
+//     {
+//       icon: assets.code_icon,
+//       iconDark: assets.code_icon_dark,
+//       title: 'Languages',
+//       description: 'HTML, CSS, JavaScript, C, C++, Java, Python',
+//     },
+//     {
+//       icon: assets.edu_icon,
+//       iconDark: assets.edu_icon_dark,
+//       title: 'Education',
+//       description: 'B.Tech in Computer Science',
+//     },
+//     {
+//       icon: assets.project_icon,
+//       iconDark: assets.project_icon_dark,
+//       title: 'Projects',
+//       description: 'Built more than 5 projects',
+//     },
+//   ];
 
-  const toolsData = [assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git];
+//   const toolsData = [assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git];
 
-  return (
-    <motion.section
-      id="about"
-      className="w-full max-w-[95%] mx-auto my-24 px-2 py-12 shadow-xl relative rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none transition-colors duration-300 bg-gradient-to-tr from-purple-100 to-purple-300"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-    >
-      <div className="flex flex-col lg:flex-row gap-16 items-center">
-        <motion.div
-          className="relative w-72 h-72 rounded-xl overflow-hidden border-8 border-purple-500 shadow-[0_0_30px_rgba(128,0,128,0.6)]"
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.7 }}
-        >
-          <Image
-            src={assets.user_image}
-            alt="Profile Image"
-            className="object-cover w-full h-full"
-            priority
-          />
-          <motion.div
-            className="absolute inset-0 rounded-xl border-4 border-purple-400 opacity-40"
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
-          />
-        </motion.div>
+//   return (
+//     <motion.section
+//       id="about"
+//       className="w-full max-w-[95%] mx-auto my-24 px-2 py-12 shadow-xl relative rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none transition-colors duration-300 bg-gradient-to-tr from-purple-100 to-purple-300"
+//       initial={{ opacity: 0, y: 40 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       viewport={{ once: true }}
+//       transition={{ duration: 1 }}
+//     >
+//       <div className="flex flex-col lg:flex-row gap-16 items-center">
+//         <motion.div
+//           className="relative w-72 h-72 rounded-xl overflow-hidden border-8 border-purple-500 shadow-[0_0_30px_rgba(128,0,128,0.6)]"
+//           initial={{ scale: 0.9, opacity: 0 }}
+//           whileInView={{ scale: 1, opacity: 1 }}
+//           transition={{ duration: 0.7 }}
+//         >
+//           <Image
+//             src={assets.user_image}
+//             alt="Profile Image"
+//             className="object-cover w-full h-full"
+//             priority
+//           />
+//           <motion.div
+//             className="absolute inset-0 rounded-xl border-4 border-purple-400 opacity-40"
+//             animate={{ rotate: 360 }}
+//             transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
+//           />
+//         </motion.div>
 
-        <div className="flex-1 flex flex-col gap-12">
-          <h2 className="text-4xl font-extrabold text-purple-900 tracking-tight font-Ovo">
-            About Vipul
-          </h2>
+//         <div className="flex-1 flex flex-col gap-12">
+//           <h2 className="text-4xl font-extrabold text-purple-900 tracking-tight font-Ovo">
+//             About Vipul
+//           </h2>
 
-          <p className="text-lg text-purple-800 leading-relaxed max-w-xl font-Ovo">
-            I am a passionate 3rd-year B.Tech Computer Science student from VIT Vellore. Skilled in Python, C++, JavaScript, React, and more. Experienced as campus ambassador across IITs and NITs, developing leadership and networking skills. I love solving problems and building impactful tech solutions.
-          </p>
+//           <p className="text-lg text-purple-800 leading-relaxed max-w-xl font-Ovo">
+//             I am a passionate 3rd-year B.Tech Computer Science student from VIT Vellore. Skilled in Python, C++, JavaScript, React, and more. Experienced as campus ambassador across IITs and NITs, developing leadership and networking skills. I love solving problems and building impactful tech solutions.
+//           </p>
 
-          <div className="flex flex-col gap-6">
-            {infoList.map(({ icon, iconDark, title, description }, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.03, boxShadow: '0 6px 15px rgba(128,0,128,0.3)' }}
-                className="flex items-center gap-6 p-5 rounded-lg bg-[#f3e8ff] shadow-md border border-[#e9d8fd] cursor-pointer transition-colors duration-300"
-              >
-                <Image
-                  src={isDarkMode && iconDark ? iconDark : icon}
-                  alt={title}
-                  className="w-12 h-12"
-                />
-                <div>
-                  <h3 className="text-purple-900 font-semibold text-xl font-Ovo">{title}</h3>
-                  <p className="text-purple-800 font-Ovo">{description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+//           <div className="flex flex-col gap-6">
+//             {infoList.map(({ icon, iconDark, title, description }, i) => (
+//               <motion.div
+//                 key={i}
+//                 whileHover={{ scale: 1.03, boxShadow: '0 6px 15px rgba(128,0,128,0.3)' }}
+//                 className="flex items-center gap-6 p-5 rounded-lg bg-[#f3e8ff] shadow-md border border-[#e9d8fd] cursor-pointer transition-colors duration-300"
+//               >
+//                 <Image
+//                   src={isDarkMode && iconDark ? iconDark : icon}
+//                   alt={title}
+//                   className="w-12 h-12"
+//                 />
+//                 <div>
+//                   <h3 className="text-purple-900 font-semibold text-xl font-Ovo">{title}</h3>
+//                   <p className="text-purple-800 font-Ovo">{description}</p>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
 
-          <h3 className="text-xl font-semibold text-purple-800 mt-8 mb-4 font-Ovo">
-            Tools I Use
-          </h3>
-          <div className="flex gap-6 flex-wrap max-w-xl">
-            {toolsData.map((tool, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 5,
-                  boxShadow: '0 8px 20px rgba(128,0,128,0.3)',
-                }}
-                className="w-14 h-14 bg-[#f3e8ff] border border-[#e9d8fd] rounded-lg flex items-center justify-center cursor-pointer shadow-sm"
-              >
-                <Image src={tool} alt="Tool Icon" className="w-10 h-10" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+//           <h3 className="text-xl font-semibold text-purple-800 mt-8 mb-4 font-Ovo">
+//             Tools I Use
+//           </h3>
+//           <div className="flex gap-6 flex-wrap max-w-xl">
+//             {toolsData.map((tool, idx) => (
+//               <motion.div
+//                 key={idx}
+//                 whileHover={{
+//                   scale: 1.1,
+//                   rotate: 5,
+//                   boxShadow: '0 8px 20px rgba(128,0,128,0.3)',
+//                 }}
+//                 className="w-14 h-14 bg-[#f3e8ff] border border-[#e9d8fd] rounded-lg flex items-center justify-center cursor-pointer shadow-sm"
+//               >
+//                 <Image src={tool} alt="Tool Icon" className="w-10 h-10" />
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
 
-      <motion.div
-        className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-purple-300 opacity-30 blur-3xl"
-        animate={{ scale: [1, 1.15, 1] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-purple-400 opacity-25 blur-2xl"
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
-    </motion.section>
-  );
-};
+//       <motion.div
+//         className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-purple-300 opacity-30 blur-3xl"
+//         animate={{ scale: [1, 1.15, 1] }}
+//         transition={{ duration: 8, repeat: Infinity }}
+//       />
+//       <motion.div
+//         className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-purple-400 opacity-25 blur-2xl"
+//         animate={{ scale: [1, 1.1, 1] }}
+//         transition={{ duration: 10, repeat: Infinity }}
+//       />
+//     </motion.section>
+//   );
+// };
 
-export default About;
+// export default About;
