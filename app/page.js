@@ -6,6 +6,10 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+//new
+import Services from "./components/Services";
+import Certificates from "./components/Certificates";
+
 import React,{useState,useEffect} from 'react'
 
 export default function Home() {
@@ -32,8 +36,11 @@ if(isDarkMode){
     <Header isDarkMode={isDarkMode}/>
     <About isDarkMode={isDarkMode}/>
     <Work isDarkMode={isDarkMode}/>
+    <Services isDarkMode={isDarkMode}/>
+    <Certificates isDarkMode={isDarkMode}/>
     <Contact isDarkMode={isDarkMode}/>
     <Footer isDarkMode={isDarkMode}/>
+     
     </>
   );
 }
