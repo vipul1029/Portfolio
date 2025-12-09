@@ -36,13 +36,21 @@ The website focuses on clean design, smooth animations, responsiveness, and a mo
 
 portfolio/
 ├── app/
+
 │ ├── components/
+
 │ ├── page.js
+
 ├── public/
+
 │ ├── images
+
 │ └── certificates
+
 ├── assets/
+
 ├── styles/
+
 └── README.md
 
 
