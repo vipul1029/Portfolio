@@ -130,7 +130,7 @@ const Certificates = () => {
       </motion.p>
 
       {/* Summary pill */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
@@ -139,8 +139,24 @@ const Certificates = () => {
                    text-xs sm:text-sm text-gray-700 dark:text-gray-200"
       >
         {certificates.length}+ verified certificates across development, AI/ML, Hackathons, and problem solving.
-      </motion.div>
+      </motion.div> */}
+<motion.div
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.7 }}
+ className="mx-auto mb-10 px-3 py-2 rounded-full
+           bg-white/80 dark:bg-darkHover/70
+           border border-gray-300 dark:border-white/40
+           text-xs sm:text-sm text-gray-700 dark:text-gray-200
+           max-w-[92vw] sm:max-w-xl lg:max-w-fit
+           text-center break-words lg:whitespace-nowrap"
 
+>
+  <span className="font-semibold">
+    {certificates.length}+{" "}
+  </span>
+  verified certificates across development, AI/ML, hackathons, and problem solving.
+</motion.div>
       {/* Certificates Grid */}
       <motion.div
         initial={{ opacity: 0 }}
