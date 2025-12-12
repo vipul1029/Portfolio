@@ -11,7 +11,7 @@ const Work = ({ isDarkMode }) => {
       title: "Shoporia — E-commerce Frontend",
       description: "Modern & responsive e-commerce UI built with Next.js.",
       bgImage: "/work-9.png",
-      link: "https://shoporia-frontend.vercel.app/",
+      link: "https://shoporia-shopping-site.onrender.com/",
       tag: "Fullstack",
     },
     {
