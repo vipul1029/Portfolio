@@ -63,7 +63,7 @@ const Header = () => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          href="Vipul_Vit_Resume.pdf" download
+          href="Vipul_VIT_Resume.pdf" download
         className=
         // 'px-8 py-3 border border-gray-500 rounded-full bg-white text-black dark:text-white flex items-center gap-2 font-semibold shadow-md hover:scale-105 transition-all duration-300  dark:bg-darkHover'
         
