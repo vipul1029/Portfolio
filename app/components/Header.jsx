@@ -41,7 +41,9 @@ const Header = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
         className='max-w-2xl mx-auto text-lg font-Ovo text-gray-700 dark:text-gray-300'>
-         3rd year student at Vellore Institute of Technology ,vellore | pursuing Btech in CSE Core<span className="font-semibold"></span>,Campus ambassador @|IT Guwahati, lIT Kanpur, Nit Trichy, Nit Nagpur| Python | C |C++ |Java | HTML | CSS |JAVA Sctipt|React | Node | DSA | AI ML.
+         /*3rd year student at Vellore Institute of Technology ,vellore | pursuing Btech in CSE Core<span className="font-semibold"></span>,Campus ambassador @|IT Guwahati, lIT Kanpur, Nit Trichy, Nit Nagpur| Python | C |C++ |Java | HTML | CSS |JAVA Sctipt|React | Node | DSA | AI ML.*/
+
+        3rd-year B.Tech CSE (Core) student at VIT Vellore | Software Developer | Full-Stack (React, Node.js) & AI/ML Enthusiast | Strong in DSA | Campus Ambassador @ IIT Guwahati, IIT Kanpur, NIT Trichy & NIT Nagpur
       </motion.p>
 
       {/* Buttons */}
