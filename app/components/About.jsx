@@ -75,9 +75,12 @@ const About = ({ isDarkMode }) => {
                     <p className='mb-10 max-w-2xl font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-relaxed'>
                         About Me
 
-I am a dedicated 3rd-year B.Tech student in Computer Science and Engineering at Vellore Institute of Technology, Vellore. My technical foundation spans a diverse set of programming languages, including Python, C, C++, Java, HTML, CSS, JavaScript, React, and Node.js. My academic journey has been complemented by hands-on experience in data structures, algorithms, artificial intelligence, and machine learning, equipping me with the skills required to tackle complex real-world problems.
-
-As a Campus Ambassador at IIT Guwahati, IIT Kanpur, NIT Trichy, and NIT Nagpur, I have developed strong leadership, networking, and communication skills, connecting with peers and professionals in the tech community. My passion for coding and technology drives me to constantly explore new tools, frameworks, and methodologies, while my problem-solving mindset fuels my commitment to building impactful solutions.
+About Me I’m a 3rd-year B.Tech student in Computer Science and Engineering at VIT Vellore, passionate about building practical and scalable tech solutions.
+I have hands-on experience in full-stack development and machine learning, working with technologies such as React, Node.js, MongoDB, PostgreSQL, and Python. I gained real-world exposure through my Software Development Internship at Bluestock Fintech,
+where I contributed to an end-to-end IPO web application by developing responsive frontends, designing RESTful APIs, and working with databases. 
+I enjoy problem-solving and have a strong interest in data structures, algorithms, and AI/ML, including participation in the 
+Smart India Hackathon, where I worked on an AI-based women’s safety project. Alongside technical work,
+I serve as a Campus Ambassador for IITs and NITs, which has strengthened my leadership, communication, and networking skills. I’m a curious learner who enjoys exploring new technologies and turning ideas into impactful, real-world applications.
                     </p>
 
                     {/* Info Cards */}
