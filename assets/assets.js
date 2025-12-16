@@ -13,7 +13,7 @@ import gitHub from './gitHub.png';
 import render from './render.jpeg';
 import postman from './postman.png';
 import vercel from './vercel.jpg';
-import nextjs from './nextjs.png';
+import nextjs from './nextjs1.png';
 import nodejs from './nodejs.png';
 import postgresql from './postgresql.jpg';
 import reactlogo from './reactlogo.png';
@@ -61,7 +61,7 @@ export const assets = {
     gitHub,
     render,
     postman,
-    nextjs,
+    nextjs1,
     nodejs,
     postgresql,
     mongodb,
@@ -136,7 +136,7 @@ assets.reactlogo,
 assets.nodejs,
 assets.mongodb,
 assets.postgresql,
-assets.nextjs,
+assets.nextjs1,
 assets.figma,
 assets.postman,
 assets.vercel,
