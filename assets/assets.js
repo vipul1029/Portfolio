@@ -13,7 +13,7 @@ import gitHub from './gitHub.png';
 import render from './render.jpeg';
 import postman from './postman.png';
 import vercel from './vercel.jpg';
-import nextjs from './nextjs1.png';
+import nextjs1 from './nextjs1.png';
 import nodejs from './nodejs.png';
 import postgresql from './postgresql.jpg';
 import reactlogo from './reactlogo.png';
