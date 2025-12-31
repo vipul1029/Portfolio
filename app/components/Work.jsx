@@ -11,15 +11,8 @@ const Work = ({ isDarkMode }) => {
       title: "Shoporia — E-commerce Frontend",
       description: "Modern & responsive e-commerce UI built with Next.js.",
       bgImage: "/work-9.png",
-      link: "https://shoporia-shopping-site.onrender.com/login",
+      link: "https://shoporia-frontend.vercel.app/",
       tag: "Fullstack",
-    },
-       {
-      title: "Virtual Eclipse — Solar Eclipse Visualization",
-      description: "Interactive solar eclipse visualization web app.",
-      bgImage: "/work-8.png",
-      link: "https://virtual-eclipse.vercel.app/",
-      tag: "Visualization",
     },
     {
       title: "Food Ordering Platform",
@@ -28,7 +21,20 @@ const Work = ({ isDarkMode }) => {
       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
       tag: "Fullstack",
     },
- 
+    {
+      title: "Virtual Eclipse — Solar Eclipse Visualization",
+      description: "Interactive solar eclipse visualization web app.",
+      bgImage: "/work-8.png",
+      link: "https://virtual-eclipse.vercel.app/",
+      tag: "Visualization",
+    },
+      {
+  title: "Cancer Awareness & Support",
+  description: "",
+  bgImage: "/work-10.png",
+  link: "https://cancer-awareness-website-ten.vercel.app/",
+  tag: "React.js",
+},
     {
       title: "NVZ - Tesla UI",
       description: "Tesla-inspired landing page with smooth animations.",
@@ -70,7 +76,8 @@ const Work = ({ isDarkMode }) => {
       bgImage: "/work-7.png",
       link: "https://github.com/vipul1029/Sales-Prediction",
       tag: "Machine Learning",
-    },
+    }
+
   ];
 
   return (

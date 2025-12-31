@@ -157,6 +157,9 @@ const Certificates = () => {
   </span>
   verified certificates across development, AI/ML, hackathons, and problem solving.
 </motion.div>
+
+
+
       {/* Certificates Grid */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -232,3 +235,12 @@ const Certificates = () => {
 };
 
 export default Certificates;
+
+
+
+
+
+
+
+
+
