@@ -16,7 +16,7 @@ The website focuses on clean design, smooth animations, responsiveness, and a mo
 - 💼 Featured projects with live links  
 - 🏆 Certificates and achievements  
 - 🤝 Services, collaborations, and freelancing info  
-- 📩 Easy ways to contact me  
+- 📩 Easy ways to contact me 
 
 ## 🧩 Key Features
 - Smooth animations with Framer Motion  
