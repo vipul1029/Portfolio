@@ -1208,6 +1208,300 @@
 
 
 
+// "use client";
+
+// import React from "react";
+// import Image from "next/image";
+// import { motion } from "framer-motion";
+// import { assets } from "@/assets/assets";
+
+// const Work = ({ isDarkMode }) => {
+
+//   const workData = [
+//     {
+//       title: "Shoporia — E-commerce Frontend",
+//       description: "Modern & responsive e-commerce UI built with Next.js.",
+//       bgImage: "/work-9.png",
+//       link: "https://shoporia-frontend.vercel.app/",
+//       tag: "Fullstack",
+//       category: "fullstack",
+//     },
+//     {
+//       title: "Food Ordering Platform",
+//       description: "Food delivery app with cart and checkout experience.",
+//       bgImage: "/work-1.png",
+//       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
+//       tag: "Fullstack",
+//       category: "fullstack",
+//     },
+//     {
+//   title: "Contact Management Web App",
+//   description: "A full-featured contact management application that lets users add, view, edit, and delete contact information with a responsive dashboard.",
+//   bgImage: "/work-11.png",
+//   link: "https://contact-management-vipul107.vercel.app/",
+//   tag: "Fullstack",
+//   category: "fullstack",
+// },
+
+   
+   
+//     // Frontend
+//     {
+//       title: "Virtual Eclipse — Solar Eclipse Visualization",
+//       description: "Interactive solar eclipse visualization web app.",
+//       bgImage: "/work-8.png",
+//       link: "https://virtual-eclipse.vercel.app/",
+//       tag: "Visualization",
+//       category: "frontend",
+//     },
+//     {
+//       title: "Cancer Awareness & Support",
+//       description: "Awareness-focused React website with clean UI.",
+//       bgImage: "/work-10.png",
+//       link: "https://cancer-awareness-website-ten.vercel.app/",
+//       tag: "React.js",
+//       category: "frontend",
+//     },
+//     {
+//       title: "NVZ - Tesla UI",
+//       description: "Tesla-inspired landing page with smooth animations.",
+//       bgImage: "/work-2.png",
+//       link: "https://nvz-vipul1007s-projects.vercel.app/",
+//       tag: "UI/UX",
+//       category: "frontend",
+//     },
+//     {
+//       title: "Lazarev Agency Clone",
+//       description: "Creative agency-style portfolio website.",
+//       bgImage: "/work-3.png",
+//       link: "https://vipul1029.github.io/Lazarev/",
+//       tag: "Frontend",
+//       category: "frontend",
+//     },
+//     {
+//       title: "Teecraft Golf Hub",
+//       description: "Interactive animated website for a golf club.",
+//       bgImage: "/work-4.png",
+//       link: "https://vipul1029.github.io/sidcup-gaming-site/",
+//       tag: "Animation",
+//       category: "frontend",
+//     },
+//     {
+//       title: "Gaming Tutorial Site",
+//       description: "Responsive gaming tutorial platform.",
+//       bgImage: "/work-5.png",
+//       link: "https://vipul1029.github.io/Miniproject/",
+//       tag: "Frontend",
+//       category: "frontend",
+//     },
+
+//     // AI / ML
+//        {
+//       title: "AgriInspect-ML-Based-Fruit-Quality-Evaluation ",
+//       description: "ML-based web app for apple quality (Good/Bad) prediction using XGBoost and Flask.",
+//       bgImage: "/work-12.png",
+//       link: "https://agriinspect-ml-based-fruit-quality-w0sm.onrender.com/",
+//       tag: "AI",
+//       category: "ai",
+//     },
+//     {
+//       title: "AI Resume Builder",
+//       description: "AI-powered resume & cover letter generator.",
+//       bgImage: "/work-6.png",
+//       link: "https://resume-cover-letter-maker-q96u.vercel.app/",
+//       tag: "AI",
+//       category: "ai",
+//     },
+//     {
+//       title: "Sales Prediction",
+//       description: "ML model to forecast sales from historical data.",
+//       bgImage: "/work-7.png",
+//       link: "https://github.com/vipul1029/Sales-Prediction",
+//       tag: "Machine Learning",
+//       category: "ai",
+//     },
+//   ];
+
+//   const sectionMeta = {
+//     fullstack: {
+//       title: "Full-Stack Projects",
+//       description:
+//         "Scalable, real-world applications combining modern UI, backend logic, and complete user flows.",
+//       glow: "from-emerald-400/20 to-cyan-400/20",
+//     },
+//     frontend: {
+//       title: "Frontend & UI Projects",
+//       description:
+//         "Visually refined, animated, and responsive interfaces built with strong UX principles.",
+//       glow: "from-indigo-400/20 to-purple-400/20",
+//     },
+//     ai: {
+//       title: "AI & Machine Learning Projects",
+//       description:
+//         "AI-driven applications leveraging machine learning to create intelligent, data-powered experiences.",
+//       glow: "from-orange-400/20 to-pink-400/20",
+//     },
+//   };
+
+//   const renderSection = (category) => {
+//     const projects = workData.filter(p => p.category === category);
+
+//     return (
+//       <section className="relative mt-32">
+//         <div className={`absolute inset-0 -z-10 blur-3xl bg-gradient-to-br ${sectionMeta[category].glow}`} />
+
+//         <h3 className="text-4xl md:text-5xl font-Ovo text-center mb-4">
+//           {sectionMeta[category].title}
+//         </h3>
+
+//         <p className="text-center max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400 font-Ovo text-lg">
+//           {sectionMeta[category].description}
+//         </p>
+
+//         <motion.div
+//           initial={{ width: 0 }}
+//           whileInView={{ width: "100px" }}
+//           transition={{ duration: 0.6 }}
+//           className="mx-auto mb-16 h-[3px] bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full"
+//         />
+
+//         <div
+//           className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+//           style={{ justifyItems: "center" }}
+//         >
+//           {projects.map((item, index) => (
+//             <motion.a
+//               key={index}
+//               href={item.link}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               initial={{ opacity: 0, y: 40 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.5, delay: index * 0.1 }}
+//               whileHover={{ y: -10, scale: 1.05 }}
+//               className="relative w-full max-w-[380px] rounded-2xl overflow-hidden group cursor-pointer
+//                          bg-white/70 dark:bg-white/5 backdrop-blur-lg
+//                          border border-white/20 shadow-xl hover:shadow-2xl transition"
+//             >
+//               <div
+//                 className="relative h-[260px]"
+//                 style={{
+//                   backgroundImage: `url(${item.bgImage})`,
+//                   backgroundSize: "cover",
+//                   backgroundPosition: "center",
+//                 }}
+//               >
+//                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition" />
+
+//                 <span className="absolute top-4 left-4 px-4 py-1 rounded-full text-xs font-semibold text-white bg-black/60 backdrop-blur">
+//                   {item.tag}
+//                 </span>
+
+//                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+//                   <span className="px-6 py-2 bg-white text-black rounded-full font-semibold">
+//                     View Project
+//                   </span>
+//                 </div>
+//               </div>
+
+//               <div className="p-5">
+//                 <h4 className="text-lg font-semibold mb-1">{item.title}</h4>
+//                 <p className="text-sm text-gray-600 dark:text-gray-400">
+//                   {item.description}
+//                 </p>
+//               </div>
+
+//               <div className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-lime-400 text-black">
+//                 <Image
+//                   src={assets.send_icon}
+//                   alt="open"
+//                   width={18}
+//                   height={18}
+//                   className="w-auto h-auto"
+//                 />
+//               </div>
+//             </motion.a>
+//           ))}
+//         </div>
+//       </section>
+//     );
+//   };
+
+//   return (
+//     <motion.section
+//       id="work"
+//       initial={{ opacity: 0 }}
+//       whileInView={{ opacity: 1 }}
+//       transition={{ duration: 1 }}
+//       className="relative w-full px-[10%] py-28 bg-gradient-to-b from-gray-100 to-white
+//                  dark:from-darkTheme dark:to-darkHover"
+//     >
+//       <h4 className="text-center mb-3 text-lg font-Ovo tracking-wide">
+//         My Projects
+//       </h4>
+
+//       <h2 className="text-center text-5xl md:text-6xl font-Ovo mb-6">
+//         My Latest Work
+//       </h2>
+
+//       <p className="text-center max-w-3xl mx-auto mb-24 font-Ovo text-gray-700 dark:text-gray-300 text-lg">
+//         A carefully curated collection of projects showcasing my skills in
+//         full-stack development, frontend engineering, and AI-powered solutions.
+//       </p>
+
+//       {renderSection("fullstack")}
+//       {renderSection("frontend")}
+//       {renderSection("ai")}
+
+//       {/* View All Projects Button */}
+// <motion.a
+//   href="https://github.com/vipul1029?tab=repositories"
+//   target="_blank"
+//   rel="noopener noreferrer"
+//   whileHover={{ scale: 1.08 }}
+//   whileTap={{ scale: 0.96 }}
+//   className="group mt-32 mx-auto flex items-center gap-4 w-max
+//              px-14 py-4 rounded-full
+//              bg-gradient-to-r from-lime-400 to-emerald-500
+//              text-black font-semibold text-lg
+//              shadow-lg hover:shadow-2xl
+//              transition-all duration-300"
+// >
+//   <span>View all projects</span>
+
+//   {/* Animated Arrow */}
+//   <span
+//     className="text-2xl transform transition-transform duration-300
+//                group-hover:translate-x-2"
+//   >
+//     →
+//   </span>
+// </motion.a>
+//     </motion.section>
+//   );
+// };
+
+// export default Work;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 
 import React from "react";
@@ -1218,82 +1512,81 @@ import { assets } from "@/assets/assets";
 const Work = ({ isDarkMode }) => {
 
   const workData = [
+
+    /* ================= FULL STACK ================= */
+
     {
-      title: "Shoporia — E-commerce Frontend",
-      description: "Modern & responsive e-commerce UI built with Next.js.",
+      title: "Shoporia — E-Commerce Platform",
+      description:
+        "Modern full-stack e-commerce platform with responsive UI, authentication, orders, and scalable architecture.",
       bgImage: "/work-9.png",
       link: "https://shoporia-frontend.vercel.app/",
-      tag: "Fullstack",
+      tag: "Full Stack",
       category: "fullstack",
     },
+
     {
       title: "Food Ordering Platform",
-      description: "Food delivery app with cart and checkout experience.",
+      description:
+        "Full-stack food delivery application with cart, checkout, authentication, and modern user experience.",
       bgImage: "/work-1.png",
       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-      tag: "Fullstack",
+      tag: "Full Stack",
       category: "fullstack",
     },
-    {
-  title: "Contact Management Web App",
-  description: "A full-featured contact management application that lets users add, view, edit, and delete contact information with a responsive dashboard.",
-  bgImage: "/work-11.png",
-  link: "https://contact-management-vipul107.vercel.app/",
-  tag: "Fullstack",
-  category: "fullstack",
-},
 
-   
-   
-    // Frontend
     {
-      title: "Virtual Eclipse — Solar Eclipse Visualization",
-      description: "Interactive solar eclipse visualization web app.",
+      title: "Contact Management Web App",
+      description:
+        "Scalable contact management system with dashboard, CRUD operations, and responsive UI.",
+      bgImage: "/work-11.png",
+      link: "https://contact-management-vipul107.vercel.app/",
+      tag: "Web Application",
+      category: "fullstack",
+    },
+
+    /* ================= FRONTEND ================= */
+
+    {
+      title: "Virtual Eclipse Visualization",
+      description:
+        "Interactive solar eclipse visualization platform with immersive animations and responsive UI.",
       bgImage: "/work-8.png",
       link: "https://virtual-eclipse.vercel.app/",
       tag: "Visualization",
       category: "frontend",
     },
+
     {
-      title: "Cancer Awareness & Support",
-      description: "Awareness-focused React website with clean UI.",
+      title: "Cancer Awareness Platform",
+      description:
+        "Awareness-focused React application designed with accessibility and clean UI principles.",
       bgImage: "/work-10.png",
       link: "https://cancer-awareness-website-ten.vercel.app/",
-      tag: "React.js",
+      tag: "Frontend",
       category: "frontend",
     },
+
     {
-      title: "NVZ - Tesla UI",
-      description: "Tesla-inspired landing page with smooth animations.",
+      title: "NVZ — Tesla Inspired UI",
+      description:
+        "Modern Tesla-inspired landing page with premium animations and interactive experiences.",
       bgImage: "/work-2.png",
       link: "https://nvz-vipul1007s-projects.vercel.app/",
-      tag: "UI/UX",
+      tag: "UI / UX",
       category: "frontend",
     },
+
     {
       title: "Lazarev Agency Clone",
-      description: "Creative agency-style portfolio website.",
+      description:
+        "Creative agency-style animated portfolio website focused on modern UI interactions.",
       bgImage: "/work-3.png",
       link: "https://vipul1029.github.io/Lazarev/",
       tag: "Frontend",
       category: "frontend",
     },
-    {
-      title: "Teecraft Golf Hub",
-      description: "Interactive animated website for a golf club.",
-      bgImage: "/work-4.png",
-      link: "https://vipul1029.github.io/sidcup-gaming-site/",
-      tag: "Animation",
-      category: "frontend",
-    },
-    {
-      title: "Gaming Tutorial Site",
-      description: "Responsive gaming tutorial platform.",
-      bgImage: "/work-5.png",
-      link: "https://vipul1029.github.io/Miniproject/",
-      tag: "Frontend",
-      category: "frontend",
-    },
+
 
     // AI / ML
       {
@@ -1304,72 +1597,122 @@ const Work = ({ isDarkMode }) => {
       tag: "AI",
       category: "ai",
     },
+
+    /* ================= AI / ML ================= */
+
+
     {
-      title: "AI Resume Builder",
-      description: "AI-powered resume & cover letter generator.",
-      bgImage: "/work-6.png",
-      link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-      tag: "AI",
+      title: "Real-Time Vehicle Detection System",
+      description:
+        "YOLO-based real-time vehicle detection and tracking system using computer vision.",
+      bgImage: "vehicle_detection.png",
+      link: "https://github.com/vipul1029",
+      tag: "Computer Vision",
       category: "ai",
     },
+
     {
-      title: "Sales Prediction",
-      description: "ML model to forecast sales from historical data.",
+      title: "AgriInspect — Fruit Quality Evaluation",
+      description:
+        "ML-powered fruit quality evaluation system using computer vision and XGBoost.",
+      bgImage: "/work-12.png",
+      link: "https://agriinspect-ml-based-fruit-quality-w0sm.onrender.com/",
+      tag: "AI / ML",
+      category: "ai",
+    },
+
+    {
+      title: "AI Resume Builder",
+      description:
+        "AI-powered resume and cover letter generation platform with modern UI.",
+      bgImage: "/work-6.png",
+      link: "https://resume-cover-letter-maker-q96u.vercel.app/",
+      tag: "AI Application",
+      category: "ai",
+    },
+
+    {
+      title: "Sales Prediction ML Model",
+      description:
+        "Machine learning model for predictive sales forecasting and analytics.",
       bgImage: "/work-7.png",
       link: "https://github.com/vipul1029/Sales-Prediction",
       tag: "Machine Learning",
       category: "ai",
     },
+
   ];
 
   const sectionMeta = {
+
     fullstack: {
       title: "Full-Stack Projects",
       description:
-        "Scalable, real-world applications combining modern UI, backend logic, and complete user flows.",
+        "Scalable real-world applications combining frontend experiences, backend systems, authentication, and database architecture.",
       glow: "from-emerald-400/20 to-cyan-400/20",
     },
+
     frontend: {
       title: "Frontend & UI Projects",
       description:
-        "Visually refined, animated, and responsive interfaces built with strong UX principles.",
+        "Modern, animated, and responsive interfaces designed with strong focus on user experience and visual interactions.",
       glow: "from-indigo-400/20 to-purple-400/20",
     },
+
     ai: {
       title: "AI & Machine Learning Projects",
       description:
-        "AI-driven applications leveraging machine learning to create intelligent, data-powered experiences.",
+        "AI-powered applications and machine learning systems focused on automation, analytics, and intelligent experiences.",
       glow: "from-orange-400/20 to-pink-400/20",
     },
+
   };
 
   const renderSection = (category) => {
-    const projects = workData.filter(p => p.category === category);
+
+    const projects = workData.filter(
+      (p) => p.category === category
+    );
 
     return (
-      <section className="relative mt-32">
-        <div className={`absolute inset-0 -z-10 blur-3xl bg-gradient-to-br ${sectionMeta[category].glow}`} />
 
+      <section className="relative mt-32">
+
+        {/* Background Glow */}
+        <div
+          className={`absolute inset-0 -z-10 blur-3xl bg-gradient-to-br ${sectionMeta[category].glow}`}
+        />
+
+        {/* Section Title */}
         <h3 className="text-4xl md:text-5xl font-Ovo text-center mb-4">
+
           {sectionMeta[category].title}
+
         </h3>
 
-        <p className="text-center max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400 font-Ovo text-lg">
+        {/* Section Description */}
+        <p className="text-center max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400 font-Ovo text-lg leading-8">
+
           {sectionMeta[category].description}
+
         </p>
 
+        {/* Animated Divider */}
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.35 }}
           className="mx-auto mb-16 h-[3px] bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full"
         />
 
+        {/* Projects Grid */}
         <div
           className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
           style={{ justifyItems: "center" }}
         >
+
           {projects.map((item, index) => (
+
             <motion.a
               key={index}
               href={item.link}
@@ -1377,41 +1720,66 @@ const Work = ({ isDarkMode }) => {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.05 }}
+              transition={{ duration: 0.35 }}
+              whileHover={{ y: -6 }}
               className="relative w-full max-w-[380px] rounded-2xl overflow-hidden group cursor-pointer
                          bg-white/70 dark:bg-white/5 backdrop-blur-lg
                          border border-white/20 shadow-xl hover:shadow-2xl transition"
             >
+
+              {/* Project Image */}
               <div
-                className="relative h-[260px]"
+                className="relative h-[240px]"
                 style={{
                   backgroundImage: `url(${item.bgImage})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               >
+
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition" />
 
+                {/* Tag */}
                 <span className="absolute top-4 left-4 px-4 py-1 rounded-full text-xs font-semibold text-white bg-black/60 backdrop-blur">
+
                   {item.tag}
+
                 </span>
 
+                {/* Hover Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+
                   <span className="px-6 py-2 bg-white text-black rounded-full font-semibold">
+
                     View Project
+
                   </span>
+
                 </div>
+
               </div>
 
+              {/* Content */}
               <div className="p-5">
-                <h4 className="text-lg font-semibold mb-1">{item.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+
+                <h4 className="text-lg font-semibold mb-1">
+
+                  {item.title}
+
+                </h4>
+
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-6">
+
                   {item.description}
+
                 </p>
+
               </div>
 
+              {/* Arrow */}
               <div className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-lime-400 text-black">
+
                 <Image
                   src={assets.send_icon}
                   alt="open"
@@ -1419,64 +1787,108 @@ const Work = ({ isDarkMode }) => {
                   height={18}
                   className="w-auto h-auto"
                 />
+
               </div>
+
             </motion.a>
+
           ))}
+
         </div>
+
       </section>
     );
   };
 
   return (
+
     <motion.section
       id="work"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.35 }}
       className="relative w-full px-[10%] py-28 bg-gradient-to-b from-gray-100 to-white
                  dark:from-darkTheme dark:to-darkHover"
     >
+
+      {/* Heading */}
       <h4 className="text-center mb-3 text-lg font-Ovo tracking-wide">
+
         My Projects
+
       </h4>
 
       <h2 className="text-center text-5xl md:text-6xl font-Ovo mb-6">
-        My Latest Work
+
+        Featured Projects
+
       </h2>
 
-      <p className="text-center max-w-3xl mx-auto mb-24 font-Ovo text-gray-700 dark:text-gray-300 text-lg">
-        A carefully curated collection of projects showcasing my skills in
-        full-stack development, frontend engineering, and AI-powered solutions.
+      {/* Intro */}
+      <p className="text-center max-w-3xl mx-auto mb-14 font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-8">
+
+        A collection of real-world projects focused on full-stack development,
+        scalable software systems, AI-powered applications, and modern user experiences.
+
       </p>
 
+      {/* Tech Pills */}
+      <div className="flex flex-wrap justify-center gap-3 mb-16">
+
+        <span className="px-4 py-2 rounded-full text-sm bg-gray-900 text-white dark:bg-white dark:text-black">
+          Full Stack
+        </span>
+
+        <span className="px-4 py-2 rounded-full text-sm border border-gray-400 dark:border-white/40">
+          AI / ML
+        </span>
+
+        <span className="px-4 py-2 rounded-full text-sm border border-gray-400 dark:border-white/40">
+          Computer Vision
+        </span>
+
+        <span className="px-4 py-2 rounded-full text-sm border border-gray-400 dark:border-white/40">
+          Scalable Systems
+        </span>
+
+      </div>
+
+      {/* Sections */}
       {renderSection("fullstack")}
       {renderSection("frontend")}
       {renderSection("ai")}
 
-      {/* View All Projects Button */}
-<motion.a
-  href="https://github.com/vipul1029?tab=repositories"
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.08 }}
-  whileTap={{ scale: 0.96 }}
-  className="group mt-32 mx-auto flex items-center gap-4 w-max
-             px-14 py-4 rounded-full
-             bg-gradient-to-r from-lime-400 to-emerald-500
-             text-black font-semibold text-lg
-             shadow-lg hover:shadow-2xl
-             transition-all duration-300"
->
-  <span>View all projects</span>
+      {/* GitHub Button */}
+      <motion.a
+        href="https://github.com/vipul1029?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.96 }}
+        className="group mt-32 mx-auto flex items-center gap-4 w-max
+                   px-14 py-4 rounded-full
+                   bg-gradient-to-r from-lime-400 to-emerald-500
+                   text-black font-semibold text-lg
+                   shadow-lg hover:shadow-2xl
+                   transition-all duration-300"
+      >
 
-  {/* Animated Arrow */}
-  <span
-    className="text-2xl transform transition-transform duration-300
-               group-hover:translate-x-2"
-  >
-    →
-  </span>
-</motion.a>
+        <span>
+
+          Explore GitHub Projects
+
+        </span>
+
+        {/* Arrow */}
+        <span
+          className="text-2xl transform transition-transform duration-300
+                     group-hover:translate-x-2"
+        >
+          →
+        </span>
+
+      </motion.a>
+
     </motion.section>
   );
 };

@@ -5,6 +5,7 @@ import About from "./components/About";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Experience from "./components/Experience";
 
 //new
 import Services from "./components/Services";
@@ -35,6 +36,7 @@ if(isDarkMode){
     <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
     <Header isDarkMode={isDarkMode}/>
     <About isDarkMode={isDarkMode}/>
+    <Experience isDarkMode={isDarkMode}/>
     <Work isDarkMode={isDarkMode}/>
     <Services isDarkMode={isDarkMode}/>
     <Certificates isDarkMode={isDarkMode}/>
