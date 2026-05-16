@@ -1589,14 +1589,7 @@ const Work = ({ isDarkMode }) => {
 
 
     // AI / ML
-      {
-      title: "AgriInspect-ML-Based-Fruit-Quality-Evaluation ",
-      description: "ML-based web app for apple quality (Good/Bad) prediction using XGBoost and Flask.",
-      bgImage: "/work-12.png",
-      link: "https://agriinspect-ml-based-fruit-quality-w0sm.onrender.com/",
-      tag: "AI",
-      category: "ai",
-    },
+
 
     /* ================= AI / ML ================= */
 
