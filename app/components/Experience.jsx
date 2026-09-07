@@ -27,7 +27,7 @@ const EXPERIENCES = [
     ],
     technologies: ["YOLO", "DeepSORT", "OpenCV", "Python", "Computer Vision", "Deep Learning"],
     websiteUrl: "markmyad.com",
-    videoSrc: "/videos/markmyad.mp4",
+    videoSrc: "https://4mdckcg73rtuqy6f.private.blob.vercel-storage.com/markmyad.mp4?vercel-blob-valid-until=1788815414303&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfNG1EQ2tjZzczcnRVcVk2ZiIsIm93bmVySWQiOiJ0ZWFtX0tWcWZZUGpRU3NJWXE1VmU4dGJBYml4TiIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg4ODU4MjgxMDQ1LCJpYXQiOjE3ODg4MTUwODIxMzV9.gawtrzylGTC-LqbTEM8Emo7pipV6VTK9mpw1h9pR1f4&vercel-blob-signature=HCcF1DRnUJwoe4qv0Ona8VfiA7G4bQ8oEs2mhXyEeus",
     accent: "#ea580c",
   },
   {
@@ -49,7 +49,7 @@ const EXPERIENCES = [
     ],
     technologies: ["Gemini API", "LLMs", "Voice AI", "Embeddings", "UMAP", "Python", "AI Agents"],
     websiteUrl: "kreditbee.com",
-    videoSrc: "/videos/kreditbee.mp4",
+    videoSrc: "https://4mdckcg73rtuqy6f.private.blob.vercel-storage.com/kreditbee.mp4?vercel-blob-valid-until=1788815395046&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfNG1EQ2tjZzczcnRVcVk2ZiIsIm93bmVySWQiOiJ0ZWFtX0tWcWZZUGpRU3NJWXE1VmU4dGJBYml4TiIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg4ODU4MjgxMDQ1LCJpYXQiOjE3ODg4MTUwODIxMzV9.gawtrzylGTC-LqbTEM8Emo7pipV6VTK9mpw1h9pR1f4&vercel-blob-signature=yuREsPkdJfxGWZxBn56NRP7c6NruU3fxKzhHog-Vx0I",
     accent: "#8b5cf6",
   },
   {
@@ -71,7 +71,7 @@ const EXPERIENCES = [
     ],
     technologies: ["React", "Node.js", "FastAPI", "Firebase", "PostgreSQL", "Git"],
     websiteUrl: "jurident.com",
-    videoSrc: "/videos/jurident.mp4",
+    videoSrc: "https://4mdckcg73rtuqy6f.private.blob.vercel-storage.com/jurident.mp4?vercel-blob-valid-until=1788815368016&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfNG1EQ2tjZzczcnRVcVk2ZiIsIm93bmVySWQiOiJ0ZWFtX0tWcWZZUGpRU3NJWXE1VmU4dGJBYml4TiIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg4ODU4MjgxMDQ1LCJpYXQiOjE3ODg4MTUwODIxMzV9.gawtrzylGTC-LqbTEM8Emo7pipV6VTK9mpw1h9pR1f4&vercel-blob-signature=0JwbTr-A0wA5ZBIVpP5W3t7QpGW6iiKPaQ799MArXP0",
     accent: "#06b6d4",
   },
   {
@@ -93,7 +93,7 @@ const EXPERIENCES = [
     ],
     technologies: ["React.js", "Node.js", "PostgreSQL", "REST APIs", "Figma", "Git", "Postman"],
     websiteUrl: "bluestock.in",
-    videoSrc: "/videos/bluestock.mp4",
+    videoSrc: "https://4mdckcg73rtuqy6f.private.blob.vercel-storage.com/bluestock.mp4?vercel-blob-valid-until=1788815178137&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfNG1EQ2tjZzczcnRVcVk2ZiIsIm93bmVySWQiOiJ0ZWFtX0tWcWZZUGpRU3NJWXE1VmU4dGJBYml4TiIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg4ODU4MjgxMDQ1LCJpYXQiOjE3ODg4MTUwODIxMzV9.gawtrzylGTC-LqbTEM8Emo7pipV6VTK9mpw1h9pR1f4&vercel-blob-signature=nERcGu1xrfyfyegelYmrMTFazTJ4akpHyxji5meM1uk",
     accent: "#ea580c",
   },
 ];
