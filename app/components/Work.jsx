@@ -1,1895 +1,397 @@
-// // // // // "use client";
-
-// // // // // import React from "react";
-// // // // // import Image from "next/image";
-// // // // // import { motion } from "framer-motion";
-// // // // // import { assets } from "@/assets/assets";
-
-// // // // // const Work = ({ isDarkMode }) => {
-// // // // //   const workData = [
-// // // // //     {
-// // // // //       title: "Shoporia — E-commerce Frontend",
-// // // // //       description: "Modern & responsive e-commerce UI built with Next.js.",
-// // // // //       bgImage: "/work-9.png",
-// // // // //       link: "https://shoporia-frontend.vercel.app/",
-// // // // //       tag: "Fullstack",
-// // // // //     },
-// // // // //     {
-// // // // //       title: "Food Ordering Platform",
-// // // // //       description: "Food delivery app with cart and checkout experience.",
-// // // // //       bgImage: "/work-1.png",
-// // // // //       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-// // // // //       tag: "Fullstack",
-// // // // //     },
-// // // // //     {
-// // // // //       title: "Virtual Eclipse — Solar Eclipse Visualization",
-// // // // //       description: "Interactive solar eclipse visualization web app.",
-// // // // //       bgImage: "/work-8.png",
-// // // // //       link: "https://virtual-eclipse.vercel.app/",
-// // // // //       tag: "Visualization",
-// // // // //     },
-// // // // //       {
-// // // // //   title: "Cancer Awareness & Support",
-// // // // //   description: "",
-// // // // //   bgImage: "/work-10.png",
-// // // // //   link: "https://cancer-awareness-website-ten.vercel.app/",
-// // // // //   tag: "React.js",
-// // // // // },
-// // // // //     {
-// // // // //       title: "NVZ - Tesla UI",
-// // // // //       description: "Tesla-inspired landing page with smooth animations.",
-// // // // //       bgImage: "/work-2.png",
-// // // // //       link: "https://nvz-vipul1007s-projects.vercel.app/",
-// // // // //       tag: "UI/UX",
-// // // // //     },
-// // // // //     {
-// // // // //       title: "Lazarev Agency Clone",
-// // // // //       description: "Creative agency style portfolio website.",
-// // // // //       bgImage: "/work-3.png",
-// // // // //       link: "https://vipul1029.github.io/Lazarev/",
-// // // // //       tag: "Frontend",
-// // // // //     },
-// // // // //     {
-// // // // //       title: "Teecraft Golf Hub",
-// // // // //       description: "Interactive animated website for a golf club.",
-// // // // //       bgImage: "/work-4.png",
-// // // // //       link: "https://vipul1029.github.io/sidcup-gaming-site/",
-// // // // //       tag: "Animation",
-// // // // //     },
-// // // // //     {
-// // // // //       title: "Gaming Tutorial Site",
-// // // // //       description: "Responsive gaming tutorial platform.",
-// // // // //       bgImage: "/work-5.png",
-// // // // //       link: "https://vipul1029.github.io/Miniproject/",
-// // // // //       tag: "Frontend",
-// // // // //     },
-// // // // //     {
-// // // // //       title: "AI Resume Builder",
-// // // // //       description: "AI-powered resume & cover letter generator.",
-// // // // //       bgImage: "/work-6.png",
-// // // // //       link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-// // // // //       tag: "AI",
-// // // // //     },
-// // // // //     {
-// // // // //       title: "Sales Prediction",
-// // // // //       description: "ML model to forecast sales from historical data.",
-// // // // //       bgImage: "/work-7.png",
-// // // // //       link: "https://github.com/vipul1029/Sales-Prediction",
-// // // // //       tag: "Machine Learning",
-// // // // //     }
-
-// // // // //   ];
-
-// // // // //   return (
-// // // // //     <motion.section
-// // // // //       id="work"
-// // // // //       initial={{ opacity: 0 }}
-// // // // //       whileInView={{ opacity: 1 }}
-// // // // //       transition={{ duration: 1 }}
-// // // // //       className="relative w-full px-[12%] py-20 scroll-mt-20 
-// // // // //                  bg-gradient-to-b from-gray-100 to-white
-// // // // //                  dark:from-darkTheme dark:to-darkHover"
-// // // // //     >
-// // // // //       {/* Titles */}
-// // // // //       <h4 className="text-center mb-2 text-lg font-Ovo">My Projects</h4>
-// // // // //       <h2 className="text-center text-5xl font-Ovo mb-6">My Latest Work</h2>
-// // // // //       <p className="text-center max-w-2xl mx-auto mb-14 font-Ovo 
-// // // // //                     text-gray-700 dark:text-gray-300">
-// // // // //         A curated showcase of projects highlighting my frontend, full-stack,
-// // // // //         and machine learning experience.
-// // // // //       </p>
-
-// // // // //       {/* Grid */}
-// // // // //       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-// // // // //         {workData.map((item, index) => (
-// // // // //           <motion.a
-// // // // //             key={index}
-// // // // //             href={item.link}
-// // // // //             target="_blank"
-// // // // //             rel="noopener noreferrer"
-// // // // //             whileHover={{ y: -6, scale: 1.02 }}
-// // // // //             transition={{ duration: 0.3 }}
-// // // // //             className="relative rounded-xl overflow-hidden group cursor-pointer 
-// // // // //                        shadow-lg"
-// // // // //           >
-// // // // //             {/* Image */}
-// // // // //             <div
-// // // // //               className="relative w-full h-[260px]"
-// // // // //               style={{
-// // // // //                 backgroundImage: `url(${item.bgImage})`,
-// // // // //                 backgroundSize: "cover",
-// // // // //                 backgroundPosition: "center",
-// // // // //               }}
-// // // // //             >
-// // // // //               {/* Dark overlay */}
-// // // // //               <div className="absolute inset-0 bg-black/35 group-hover:bg-black/55 transition duration-300" />
-
-// // // // //               {/* Tag */}
-// // // // //               <span className="absolute top-4 left-4 z-10 text-xs px-3 py-1 
-// // // // //                                rounded-full bg-white/90 text-black font-semibold">
-// // // // //                 {item.tag}
-// // // // //               </span>
-
-// // // // //               {/* Text INSIDE image */}
-// // // // //               <div className="absolute bottom-0 left-0 right-0 z-10 
-// // // // //                               p-4 text-white">
-// // // // //                 <h3 className="font-semibold text-lg leading-tight">
-// // // // //                   {item.title}
-// // // // //                 </h3>
-// // // // //                 <p className="text-sm text-gray-200 mt-1">
-// // // // //                   {item.description}
-// // // // //                 </p>
-// // // // //               </div>
-
-// // // // //               {/* Arrow icon */}
-// // // // //               <div className="absolute bottom-4 right-4 z-10 w-9 h-9 
-// // // // //                               flex items-center justify-center rounded-full 
-// // // // //                               bg-white text-black 
-// // // // //                               group-hover:bg-lime-400 transition">
-// // // // //                 <Image
-// // // // //                   src={assets.send_icon}
-// // // // //                   alt="open"
-// // // // //                   width={18}
-// // // // //                   height={18}
-// // // // //                 />
-// // // // //               </div>
-// // // // //             </div>
-// // // // //           </motion.a>
-// // // // //         ))}
-// // // // //       </div>
-
-// // // // //       {/* View More */}
-// // // // //       <motion.a
-// // // // //         href="https://github.com/vipul1029?tab=repositories"
-// // // // //         target="_blank"
-// // // // //         rel="noopener noreferrer"
-// // // // //         whileHover={{ scale: 1.05 }}
-// // // // //         className="mt-20 mx-auto flex items-center gap-2 w-max 
-// // // // //                    px-10 py-3 rounded-full border border-gray-700
-// // // // //                    text-gray-700 dark:text-white dark:border-white
-// // // // //                    hover:bg-lightHover dark:hover:bg-darkHover"
-// // // // //       >
-// // // // //         View all projects
-// // // // //         <Image
-// // // // //           src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold}
-// // // // //           alt="arrow"
-// // // // //           className="w-4"
-// // // // //         />
-// // // // //       </motion.a>
-// // // // //     </motion.section>
-// // // // //   );
-// // // // // };
-
-// // // // // export default Work;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // // // "use client";
-
-// // // // import React from "react";
-// // // // import Image from "next/image";
-// // // // import { motion } from "framer-motion";
-// // // // import { assets } from "@/assets/assets";
-
-// // // // const Work = ({ isDarkMode }) => {
-
-// // // //   const workData = [
-// // // //     {
-// // // //       title: "Shoporia — E-commerce Frontend",
-// // // //       description: "Modern & responsive e-commerce UI built with Next.js.",
-// // // //       bgImage: "/work-9.png",
-// // // //       link: "https://shoporia-frontend.vercel.app/",
-// // // //       tag: "Fullstack",
-// // // //       category: "fullstack",
-// // // //     },
-// // // //     {
-// // // //       title: "Food Ordering Platform",
-// // // //       description: "Food delivery app with cart and checkout experience.",
-// // // //       bgImage: "/work-1.png",
-// // // //       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-// // // //       tag: "Fullstack",
-// // // //       category: "fullstack",
-// // // //     },
-// // // //     {
-// // // //       title: "Virtual Eclipse — Solar Eclipse Visualization",
-// // // //       description: "Interactive solar eclipse visualization web app.",
-// // // //       bgImage: "/work-8.png",
-// // // //       link: "https://virtual-eclipse.vercel.app/",
-// // // //       tag: "Visualization",
-// // // //       category: "frontend",
-// // // //     },
-// // // //     {
-// // // //       title: "Cancer Awareness & Support",
-// // // //       description: "Awareness-focused React website with clean UI.",
-// // // //       bgImage: "/work-10.png",
-// // // //       link: "https://cancer-awareness-website-ten.vercel.app/",
-// // // //       tag: "React.js",
-// // // //       category: "frontend",
-// // // //     },
-// // // //     {
-// // // //       title: "NVZ - Tesla UI",
-// // // //       description: "Tesla-inspired landing page with smooth animations.",
-// // // //       bgImage: "/work-2.png",
-// // // //       link: "https://nvz-vipul1007s-projects.vercel.app/",
-// // // //       tag: "UI/UX",
-// // // //       category: "frontend",
-// // // //     },
-// // // //     {
-// // // //       title: "Lazarev Agency Clone",
-// // // //       description: "Creative agency style portfolio website.",
-// // // //       bgImage: "/work-3.png",
-// // // //       link: "https://vipul1029.github.io/Lazarev/",
-// // // //       tag: "Frontend",
-// // // //       category: "frontend",
-// // // //     },
-// // // //     {
-// // // //       title: "Teecraft Golf Hub",
-// // // //       description: "Interactive animated website for a golf club.",
-// // // //       bgImage: "/work-4.png",
-// // // //       link: "https://vipul1029.github.io/sidcup-gaming-site/",
-// // // //       tag: "Animation",
-// // // //       category: "frontend",
-// // // //     },
-// // // //     {
-// // // //       title: "Gaming Tutorial Site",
-// // // //       description: "Responsive gaming tutorial platform.",
-// // // //       bgImage: "/work-5.png",
-// // // //       link: "https://vipul1029.github.io/Miniproject/",
-// // // //       tag: "Frontend",
-// // // //       category: "frontend",
-// // // //     },
-// // // //     {
-// // // //       title: "AI Resume Builder",
-// // // //       description: "AI-powered resume & cover letter generator.",
-// // // //       bgImage: "/work-6.png",
-// // // //       link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-// // // //       tag: "AI",
-// // // //       category: "ai",
-// // // //     },
-// // // //     {
-// // // //       title: "Sales Prediction",
-// // // //       description: "ML model to forecast sales from historical data.",
-// // // //       bgImage: "/work-7.png",
-// // // //       link: "https://github.com/vipul1029/Sales-Prediction",
-// // // //       tag: "Machine Learning",
-// // // //       category: "ai",
-// // // //     },
-// // // //   ];
-
-// // // //   const sectionMeta = {
-// // // //     fullstack: {
-// // // //       title: "Full-Stack Projects",
-// // // //       description:
-// // // //         "End-to-end applications combining modern frontend interfaces with scalable backend logic, authentication, and real-world workflows.",
-// // // //     },
-// // // //     frontend: {
-// // // //       title: "Frontend & UI Projects",
-// // // //       description:
-// // // //         "Pixel-perfect, responsive, and animated interfaces focused on user experience and modern design principles.",
-// // // //     },
-// // // //     ai: {
-// // // //       title: "AI & Machine Learning Projects",
-// // // //       description:
-// // // //         "Projects leveraging machine learning and AI to solve real-world problems using data-driven insights.",
-// // // //     },
-// // // //   };
-
-// // // //   const renderSection = (category) => (
-// // // //     <>
-// // // //       <h3 className="text-3xl font-Ovo text-center mt-24 mb-3">
-// // // //         {sectionMeta[category].title}
-// // // //       </h3>
-
-// // // //       <p className="text-center max-w-3xl mx-auto mb-12 text-gray-600 dark:text-gray-400 font-Ovo">
-// // // //         {sectionMeta[category].description}
-// // // //       </p>
-
-// // // //       {/* ✅ CENTERED GRID (SAFE) */}
-// // // //       <div
-// // // //         className="grid gap-8 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-// // // //         style={{ justifyItems: "center" }}
-// // // //       >
-// // // //         {workData
-// // // //           .filter(item => item.category === category)
-// // // //           .map((item, index) => (
-// // // //             <motion.a
-// // // //               key={index}
-// // // //               href={item.link}
-// // // //               target="_blank"
-// // // //               rel="noopener noreferrer"
-// // // //               whileHover={{ y: -6, scale: 1.02 }}
-// // // //               transition={{ duration: 0.3 }}
-// // // //               className="relative w-full max-w-[380px] rounded-xl overflow-hidden group cursor-pointer shadow-lg"
-// // // //             >
-// // // //               <div
-// // // //                 className="relative w-full h-[260px]"
-// // // //                 style={{
-// // // //                   backgroundImage: `url(${item.bgImage})`,
-// // // //                   backgroundSize: "cover",
-// // // //                   backgroundPosition: "center",
-// // // //                 }}
-// // // //               >
-// // // //                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/55 transition duration-300" />
-
-// // // //                 <span className="absolute top-4 left-4 z-10 text-xs px-3 py-1 rounded-full bg-white/90 text-black font-semibold">
-// // // //                   {item.tag}
-// // // //                 </span>
-
-// // // //                 <div className="absolute bottom-0 left-0 right-0 z-10 p-4 text-white">
-// // // //                   <h3 className="font-semibold text-lg leading-tight">
-// // // //                     {item.title}
-// // // //                   </h3>
-// // // //                   <p className="text-sm text-gray-200 mt-1">
-// // // //                     {item.description}
-// // // //                   </p>
-// // // //                 </div>
-
-// // // //                 {/* send icon (warning fixed) */}
-// // // //                 <div className="absolute bottom-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white text-black group-hover:bg-lime-400 transition">
-// // // //                   <Image
-// // // //                     src={assets.send_icon}
-// // // //                     alt="open"
-// // // //                     width={18}
-// // // //                     height={18}
-// // // //                     className="w-auto h-auto"
-// // // //                   />
-// // // //                 </div>
-// // // //               </div>
-// // // //             </motion.a>
-// // // //           ))}
-// // // //       </div>
-// // // //     </>
-// // // //   );
-
-// // // //   return (
-// // // //     <motion.section
-// // // //       id="work"
-// // // //       initial={{ opacity: 0 }}
-// // // //       whileInView={{ opacity: 1 }}
-// // // //       transition={{ duration: 1 }}
-// // // //       className="relative w-full px-[12%] py-20 scroll-mt-20 
-// // // //                  bg-gradient-to-b from-gray-100 to-white
-// // // //                  dark:from-darkTheme dark:to-darkHover"
-// // // //     >
-// // // //       <h4 className="text-center mb-2 text-lg font-Ovo">My Projects</h4>
-// // // //       <h2 className="text-center text-5xl font-Ovo mb-6">My Latest Work</h2>
-// // // //       <p className="text-center max-w-2xl mx-auto mb-16 font-Ovo 
-// // // //                     text-gray-700 dark:text-gray-300">
-// // // //         A curated showcase of my work across full-stack development,
-// // // //         frontend engineering, and AI-driven applications.
-// // // //       </p>
-
-// // // //       {renderSection("fullstack")}
-// // // //       {renderSection("frontend")}
-// // // //       {renderSection("ai")}
-
-// // // //       <motion.a
-// // // //         href="https://github.com/vipul1029?tab=repositories"
-// // // //         target="_blank"
-// // // //         rel="noopener noreferrer"
-// // // //         whileHover={{ scale: 1.05 }}
-// // // //         className="mt-24 mx-auto flex items-center gap-2 w-max 
-// // // //                    px-10 py-3 rounded-full border border-gray-700
-// // // //                    text-gray-700 dark:text-white dark:border-white
-// // // //                    hover:bg-lightHover dark:hover:bg-darkHover"
-// // // //       >
-// // // //         View all projects
-// // // //         <Image
-// // // //           src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold}
-// // // //           alt="arrow"
-// // // //           className="w-4"
-// // // //         />
-// // // //       </motion.a>
-// // // //     </motion.section>
-// // // //   );
-// // // // };
-
-// // // // export default Work;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // // "use client";
-
-// // // import React from "react";
-// // // import Image from "next/image";
-// // // import { motion } from "framer-motion";
-// // // import { assets } from "@/assets/assets";
-
-// // // const Work = ({ isDarkMode }) => {
-
-// // //   const workData = [
-// // //     {
-// // //       title: "Shoporia — E-commerce Frontend",
-// // //       description: "Modern & responsive e-commerce UI built with Next.js.",
-// // //       bgImage: "/work-9.png",
-// // //       link: "https://shoporia-frontend.vercel.app/",
-// // //       tag: "Fullstack",
-// // //       category: "fullstack",
-// // //     },
-// // //     {
-// // //       title: "Food Ordering Platform",
-// // //       description: "Food delivery app with cart and checkout experience.",
-// // //       bgImage: "/work-1.png",
-// // //       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-// // //       tag: "Fullstack",
-// // //       category: "fullstack",
-// // //     },
-// // //     {
-// // //       title: "Virtual Eclipse — Solar Eclipse Visualization",
-// // //       description: "Interactive solar eclipse visualization web app.",
-// // //       bgImage: "/work-8.png",
-// // //       link: "https://virtual-eclipse.vercel.app/",
-// // //       tag: "Visualization",
-// // //       category: "frontend",
-// // //     },
-// // //     {
-// // //       title: "Cancer Awareness & Support",
-// // //       description: "Awareness-focused React website with clean UI.",
-// // //       bgImage: "/work-10.png",
-// // //       link: "https://cancer-awareness-website-ten.vercel.app/",
-// // //       tag: "React.js",
-// // //       category: "frontend",
-// // //     },
-// // //     {
-// // //       title: "NVZ - Tesla UI",
-// // //       description: "Tesla-inspired landing page with smooth animations.",
-// // //       bgImage: "/work-2.png",
-// // //       link: "https://nvz-vipul1007s-projects.vercel.app/",
-// // //       tag: "UI/UX",
-// // //       category: "frontend",
-// // //     },
-// // //     {
-// // //       title: "Lazarev Agency Clone",
-// // //       description: "Creative agency style portfolio website.",
-// // //       bgImage: "/work-3.png",
-// // //       link: "https://vipul1029.github.io/Lazarev/",
-// // //       tag: "Frontend",
-// // //       category: "frontend",
-// // //     },
-// // //     {
-// // //       title: "Teecraft Golf Hub",
-// // //       description: "Interactive animated website for a golf club.",
-// // //       bgImage: "/work-4.png",
-// // //       link: "https://vipul1029.github.io/sidcup-gaming-site/",
-// // //       tag: "Animation",
-// // //       category: "frontend",
-// // //     },
-// // //     {
-// // //       title: "Gaming Tutorial Site",
-// // //       description: "Responsive gaming tutorial platform.",
-// // //       bgImage: "/work-5.png",
-// // //       link: "https://vipul1029.github.io/Miniproject/",
-// // //       tag: "Frontend",
-// // //       category: "frontend",
-// // //     },
-// // //     {
-// // //       title: "AI Resume Builder",
-// // //       description: "AI-powered resume & cover letter generator.",
-// // //       bgImage: "/work-6.png",
-// // //       link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-// // //       tag: "AI",
-// // //       category: "ai",
-// // //     },
-// // //     {
-// // //       title: "Sales Prediction",
-// // //       description: "ML model to forecast sales from historical data.",
-// // //       bgImage: "/work-7.png",
-// // //       link: "https://github.com/vipul1029/Sales-Prediction",
-// // //       tag: "Machine Learning",
-// // //       category: "ai",
-// // //     },
-// // //   ];
-
-// // //   const sectionMeta = {
-// // //     fullstack: {
-// // //       title: "Full-Stack Projects",
-// // //       description:
-// // //         "End-to-end applications combining modern frontend interfaces with scalable backend logic and real-world workflows.",
-// // //     },
-// // //     frontend: {
-// // //       title: "Frontend & UI Projects",
-// // //       description:
-// // //         "Pixel-perfect, responsive, and animated interfaces focused on user experience and modern design principles.",
-// // //     },
-// // //     ai: {
-// // //       title: "AI & Machine Learning Projects",
-// // //       description:
-// // //         "Projects leveraging machine learning and AI techniques to solve real-world problems using data-driven insights.",
-// // //     },
-// // //   };
-
-// // //   const renderSection = (category) => {
-// // //     const projects = workData.filter(item => item.category === category);
-
-// // //     return (
-// // //       <>
-// // //         {/* Section Title */}
-// // //         <h3 className="text-3xl font-Ovo text-center mt-28 mb-3 flex justify-center items-center gap-3">
-// // //           {sectionMeta[category].title}
-// // //           <span className="text-sm px-3 py-1 rounded-full bg-black/10 dark:bg-white/10">
-// // //             {projects.length}
-// // //           </span>
-// // //         </h3>
-
-// // //         {/* Section Description */}
-// // //         <p className="text-center max-w-3xl mx-auto mb-6 text-gray-600 dark:text-gray-400 font-Ovo">
-// // //           {sectionMeta[category].description}
-// // //         </p>
-
-// // //         {/* Divider */}
-// // //         <motion.div
-// // //           initial={{ width: 0 }}
-// // //           whileInView={{ width: "80px" }}
-// // //           transition={{ duration: 0.6 }}
-// // //           className="mx-auto mb-12 h-[2px] bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full"
-// // //         />
-
-// // //         {/* Grid */}
-// // //         <div
-// // //           className="grid gap-8 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-// // //           style={{ justifyItems: "center" }}
-// // //         >
-// // //           {projects.map((item, index) => (
-// // //             <motion.a
-// // //               key={index}
-// // //               href={item.link}
-// // //               target="_blank"
-// // //               rel="noopener noreferrer"
-// // //               whileHover={{ y: -8, scale: 1.04 }}
-// // //               transition={{ duration: 0.3 }}
-// // //               className="relative w-full max-w-[380px] rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow"
-// // //             >
-// // //               <div
-// // //                 className="relative w-full h-[260px]"
-// // //                 style={{
-// // //                   backgroundImage: `url(${item.bgImage})`,
-// // //                   backgroundSize: "cover",
-// // //                   backgroundPosition: "center",
-// // //                 }}
-// // //               >
-// // //                 {/* Overlay */}
-// // //                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/60 transition duration-300" />
-
-// // //                 {/* Tag */}
-// // //                 <span
-// // //                   className={`absolute top-4 left-4 z-10 text-xs px-3 py-1 rounded-full font-semibold text-white
-// // //                     ${item.category === "fullstack" && "bg-emerald-500"}
-// // //                     ${item.category === "frontend" && "bg-indigo-500"}
-// // //                     ${item.category === "ai" && "bg-orange-500"}
-// // //                   `}
-// // //                 >
-// // //                   {item.tag}
-// // //                 </span>
-
-// // //                 {/* Hover CTA */}
-// // //                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-// // //                   <span className="px-5 py-2 bg-white text-black rounded-full text-sm font-semibold">
-// // //                     View Project
-// // //                   </span>
-// // //                 </div>
-
-// // //                 {/* Text */}
-// // //                 <div className="absolute bottom-0 left-0 right-0 z-10 p-4 text-white">
-// // //                   <h3 className="font-semibold text-lg leading-tight">
-// // //                     {item.title}
-// // //                   </h3>
-// // //                   <p className="text-sm text-gray-200 mt-1">
-// // //                     {item.description}
-// // //                   </p>
-// // //                 </div>
-
-// // //                 {/* Arrow */}
-// // //                 <div className="absolute bottom-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white text-black group-hover:bg-lime-400 transition">
-// // //                   <Image
-// // //                     src={assets.send_icon}
-// // //                     alt="open"
-// // //                     width={18}
-// // //                     height={18}
-// // //                     className="w-auto h-auto"
-// // //                   />
-// // //                 </div>
-// // //               </div>
-// // //             </motion.a>
-// // //           ))}
-// // //         </div>
-// // //       </>
-// // //     );
-// // //   };
-
-// // //   return (
-// // //     <motion.section
-// // //       id="work"
-// // //       initial={{ opacity: 0 }}
-// // //       whileInView={{ opacity: 1 }}
-// // //       transition={{ duration: 1 }}
-// // //       className="relative w-full px-[12%] py-20 scroll-mt-20 
-// // //                  bg-gradient-to-b from-gray-100 to-white
-// // //                  dark:from-darkTheme dark:to-darkHover"
-// // //     >
-// // //       <h4 className="text-center mb-2 text-lg font-Ovo">My Projects</h4>
-// // //       <h2 className="text-center text-5xl font-Ovo mb-6">My Latest Work</h2>
-// // //       <p className="text-center max-w-2xl mx-auto mb-20 font-Ovo 
-// // //                     text-gray-700 dark:text-gray-300">
-// // //         A curated showcase of my work across full-stack development,
-// // //         frontend engineering, and AI-driven applications.
-// // //       </p>
-
-// // //       {renderSection("fullstack")}
-// // //       {renderSection("frontend")}
-// // //       {renderSection("ai")}
-
-// // //       {/* View More */}
-// // //       <motion.a
-// // //         href="https://github.com/vipul1029?tab=repositories"
-// // //         target="_blank"
-// // //         rel="noopener noreferrer"
-// // //         whileHover={{ scale: 1.05 }}
-// // //         className="mt-28 mx-auto flex items-center gap-2 w-max 
-// // //                    px-10 py-3 rounded-full border border-gray-700
-// // //                    text-gray-700 dark:text-white dark:border-white
-// // //                    hover:bg-lightHover dark:hover:bg-darkHover"
-// // //       >
-// // //         View all projects
-// // //         <Image
-// // //           src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold}
-// // //           alt="arrow"
-// // //           className="w-4"
-// // //         />
-// // //       </motion.a>
-// // //     </motion.section>
-// // //   );
-// // // };
-
-// // // export default Work;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // "use client";
-
-// // import React from "react";
-// // import Image from "next/image";
-// // import { motion } from "framer-motion";
-// // import { assets } from "@/assets/assets";
-
-// // const Work = ({ isDarkMode }) => {
-
-// //   const workData = [
-// //     {
-// //       title: "Shoporia — E-commerce Frontend",
-// //       description: "Modern & responsive e-commerce UI built with Next.js.",
-// //       bgImage: "/work-9.png",
-// //       link: "https://shoporia-frontend.vercel.app/",
-// //       tag: "Fullstack",
-// //       category: "fullstack",
-// //     },
-// //     {
-// //       title: "Food Ordering Platform",
-// //       description: "Food delivery app with cart and checkout experience.",
-// //       bgImage: "/work-1.png",
-// //       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-// //       tag: "Fullstack",
-// //       category: "fullstack",
-// //     },
-// //     {
-// //       title: "Virtual Eclipse — Solar Eclipse Visualization",
-// //       description: "Interactive solar eclipse visualization web app.",
-// //       bgImage: "/work-8.png",
-// //       link: "https://virtual-eclipse.vercel.app/",
-// //       tag: "Visualization",
-// //       category: "frontend",
-// //     },
-// //     {
-// //       title: "Cancer Awareness & Support",
-// //       description: "Awareness-focused React website with clean UI.",
-// //       bgImage: "/work-10.png",
-// //       link: "https://cancer-awareness-website-ten.vercel.app/",
-// //       tag: "React.js",
-// //       category: "frontend",
-// //     },
-// //     {
-// //       title: "NVZ - Tesla UI",
-// //       description: "Tesla-inspired landing page with smooth animations.",
-// //       bgImage: "/work-2.png",
-// //       link: "https://nvz-vipul1007s-projects.vercel.app/",
-// //       tag: "UI/UX",
-// //       category: "frontend",
-// //     },
-// //     {
-// //       title: "AI Resume Builder",
-// //       description: "AI-powered resume & cover letter generator.",
-// //       bgImage: "/work-6.png",
-// //       link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-// //       tag: "AI",
-// //       category: "ai",
-// //     },
-// //   ];
-
-// //   const sectionMeta = {
-// //     fullstack: {
-// //       title: "Full-Stack Projects",
-// //       description:
-// //         "Scalable, real-world applications combining modern UI, backend logic, and complete user flows.",
-// //       glow: "from-emerald-400/20 to-cyan-400/20",
-// //     },
-// //     frontend: {
-// //       title: "Frontend & UI Projects",
-// //       description:
-// //         "Visually refined, animated, and responsive interfaces built with strong UX principles.",
-// //       glow: "from-indigo-400/20 to-purple-400/20",
-// //     },
-// //     ai: {
-// //       title: "AI & Machine Learning Projects",
-// //       description:
-// //         "AI-driven applications leveraging machine learning to create intelligent, data-powered experiences.",
-// //       glow: "from-orange-400/20 to-pink-400/20",
-// //     },
-// //   };
-
-// //   const renderSection = (category) => {
-// //     const projects = workData.filter(p => p.category === category);
-
-// //     return (
-// //       <section className="relative mt-32">
-// //         {/* Background Accent */}
-// //         <div
-// //           className={`absolute inset-0 -z-10 blur-3xl bg-gradient-to-br ${sectionMeta[category].glow}`}
-// //         />
-
-// //         {/* Title */}
-// //         <h3 className="text-4xl md:text-5xl font-Ovo text-center mb-4">
-// //           {sectionMeta[category].title}
-// //         </h3>
-
-// //         <p className="text-center max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400 font-Ovo text-lg">
-// //           {sectionMeta[category].description}
-// //         </p>
-
-// //         {/* Divider */}
-// //         <motion.div
-// //           initial={{ width: 0 }}
-// //           whileInView={{ width: "100px" }}
-// //           transition={{ duration: 0.6 }}
-// //           className="mx-auto mb-16 h-[3px] bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full"
-// //         />
-
-// //         {/* Grid */}
-// //         <div
-// //           className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-// //           style={{ justifyItems: "center" }}
-// //         >
-// //           {projects.map((item, index) => (
-// //             <motion.a
-// //               key={index}
-// //               href={item.link}
-// //               target="_blank"
-// //               rel="noopener noreferrer"
-// //               initial={{ opacity: 0, y: 40 }}
-// //               whileInView={{ opacity: 1, y: 0 }}
-// //               transition={{ duration: 0.5, delay: index * 0.1 }}
-// //               whileHover={{ y: -10, scale: 1.05 }}
-// //               className="relative w-full max-w-[380px] rounded-2xl overflow-hidden group cursor-pointer
-// //                          bg-white/70 dark:bg-white/5 backdrop-blur-lg
-// //                          border border-white/20 shadow-xl hover:shadow-2xl transition"
-// //             >
-// //               {/* Image */}
-// //               <div
-// //                 className="relative h-[260px]"
-// //                 style={{
-// //                   backgroundImage: `url(${item.bgImage})`,
-// //                   backgroundSize: "cover",
-// //                   backgroundPosition: "center",
-// //                 }}
-// //               >
-// //                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition" />
-
-// //                 {/* Tag */}
-// //                 <span className="absolute top-4 left-4 px-4 py-1 rounded-full text-xs font-semibold text-white bg-black/60 backdrop-blur">
-// //                   {item.tag}
-// //                 </span>
-
-// //                 {/* CTA */}
-// //                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-// //                   <span className="px-6 py-2 bg-white text-black rounded-full font-semibold">
-// //                     View Project
-// //                   </span>
-// //                 </div>
-// //               </div>
-
-// //               {/* Content */}
-// //               <div className="p-5">
-// //                 <h4 className="text-lg font-semibold mb-1">
-// //                   {item.title}
-// //                 </h4>
-// //                 <p className="text-sm text-gray-600 dark:text-gray-400">
-// //                   {item.description}
-// //                 </p>
-// //               </div>
-
-// //               {/* Arrow */}
-// //               <div className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-full
-// //                               bg-lime-400 text-black">
-// //                 <Image
-// //                   src={assets.send_icon}
-// //                   alt="open"
-// //                   width={18}
-// //                   height={18}
-// //                   className="w-auto h-auto"
-// //                 />
-// //               </div>
-// //             </motion.a>
-// //           ))}
-// //         </div>
-// //       </section>
-// //     );
-// //   };
-
-// //   return (
-// //     <motion.section
-// //       id="work"
-// //       initial={{ opacity: 0 }}
-// //       whileInView={{ opacity: 1 }}
-// //       transition={{ duration: 1 }}
-// //       className="relative w-full px-[10%] py-28 bg-gradient-to-b from-gray-100 to-white
-// //                  dark:from-darkTheme dark:to-darkHover"
-// //     >
-// //       <h4 className="text-center mb-3 text-lg font-Ovo tracking-wide">
-// //         My Work
-// //       </h4>
-
-// //       <h2 className="text-center text-5xl md:text-6xl font-Ovo mb-6">
-// //         My Latest Work
-// //       </h2>
-
-// //       <p className="text-center max-w-3xl mx-auto mb-24 font-Ovo text-gray-700 dark:text-gray-300 text-lg">
-// //         A carefully curated collection of projects showcasing my skills in
-// //         full-stack development, frontend engineering, and AI-powered solutions.
-// //       </p>
-
-// //       {renderSection("fullstack")}
-// //       {renderSection("frontend")}
-// //       {renderSection("ai")}
-// //     </motion.section>
-// //   );
-// // };
-
-// // export default Work;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-
-// import React from "react";
-// import Image from "next/image";
-// import { motion } from "framer-motion";
-// import { assets } from "@/assets/assets";
-
-// const Work = ({ isDarkMode }) => {
-
-//   const workData = [
-//     {
-//       title: "Shoporia — E-commerce Frontend",
-//       description: "Modern & responsive e-commerce UI built with Next.js.",
-//       bgImage: "/work-9.png",
-//       link: "https://shoporia-frontend.vercel.app/",
-//       tag: "Fullstack",
-//       category: "fullstack",
-//     },
-//     {
-//       title: "Food Ordering Platform",
-//       description: "Food delivery app with cart and checkout experience.",
-//       bgImage: "/work-1.png",
-//       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-//       tag: "Fullstack",
-//       category: "fullstack",
-//     },
-
-//     /* ---------- FRONTEND ---------- */
-//     {
-//       title: "Virtual Eclipse — Solar Eclipse Visualization",
-//       description: "Interactive solar eclipse visualization web app.",
-//       bgImage: "/work-8.png",
-//       link: "https://virtual-eclipse.vercel.app/",
-//       tag: "Visualization",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Cancer Awareness & Support",
-//       description: "Awareness-focused React website with clean UI.",
-//       bgImage: "/work-10.png",
-//       link: "https://cancer-awareness-website-ten.vercel.app/",
-//       tag: "React.js",
-//       category: "frontend",
-//     },
-//     {
-//       title: "NVZ - Tesla UI",
-//       description: "Tesla-inspired landing page with smooth animations.",
-//       bgImage: "/work-2.png",
-//       link: "https://nvz-vipul1007s-projects.vercel.app/",
-//       tag: "UI/UX",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Lazarev Agency Clone",
-//       description: "Creative agency-style portfolio website.",
-//       bgImage: "/work-3.png",
-//       link: "https://vipul1029.github.io/Lazarev/",
-//       tag: "Frontend",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Teecraft Golf Hub",
-//       description: "Interactive animated website for a golf club.",
-//       bgImage: "/work-4.png",
-//       link: "https://vipul1029.github.io/sidcup-gaming-site/",
-//       tag: "Animation",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Gaming Tutorial Site",
-//       description: "Responsive gaming tutorial platform.",
-//       bgImage: "/work-5.png",
-//       link: "https://vipul1029.github.io/Miniproject/",
-//       tag: "Frontend",
-//       category: "frontend",
-//     },
-
-//     /* ---------- AI / ML ---------- */
-//     {
-//       title: "AI Resume Builder",
-//       description: "AI-powered resume & cover letter generator.",
-//       bgImage: "/work-6.png",
-//       link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-//       tag: "AI",
-//       category: "ai",
-//     },
-//     {
-//       title: "Sales Prediction",
-//       description: "ML model to forecast sales from historical data.",
-//       bgImage: "/work-7.png",
-//       link: "https://github.com/vipul1029/Sales-Prediction",
-//       tag: "Machine Learning",
-//       category: "ai",
-//     },
-//   ];
-
-//   const sectionMeta = {
-//     fullstack: {
-//       title: "Full-Stack Projects",
-//       description:
-//         "Scalable, real-world applications combining modern UI, backend logic, and complete user flows.",
-//       glow: "from-emerald-400/20 to-cyan-400/20",
-//     },
-//     frontend: {
-//       title: "Frontend & UI Projects",
-//       description:
-//         "Visually refined, animated, and responsive interfaces built with strong UX principles.",
-//       glow: "from-indigo-400/20 to-purple-400/20",
-//     },
-//     ai: {
-//       title: "AI & Machine Learning Projects",
-//       description:
-//         "AI-driven applications leveraging machine learning to create intelligent, data-powered experiences.",
-//       glow: "from-orange-400/20 to-pink-400/20",
-//     },
-//   };
-
-//   const renderSection = (category) => {
-//     const projects = workData.filter(p => p.category === category);
-
-//     return (
-//       <section className="relative mt-32">
-//         {/* Background Accent */}
-//         <div
-//           className={`absolute inset-0 -z-10 blur-3xl bg-gradient-to-br ${sectionMeta[category].glow}`}
-//         />
-
-//         {/* Title */}
-//         <h3 className="text-4xl md:text-5xl font-Ovo text-center mb-4">
-//           {sectionMeta[category].title}
-//         </h3>
-
-//         <p className="text-center max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400 font-Ovo text-lg">
-//           {sectionMeta[category].description}
-//         </p>
-
-//         {/* Divider */}
-//         <motion.div
-//           initial={{ width: 0 }}
-//           whileInView={{ width: "100px" }}
-//           transition={{ duration: 0.6 }}
-//           className="mx-auto mb-16 h-[3px] bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full"
-//         />
-
-//         {/* Grid */}
-//         <div
-//           className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-//           style={{ justifyItems: "center" }}
-//         >
-//           {projects.map((item, index) => (
-//             <motion.a
-//               key={index}
-//               href={item.link}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               initial={{ opacity: 0, y: 40 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5, delay: index * 0.1 }}
-//               whileHover={{ y: -10, scale: 1.05 }}
-//               className="relative w-full max-w-[380px] rounded-2xl overflow-hidden group cursor-pointer
-//                          bg-white/70 dark:bg-white/5 backdrop-blur-lg
-//                          border border-white/20 shadow-xl hover:shadow-2xl transition"
-//             >
-//               {/* Image */}
-//               <div
-//                 className="relative h-[260px]"
-//                 style={{
-//                   backgroundImage: `url(${item.bgImage})`,
-//                   backgroundSize: "cover",
-//                   backgroundPosition: "center",
-//                 }}
-//               >
-//                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition" />
-
-//                 {/* Tag */}
-//                 <span className="absolute top-4 left-4 px-4 py-1 rounded-full text-xs font-semibold text-white bg-black/60 backdrop-blur">
-//                   {item.tag}
-//                 </span>
-
-//                 {/* CTA */}
-//                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-//                   <span className="px-6 py-2 bg-white text-black rounded-full font-semibold">
-//                     View Project
-//                   </span>
-//                 </div>
-//               </div>
-
-//               {/* Content */}
-//               <div className="p-5">
-//                 <h4 className="text-lg font-semibold mb-1">
-//                   {item.title}
-//                 </h4>
-//                 <p className="text-sm text-gray-600 dark:text-gray-400">
-//                   {item.description}
-//                 </p>
-//               </div>
-
-//               {/* Arrow */}
-//               <div className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-full
-//                               bg-lime-400 text-black">
-//                 <Image
-//                   src={assets.send_icon}
-//                   alt="open"
-//                   width={18}
-//                   height={18}
-//                   className="w-auto h-auto"
-//                 />
-//               </div>
-//             </motion.a>
-//           ))}
-//         </div>
-//       </section>
-//     );
-//   };
-
-//   return (
-//     <motion.section
-//       id="work"
-//       initial={{ opacity: 0 }}
-//       whileInView={{ opacity: 1 }}
-//       transition={{ duration: 1 }}
-//       className="relative w-full px-[10%] py-28 bg-gradient-to-b from-gray-100 to-white
-//                  dark:from-darkTheme dark:to-darkHover"
-//     >
-//       <h4 className="text-center mb-3 text-lg font-Ovo tracking-wide">
-//         My Work
-//       </h4>
-
-//       <h2 className="text-center text-5xl md:text-6xl font-Ovo mb-6">
-//         My Latest Work
-//       </h2>
-
-//       <p className="text-center max-w-3xl mx-auto mb-24 font-Ovo text-gray-700 dark:text-gray-300 text-lg">
-//         A carefully curated collection of projects showcasing my skills in
-//         full-stack development, frontend engineering, and AI-powered solutions.
-//       </p>
-
-//       {renderSection("fullstack")}
-//       {renderSection("frontend")}
-//       {renderSection("ai")}
-//     </motion.section>
-//   );
-// };
-
-// export default Work;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-
-// import React from "react";
-// import Image from "next/image";
-// import { motion } from "framer-motion";
-// import { assets } from "@/assets/assets";
-
-// const Work = ({ isDarkMode }) => {
-
-//   const workData = [
-//     {
-//       title: "Shoporia — E-commerce Frontend",
-//       description: "Modern & responsive e-commerce UI built with Next.js.",
-//       bgImage: "/work-9.png",
-//       link: "https://shoporia-frontend.vercel.app/",
-//       tag: "Fullstack",
-//       category: "fullstack",
-//     },
-//     {
-//       title: "Food Ordering Platform",
-//       description: "Food delivery app with cart and checkout experience.",
-//       bgImage: "/work-1.png",
-//       link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-//       tag: "Fullstack",
-//       category: "fullstack",
-//     },
-//     {
-//   title: "Contact Management Web App",
-//   description: "A full-featured contact management application that lets users add, view, edit, and delete contact information with a responsive dashboard.",
-//   bgImage: "/work-11.png",
-//   link: "https://contact-management-vipul107.vercel.app/",
-//   tag: "Fullstack",
-//   category: "fullstack",
-// },
-
-   
-   
-//     // Frontend
-//     {
-//       title: "Virtual Eclipse — Solar Eclipse Visualization",
-//       description: "Interactive solar eclipse visualization web app.",
-//       bgImage: "/work-8.png",
-//       link: "https://virtual-eclipse.vercel.app/",
-//       tag: "Visualization",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Cancer Awareness & Support",
-//       description: "Awareness-focused React website with clean UI.",
-//       bgImage: "/work-10.png",
-//       link: "https://cancer-awareness-website-ten.vercel.app/",
-//       tag: "React.js",
-//       category: "frontend",
-//     },
-//     {
-//       title: "NVZ - Tesla UI",
-//       description: "Tesla-inspired landing page with smooth animations.",
-//       bgImage: "/work-2.png",
-//       link: "https://nvz-vipul1007s-projects.vercel.app/",
-//       tag: "UI/UX",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Lazarev Agency Clone",
-//       description: "Creative agency-style portfolio website.",
-//       bgImage: "/work-3.png",
-//       link: "https://vipul1029.github.io/Lazarev/",
-//       tag: "Frontend",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Teecraft Golf Hub",
-//       description: "Interactive animated website for a golf club.",
-//       bgImage: "/work-4.png",
-//       link: "https://vipul1029.github.io/sidcup-gaming-site/",
-//       tag: "Animation",
-//       category: "frontend",
-//     },
-//     {
-//       title: "Gaming Tutorial Site",
-//       description: "Responsive gaming tutorial platform.",
-//       bgImage: "/work-5.png",
-//       link: "https://vipul1029.github.io/Miniproject/",
-//       tag: "Frontend",
-//       category: "frontend",
-//     },
-
-//     // AI / ML
-//        {
-//       title: "AgriInspect-ML-Based-Fruit-Quality-Evaluation ",
-//       description: "ML-based web app for apple quality (Good/Bad) prediction using XGBoost and Flask.",
-//       bgImage: "/work-12.png",
-//       link: "https://agriinspect-ml-based-fruit-quality-w0sm.onrender.com/",
-//       tag: "AI",
-//       category: "ai",
-//     },
-//     {
-//       title: "AI Resume Builder",
-//       description: "AI-powered resume & cover letter generator.",
-//       bgImage: "/work-6.png",
-//       link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-//       tag: "AI",
-//       category: "ai",
-//     },
-//     {
-//       title: "Sales Prediction",
-//       description: "ML model to forecast sales from historical data.",
-//       bgImage: "/work-7.png",
-//       link: "https://github.com/vipul1029/Sales-Prediction",
-//       tag: "Machine Learning",
-//       category: "ai",
-//     },
-//   ];
-
-//   const sectionMeta = {
-//     fullstack: {
-//       title: "Full-Stack Projects",
-//       description:
-//         "Scalable, real-world applications combining modern UI, backend logic, and complete user flows.",
-//       glow: "from-emerald-400/20 to-cyan-400/20",
-//     },
-//     frontend: {
-//       title: "Frontend & UI Projects",
-//       description:
-//         "Visually refined, animated, and responsive interfaces built with strong UX principles.",
-//       glow: "from-indigo-400/20 to-purple-400/20",
-//     },
-//     ai: {
-//       title: "AI & Machine Learning Projects",
-//       description:
-//         "AI-driven applications leveraging machine learning to create intelligent, data-powered experiences.",
-//       glow: "from-orange-400/20 to-pink-400/20",
-//     },
-//   };
-
-//   const renderSection = (category) => {
-//     const projects = workData.filter(p => p.category === category);
-
-//     return (
-//       <section className="relative mt-32">
-//         <div className={`absolute inset-0 -z-10 blur-3xl bg-gradient-to-br ${sectionMeta[category].glow}`} />
-
-//         <h3 className="text-4xl md:text-5xl font-Ovo text-center mb-4">
-//           {sectionMeta[category].title}
-//         </h3>
-
-//         <p className="text-center max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400 font-Ovo text-lg">
-//           {sectionMeta[category].description}
-//         </p>
-
-//         <motion.div
-//           initial={{ width: 0 }}
-//           whileInView={{ width: "100px" }}
-//           transition={{ duration: 0.6 }}
-//           className="mx-auto mb-16 h-[3px] bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full"
-//         />
-
-//         <div
-//           className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-//           style={{ justifyItems: "center" }}
-//         >
-//           {projects.map((item, index) => (
-//             <motion.a
-//               key={index}
-//               href={item.link}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               initial={{ opacity: 0, y: 40 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5, delay: index * 0.1 }}
-//               whileHover={{ y: -10, scale: 1.05 }}
-//               className="relative w-full max-w-[380px] rounded-2xl overflow-hidden group cursor-pointer
-//                          bg-white/70 dark:bg-white/5 backdrop-blur-lg
-//                          border border-white/20 shadow-xl hover:shadow-2xl transition"
-//             >
-//               <div
-//                 className="relative h-[260px]"
-//                 style={{
-//                   backgroundImage: `url(${item.bgImage})`,
-//                   backgroundSize: "cover",
-//                   backgroundPosition: "center",
-//                 }}
-//               >
-//                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition" />
-
-//                 <span className="absolute top-4 left-4 px-4 py-1 rounded-full text-xs font-semibold text-white bg-black/60 backdrop-blur">
-//                   {item.tag}
-//                 </span>
-
-//                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-//                   <span className="px-6 py-2 bg-white text-black rounded-full font-semibold">
-//                     View Project
-//                   </span>
-//                 </div>
-//               </div>
-
-//               <div className="p-5">
-//                 <h4 className="text-lg font-semibold mb-1">{item.title}</h4>
-//                 <p className="text-sm text-gray-600 dark:text-gray-400">
-//                   {item.description}
-//                 </p>
-//               </div>
-
-//               <div className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-lime-400 text-black">
-//                 <Image
-//                   src={assets.send_icon}
-//                   alt="open"
-//                   width={18}
-//                   height={18}
-//                   className="w-auto h-auto"
-//                 />
-//               </div>
-//             </motion.a>
-//           ))}
-//         </div>
-//       </section>
-//     );
-//   };
-
-//   return (
-//     <motion.section
-//       id="work"
-//       initial={{ opacity: 0 }}
-//       whileInView={{ opacity: 1 }}
-//       transition={{ duration: 1 }}
-//       className="relative w-full px-[10%] py-28 bg-gradient-to-b from-gray-100 to-white
-//                  dark:from-darkTheme dark:to-darkHover"
-//     >
-//       <h4 className="text-center mb-3 text-lg font-Ovo tracking-wide">
-//         My Projects
-//       </h4>
-
-//       <h2 className="text-center text-5xl md:text-6xl font-Ovo mb-6">
-//         My Latest Work
-//       </h2>
-
-//       <p className="text-center max-w-3xl mx-auto mb-24 font-Ovo text-gray-700 dark:text-gray-300 text-lg">
-//         A carefully curated collection of projects showcasing my skills in
-//         full-stack development, frontend engineering, and AI-powered solutions.
-//       </p>
-
-//       {renderSection("fullstack")}
-//       {renderSection("frontend")}
-//       {renderSection("ai")}
-
-//       {/* View All Projects Button */}
-// <motion.a
-//   href="https://github.com/vipul1029?tab=repositories"
-//   target="_blank"
-//   rel="noopener noreferrer"
-//   whileHover={{ scale: 1.08 }}
-//   whileTap={{ scale: 0.96 }}
-//   className="group mt-32 mx-auto flex items-center gap-4 w-max
-//              px-14 py-4 rounded-full
-//              bg-gradient-to-r from-lime-400 to-emerald-500
-//              text-black font-semibold text-lg
-//              shadow-lg hover:shadow-2xl
-//              transition-all duration-300"
-// >
-//   <span>View all projects</span>
-
-//   {/* Animated Arrow */}
-//   <span
-//     className="text-2xl transform transition-transform duration-300
-//                group-hover:translate-x-2"
-//   >
-//     →
-//   </span>
-// </motion.a>
-//     </motion.section>
-//   );
-// };
-
-// export default Work;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"use client";
-
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { assets } from "@/assets/assets";
-
-const Work = ({ isDarkMode }) => {
-
-  const workData = [
-
-    /* ================= FULL STACK ================= */
-
-    {
-      title: "Shoporia — E-Commerce Platform",
-      description:
-        "Modern full-stack e-commerce platform with responsive UI, authentication, orders, and scalable architecture.",
-      bgImage: "/work-9.png",
-      link: "https://shoporia-frontend.vercel.app/",
-      tag: "Full Stack",
-      category: "fullstack",
-    },
-
-    {
-      title: "Food Ordering Platform",
-      description:
-        "Full-stack food delivery application with cart, checkout, authentication, and modern user experience.",
-      bgImage: "/work-1.png",
-      link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
-      tag: "Full Stack",
-      category: "fullstack",
-    },
-
-    {
-      title: "Contact Management Web App",
-      description:
-        "Scalable contact management system with dashboard, CRUD operations, and responsive UI.",
-      bgImage: "/work-11.png",
-      link: "https://contact-management-vipul107.vercel.app/",
-      tag: "Web Application",
-      category: "fullstack",
-    },
-
-    /* ================= FRONTEND ================= */
-
-    {
-      title: "Virtual Eclipse Visualization",
-      description:
-        "Interactive solar eclipse visualization platform with immersive animations and responsive UI.",
-      bgImage: "/work-8.png",
-      link: "https://virtual-eclipse.vercel.app/",
-      tag: "Visualization",
-      category: "frontend",
-    },
-
-    {
-      title: "Cancer Awareness Platform",
-      description:
-        "Awareness-focused React application designed with accessibility and clean UI principles.",
-      bgImage: "/work-10.png",
-      link: "https://cancer-awareness-website-ten.vercel.app/",
-      tag: "Frontend",
-      category: "frontend",
-    },
-
-    {
-      title: "NVZ — Tesla Inspired UI",
-      description:
-        "Modern Tesla-inspired landing page with premium animations and interactive experiences.",
-      bgImage: "/work-2.png",
-      link: "https://nvz-vipul1007s-projects.vercel.app/",
-      tag: "UI / UX",
-      category: "frontend",
-    },
-
-    {
-      title: "Lazarev Agency Clone",
-      description:
-        "Creative agency-style animated portfolio website focused on modern UI interactions.",
-      bgImage: "/work-3.png",
-      link: "https://vipul1029.github.io/Lazarev/",
-      tag: "Frontend",
-      category: "frontend",
-    },
-
-
-    // AI / ML
-      {
-      title: "AgriInspect-ML-Based-Fruit-Quality-Evaluation ",
-      description: "ML-based web app for apple quality (Good/Bad) prediction using XGBoost and Flask.",
-      bgImage: "/work-12.png",
-      link: "https://agriinspect-ml-based-fruit-quality-w0sm.onrender.com/",
-      tag: "AI",
-      category: "ai",
-    },
-
-    /* ================= AI / ML ================= */
-
-
-    {
-      title: "Real-Time Vehicle Detection System",
-      description:
-        "YOLO-based real-time vehicle detection and tracking system using computer vision.",
-      bgImage: "vehicle_detection.png",
-      link: "https://github.com/vipul1029",
-      tag: "Computer Vision",
-      category: "ai",
-    },
-
-    {
-      title: "AgriInspect — Fruit Quality Evaluation",
-      description:
-        "ML-powered fruit quality evaluation system using computer vision and XGBoost.",
-      bgImage: "/work-12.png",
-      link: "https://agriinspect-ml-based-fruit-quality-w0sm.onrender.com/",
-      tag: "AI / ML",
-      category: "ai",
-    },
-
-    {
-      title: "AI Resume Builder",
-      description:
-        "AI-powered resume and cover letter generation platform with modern UI.",
-      bgImage: "/work-6.png",
-      link: "https://resume-cover-letter-maker-q96u.vercel.app/",
-      tag: "AI Application",
-      category: "ai",
-    },
-
-    {
-      title: "Sales Prediction ML Model",
-      description:
-        "Machine learning model for predictive sales forecasting and analytics.",
-      bgImage: "/work-7.png",
-      link: "https://github.com/vipul1029/Sales-Prediction",
-      tag: "Machine Learning",
-      category: "ai",
-    },
-
-  ];
-
-  const sectionMeta = {
-
-    fullstack: {
-      title: "Full-Stack Projects",
-      description:
-        "Scalable real-world applications combining frontend experiences, backend systems, authentication, and database architecture.",
-      glow: "from-emerald-400/20 to-cyan-400/20",
-    },
-
-    frontend: {
-      title: "Frontend & UI Projects",
-      description:
-        "Modern, animated, and responsive interfaces designed with strong focus on user experience and visual interactions.",
-      glow: "from-indigo-400/20 to-purple-400/20",
-    },
-
-    ai: {
-      title: "AI & Machine Learning Projects",
-      description:
-        "AI-powered applications and machine learning systems focused on automation, analytics, and intelligent experiences.",
-      glow: "from-orange-400/20 to-pink-400/20",
-    },
-
-  };
-
-  const renderSection = (category) => {
-
-    const projects = workData.filter(
-      (p) => p.category === category
-    );
-
-    return (
-
-      <section className="relative mt-32">
-
-        {/* Background Glow */}
-        <div
-          className={`absolute inset-0 -z-10 blur-3xl bg-gradient-to-br ${sectionMeta[category].glow}`}
-        />
-
-        {/* Section Title */}
-        <h3 className="text-4xl md:text-5xl font-Ovo text-center mb-4">
-
-          {sectionMeta[category].title}
-
-        </h3>
-
-        {/* Section Description */}
-        <p className="text-center max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400 font-Ovo text-lg leading-8">
-
-          {sectionMeta[category].description}
-
-        </p>
-
-        {/* Animated Divider */}
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "100px" }}
-          transition={{ duration: 0.35 }}
-          className="mx-auto mb-16 h-[3px] bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full"
-        />
-
-        {/* Projects Grid */}
-        <div
-          className="grid gap-10 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-          style={{ justifyItems: "center" }}
-        >
-
-          {projects.map((item, index) => (
-
-            <motion.a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35 }}
-              whileHover={{ y: -6 }}
-              className="relative w-full max-w-[380px] rounded-2xl overflow-hidden group cursor-pointer
-                         bg-white/70 dark:bg-white/5 backdrop-blur-lg
-                         border border-white/20 shadow-xl hover:shadow-2xl transition"
-            >
-
-              {/* Project Image */}
-              <div
-                className="relative h-[240px]"
-                style={{
-                  backgroundImage: `url(${item.bgImage})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition" />
-
-                {/* Tag */}
-                <span className="absolute top-4 left-4 px-4 py-1 rounded-full text-xs font-semibold text-white bg-black/60 backdrop-blur">
-
-                  {item.tag}
-
-                </span>
-
-                {/* Hover Button */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-
-                  <span className="px-6 py-2 bg-white text-black rounded-full font-semibold">
-
-                    View Project
-
-                  </span>
-
-                </div>
-
-              </div>
-
-              {/* Content */}
-              <div className="p-5">
-
-                <h4 className="text-lg font-semibold mb-1">
-
-                  {item.title}
-
-                </h4>
-
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-6">
-
-                  {item.description}
-
-                </p>
-
-              </div>
-
-              {/* Arrow */}
-              <div className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-lime-400 text-black">
-
-                <Image
-                  src={assets.send_icon}
-                  alt="open"
-                  width={18}
-                  height={18}
-                  className="w-auto h-auto"
-                />
-
-              </div>
-
-            </motion.a>
-
-          ))}
-
-        </div>
-
-      </section>
-    );
-  };
+﻿"use client";
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const PROJECTS = [
+  /* ── FULL STACK ── */
+  {
+    title: "Shoporia — E-Commerce Platform",
+    accentLabel: "Full Stack & Authentication",
+    description: "Modern e-commerce platform with responsive UI, authentication, live order tracking, payments, and scalable MERN architecture.",
+    bgImage: "/work-9.png",
+    link: "https://shoporia-frontend.vercel.app/",
+    github: null,
+    tech: ["React", "Node.js", "MongoDB", "Express"],
+    category: "fullstack",
+    year: "2025",
+  },
+  {
+    title: "Food Ordering Platform",
+    accentLabel: "Full Stack & Payments",
+    description: "Full-stack food delivery app with cart, checkout, authentication, live tracking, and payment integration.",
+    bgImage: "/work-1.png",
+    link: "https://food-delivery-site-vipul1007s-projects.vercel.app/",
+    github: null,
+    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    category: "fullstack",
+    year: "2025",
+  },
+  {
+    title: "Contact Management Web App",
+    accentLabel: "Dashboard & CRUD System",
+    description: "Scalable contact management system with dashboard, full CRUD operations, and responsive UI.",
+    bgImage: "/work-11.png",
+    link: "https://contact-management-vipul107.vercel.app/",
+    github: null,
+    tech: ["React", "Node.js", "PostgreSQL", "REST API"],
+    category: "fullstack",
+    year: "2025",
+  },
+  /* ── FRONTEND ── */
+  {
+    title: "NVZ — Tesla Inspired UI",
+    accentLabel: "UI / UX & Animation",
+    description: "Modern Tesla-inspired landing page with premium scroll animations and interactive experiences.",
+    bgImage: "/work-2.png",
+    link: "https://nvz-vipul1007s-projects.vercel.app/",
+    github: null,
+    tech: ["HTML", "CSS", "JavaScript", "GSAP"],
+    category: "frontend",
+    year: "2024",
+  },
+  {
+    title: "Virtual Eclipse Visualization",
+    accentLabel: "Data Visualization",
+    description: "Interactive solar eclipse visualization platform with immersive animations and responsive UI.",
+    bgImage: "/work-8.png",
+    link: "https://virtual-eclipse.vercel.app/",
+    github: null,
+    tech: ["React", "Canvas API", "JavaScript"],
+    category: "frontend",
+    year: "2024",
+  },
+  {
+    title: "Lazarev Agency Clone",
+    accentLabel: "Creative & Motion Design",
+    description: "Creative agency-style animated portfolio website focused on modern scroll interactions.",
+    bgImage: "/work-3.png",
+    link: "https://vipul1029.github.io/Lazarev/",
+    github: "https://github.com/vipul1029/Lazarev",
+    tech: ["HTML", "CSS", "GSAP", "Locomotive"],
+    category: "frontend",
+    year: "2024",
+  },
+  {
+    title: "Cancer Awareness Platform",
+    accentLabel: "Accessibility & UI Design",
+    description: "Awareness-focused React application designed with accessibility, clean UI principles, and informative content layout.",
+    bgImage: "/work-10.png",
+    link: "https://cancer-awareness-website-ten.vercel.app/",
+    github: null,
+    tech: ["React", "HTML", "CSS", "JavaScript"],
+    category: "frontend",
+    year: "2024",
+  },
+  /* ── AI / ML ── */
+  {
+    title: "AgriInspect — Fruit Quality Evaluation",
+    accentLabel: "Computer Vision & ML",
+    description: "ML-powered fruit quality evaluation system using computer vision, XGBoost, and a Flask web interface.",
+    bgImage: "/work-12.png",
+    link: "https://agriinspect-ml-based-fruit-quality-w0sm.onrender.com/",
+    github: null,
+    tech: ["Python", "XGBoost", "OpenCV", "Flask"],
+    category: "ai",
+    year: "2025",
+  },
+  {
+    title: "Real-Time Vehicle Detection",
+    accentLabel: "Computer Vision & Tracking",
+    description: "YOLO-based real-time vehicle detection and multi-object tracking system from video streams.",
+    bgImage: "/vehicle_detection.png",
+    link: "https://github.com/vipul1029",
+    github: "https://github.com/vipul1029",
+    tech: ["Python", "YOLO", "OpenCV", "DeepSORT"],
+    category: "ai",
+    year: "2026",
+  },
+  {
+    title: "AI Resume Builder",
+    accentLabel: "Generative AI & LangChain",
+    description: "AI-powered resume and cover letter generation platform using GPT and LangChain with PDF export.",
+    bgImage: "/work-6.png",
+    link: "https://resume-cover-letter-maker-q96u.vercel.app/",
+    github: null,
+    tech: ["React", "OpenAI GPT", "LangChain", "Python"],
+    category: "ai",
+    year: "2025",
+  },
+  {
+    title: "Sales Prediction ML Model",
+    accentLabel: "Machine Learning & Forecasting",
+    description: "ML model for predictive sales forecasting using regression and ensemble methods.",
+    bgImage: "/work-7.png",
+    link: "https://github.com/vipul1029/Sales-Prediction",
+    github: "https://github.com/vipul1029/Sales-Prediction",
+    tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+    category: "ai",
+    year: "2024",
+  },
+];
+
+const FILTERS = [
+  { key: "all",       label: "All Projects" },
+  { key: "fullstack", label: "Full Stack"   },
+  { key: "frontend",  label: "Frontend"     },
+  { key: "ai",        label: "AI / ML"      },
+];
+
+const ACCENT = {
+  fullstack: { color: "#ea580c" },
+  frontend:  { color: "#6366f1" },
+  ai:        { color: "#ea580c" },
+};
+
+const CAT_LABEL = { fullstack: "Full Stack", frontend: "Frontend", ai: "AI / ML" };
+
+const GitHubIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+  </svg>
+);
+
+const LIGHT_TINT = {
+  fullstack: "rgba(250,205,205,0.6)",
+  frontend:  "rgba(253,240,195,0.6)",
+  ai:        "rgba(180,245,205,0.5)",
+};
+const DARK_TINT = {
+  fullstack: "rgba(80,20,20,0.35)",
+  frontend:  "rgba(80,70,10,0.35)",
+  ai:        "rgba(10,60,30,0.35)",
+};
+
+function ProjectCard({ item, index, isDarkMode }) {
+  const accent = ACCENT[item.category];
+  const tint   = isDarkMode ? DARK_TINT[item.category] : LIGHT_TINT[item.category];
+  const cardBg = isDarkMode ? "#131313" : "#ffffff";
+  const cardBgEnd = isDarkMode ? "#111111" : "#fafaf8";
 
   return (
-
-    <motion.section
-      id="work"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.35 }}
-      className="relative w-full px-[10%] py-28 bg-gradient-to-b from-gray-100 to-white
-                 dark:from-darkTheme dark:to-darkHover"
+    <motion.a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.97 }}
+      transition={{ duration: 0.35, delay: index * 0.06 }}
+      whileHover={{ y: -6 }}
+      className="group flex flex-col rounded-[24px] overflow-hidden
+                 shadow-md hover:shadow-xl hover:shadow-black/10 dark:hover:shadow-black/40
+                 transition-all duration-300 cursor-pointer"
+      style={{
+        background: `linear-gradient(175deg, ${tint} 0%, ${cardBg} 38%, ${cardBgEnd} 100%)`,
+      }}
     >
+      {/* ── Content area ── */}
+      <div className="px-6 pt-6 pb-4 flex flex-col gap-2.5 flex-1">
 
-      {/* Heading */}
-      <h4 className="text-center mb-3 text-lg font-Ovo tracking-wide">
+        {/* GitHub icon + Year */}
+        <div className="flex items-center justify-between">
+          <motion.div
+            onClick={(e) => { if (item.github) { e.preventDefault(); window.open(item.github, "_blank"); } }}
+            whileHover={{ scale: 1.15, backgroundColor: "rgba(0,0,0,0.08)" }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.15 }}
+            className="w-8 h-8 rounded-full
+                        border border-gray-300/70 dark:border-white/10
+                        bg-white/60 dark:bg-white/[0.04]
+                        flex items-center justify-center
+                        text-gray-600 dark:text-gray-400
+                        cursor-pointer z-10 relative"
+          >
+            <GitHubIcon />
+          </motion.div>
+          <span className="text-[11px] font-Outfit font-medium
+                           text-gray-500 dark:text-gray-500
+                           border border-gray-300/70 dark:border-white/10
+                           bg-white/60 dark:bg-white/[0.04]
+                           px-3 py-1 rounded-full">
+            {item.year}
+          </span>
+        </div>
 
-        My Projects
+        {/* Title */}
+        <h4 className="font-Outfit font-black text-[24px] leading-[1.22]
+                       text-gray-900 dark:text-white mt-1">
+          {item.title}
+        </h4>
 
-      </h4>
+        {/* Accent label */}
+        <p
+          className="text-[9px] font-Outfit font-bold uppercase tracking-[0.28em]"
+          style={{ color: accent.color }}
+        >
+          {item.accentLabel}
+        </p>
 
-      <h2 className="text-center text-5xl md:text-6xl font-Ovo mb-6">
-
-        Featured Projects
-
-      </h2>
-
-      {/* Intro */}
-      <p className="text-center max-w-3xl mx-auto mb-14 font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-8">
-
-        A collection of real-world projects focused on full-stack development,
-        scalable software systems, AI-powered applications, and modern user experiences.
-
-      </p>
-
-      {/* Tech Pills */}
-      <div className="flex flex-wrap justify-center gap-3 mb-16">
-
-        <span className="px-4 py-2 rounded-full text-sm bg-gray-900 text-white dark:bg-white dark:text-black">
-          Full Stack
-        </span>
-
-        <span className="px-4 py-2 rounded-full text-sm border border-gray-400 dark:border-white/40">
-          AI / ML
-        </span>
-
-        <span className="px-4 py-2 rounded-full text-sm border border-gray-400 dark:border-white/40">
-          Computer Vision
-        </span>
-
-        <span className="px-4 py-2 rounded-full text-sm border border-gray-400 dark:border-white/40">
-          Scalable Systems
-        </span>
-
+        {/* Description */}
+        <p className="font-Outfit text-[13px] text-gray-500 dark:text-gray-400 leading-[1.75] line-clamp-3">
+          {item.description}
+        </p>
       </div>
 
-      {/* Sections */}
-      {renderSection("fullstack")}
-      {renderSection("frontend")}
-      {renderSection("ai")}
+      {/* ── Inset image with tech pills ── */}
+      <div className="mx-3 mb-3 rounded-[16px] overflow-hidden relative h-[195px] shrink-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.05]"
+          style={{ backgroundImage: `url(${item.bgImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-      {/* GitHub Button */}
-      <motion.a
-        href="https://github.com/vipul1029?tab=repositories"
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ y: -2 }}
-        whileTap={{ scale: 0.96 }}
-        className="group mt-32 mx-auto flex items-center gap-4 w-max
-                   px-14 py-4 rounded-full
-                   bg-gradient-to-r from-lime-400 to-emerald-500
-                   text-black font-semibold text-lg
-                   shadow-lg hover:shadow-2xl
-                   transition-all duration-300"
-      >
+        {/* Tech pills */}
+        <div className="absolute bottom-2.5 left-2.5 right-2.5 flex flex-wrap gap-1.5">
+          {item.tech.map((t) => (
+            <span
+              key={t}
+              className="text-[9px] font-Outfit font-semibold uppercase tracking-wider
+                         px-2.5 py-[5px] rounded-full
+                         bg-white dark:bg-black/65
+                         text-gray-700 dark:text-gray-300
+                         shadow-sm"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.a>
+  );
+}
 
-        <span>
+const Work = ({ isDarkMode }) => {
+  const [activeFilter, setActiveFilter] = useState("all");
+  const lightGrid = `linear-gradient(rgba(185,155,100,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(185,155,100,0.28) 1px, transparent 1px)`;
+  const darkGrid  = `linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)`;
 
-          Explore GitHub Projects
+  const filtered = activeFilter === "all"
+    ? PROJECTS
+    : PROJECTS.filter((p) => p.category === activeFilter);
 
-        </span>
+  return (
+    <section
+      id="work"
+      className="relative w-full scroll-mt-20"
+      style={{
+        backgroundColor: isDarkMode ? "#000000" : "#faf8f3",
+        backgroundImage: isDarkMode ? darkGrid : lightGrid,
+        backgroundSize: "40px 40px",
+      }}
+    >
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-orange-500/5 dark:bg-orange-600/8 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-indigo-400/4 dark:bg-indigo-500/6 blur-[100px] pointer-events-none" />
 
-        {/* Arrow */}
-        <span
-          className="text-2xl transform transition-transform duration-300
-                     group-hover:translate-x-2"
+      <div className="px-[8%] py-24">
+
+        {/* ── Section header ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
         >
-          →
-        </span>
+          <p className="font-Outfit text-[10px] font-light tracking-[0.4em] uppercase
+                        text-gray-400 dark:text-gray-500 mb-2">
+            03 &middot; My Work
+          </p>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+            <h2
+              className="font-Outfit font-black uppercase leading-[0.88] tracking-tight
+                         text-gray-900 dark:text-white"
+              style={{ fontSize: "clamp(34px,5vw,68px)" }}
+            >
+              FEATURED{" "}
+              <span className="bg-gradient-to-r from-orange-500 via-amber-400 to-orange-400
+                               bg-clip-text text-transparent">
+                WORK
+              </span>
+              <span className="text-orange-500">.</span>
+            </h2>
+            <p className="font-Outfit text-[14px] text-gray-500 dark:text-gray-400
+                          max-w-xs leading-relaxed sm:text-right shrink-0">
+              Projects spanning full-stack, AI systems,<br className="hidden sm:block" /> and modern UI engineering.
+            </p>
+          </div>
+        </motion.div>
 
-      </motion.a>
+        {/* ── Filter tabs ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.12 }}
+          className="flex flex-wrap gap-2 mb-12"
+        >
+          {FILTERS.map((f) => (
+            <button
+              key={f.key}
+              onClick={() => setActiveFilter(f.key)}
+              className={`px-5 py-1.5 rounded-full text-[12px] font-Outfit font-medium border transition-all duration-200
+                ${activeFilter === f.key
+                  ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white"
+                  : "bg-transparent text-gray-500 dark:text-gray-400 border-gray-200 dark:border-white/15 hover:border-gray-400 dark:hover:border-white/30"
+                }`}
+            >
+              {f.label}
+              <span className={`ml-1.5 text-[10px] ${activeFilter === f.key ? "opacity-60" : "opacity-40"}`}>
+                ({f.key === "all" ? PROJECTS.length : PROJECTS.filter((p) => p.category === f.key).length})
+              </span>
+            </button>
+          ))}
+        </motion.div>
 
-    </motion.section>
+        {/* ── Project grid ── */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeFilter}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {filtered.map((item, i) => (
+              <ProjectCard key={item.title} item={item} index={i} isDarkMode={isDarkMode} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* ── GitHub CTA ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <motion.a
+            href="https://github.com/vipul1029?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -3, scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.18 }}
+            className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full
+                       font-Outfit font-semibold text-[14px]
+                       bg-[#0a0a0a] dark:bg-white
+                       text-white dark:text-gray-900
+                       shadow-lg hover:shadow-xl hover:shadow-black/30 dark:hover:shadow-white/10
+                       transition-shadow duration-300"
+          >
+            <span className="w-5 h-5 group-hover:rotate-12 transition-transform duration-200">
+              <GitHubIcon />
+            </span>
+            View all on GitHub
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="opacity-60">
+              <path d="M1.5 11.5L11.5 1.5M11.5 1.5H4M11.5 1.5V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.a>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
