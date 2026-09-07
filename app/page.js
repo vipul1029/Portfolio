@@ -10,6 +10,8 @@ import Experience from "./components/Experience";
 //new
 import Services from "./components/Services";
 import Certificates from "./components/Certificates";
+import VipulAI from "./components/VipulAI";
+import CustomCursor from "./components/CustomCursor";
 
 import React,{useState,useEffect} from 'react'
 
@@ -33,6 +35,7 @@ if(isDarkMode){
   },[isDarkMode]  )
   return (
     <>
+    <CustomCursor />
     <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
     <Header isDarkMode={isDarkMode}/>
     <About isDarkMode={isDarkMode}/>
@@ -42,7 +45,7 @@ if(isDarkMode){
     <Certificates isDarkMode={isDarkMode}/>
     <Contact isDarkMode={isDarkMode}/>
     <Footer isDarkMode={isDarkMode}/>
-     
+    <VipulAI />
     </>
   );
 }
