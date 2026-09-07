@@ -1,437 +1,696 @@
+﻿"use client";
 
-// "use client";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-// import React from "react";
-// import { motion } from "framer-motion";
-// import Image from "next/image";
-// import { assets } from "@/assets/assets";
-
-// const experiences = [
-//   {
-//     role: "Software Development Intern",
-//     company: "KreditBee",
-//     duration: "May 2026 – Present",
-//     description:
-//       "Working on scalable real-world applications and backend systems while contributing to production-level software development workflows.",
-//     skills: ["Full Stack", "Backend Systems", "APIs", "Scalable Applications"],
-//     icon: assets.code_icon,
-//     iconDark: assets.code_icon_dark,
-//   },
-//   {
-//     role: "Project Manager & Computer Vision Intern",
-//     company: "MarkMyAd",
-//     duration: "Feb 2026 – Present",
-//     description:
-//       "Led development of AI-powered video analytics systems using computer vision and deep learning for real-time tracking and monitoring solutions.",
-//     skills: ["Computer Vision", "YOLO", "DeepSORT", "AI Systems"],
-//     icon: assets.project_icon,
-//     iconDark: assets.project_icon_dark,
-//   },
-//   {
-//     role: "Full Stack Development Intern",
-//     company: "Valsco (Jurident)",
-//     duration: "Dec 2025 – Feb 2026",
-//     description:
-//       "Built scalable full-stack features, optimized APIs, and improved backend performance for production-ready applications.",
-//     skills: ["React", "Node.js", "FastAPI", "PostgreSQL"],
-//     icon: assets.code_icon,
-//     iconDark: assets.code_icon_dark,
-//   },
-//   {
-//     role: "Software Development Intern",
-//     company: "Bluestock Fintech",
-//     duration: "June 2025 – July 2025",
-//     description:
-//       "Developed and optimized a full-stack IPO web platform with responsive frontend architecture and efficient backend integrations.",
-//     skills: ["Full Stack", "REST APIs", "PostgreSQL", "Git"],
-//     icon: assets.edu_icon,
-//     iconDark: assets.edu_icon_dark,
-//   },
-// ];
-
-// const Experience = ({ isDarkMode }) => {
-//   return (
-//     <motion.section
-//       id="experience"
-//       initial={{ opacity: 0 }}
-//       whileInView={{ opacity: 1 }}
-//       transition={{ duration: 0.35 }}
-//       className="relative w-full px-[10%] py-24 scroll-mt-20
-//                  bg-gradient-to-b from-gray-100 to-white
-//                  dark:from-darkTheme dark:to-darkHover"
-//     >
-//       {/* Background Glow */}
-//       <motion.div
-//         className="absolute top-10 left-10 w-32 h-32 bg-emerald-400 opacity-20 rounded-full blur-3xl"
-//         animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-//         transition={{ repeat: Infinity, duration: 7 }}
-//       />
-
-//       {/* Heading */}
-//       <h4 className="text-center mb-3 text-lg font-Ovo tracking-wide">
-//         Professional Journey
-//       </h4>
-
-//       <h2 className="text-center text-5xl md:text-6xl font-Ovo mb-6">
-//         Experience
-//       </h2>
-
-//       {/* Intro */}
-//       <p className="text-center max-w-3xl mx-auto mb-16 font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-8">
-//         Internship experiences across software engineering, full-stack development,
-//         fintech platforms, and AI-powered systems focused on building scalable,
-//         real-world applications.
-//       </p>
-
-//       {/* Timeline */}
-//       <div className="relative max-w-5xl mx-auto">
-
-//         {/* Vertical Line */}
-//         <div className="absolute left-5 sm:left-1/2 top-0 h-full w-[2px] bg-gray-300 dark:bg-white/20 transform sm:-translate-x-1/2" />
-
-//         <div className="flex flex-col gap-16">
-
-//           {experiences.map((item, index) => (
-//             <motion.div
-//               key={index}
-//               initial={{ opacity: 0, y: 40 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.35 }}
-//               className={`relative flex flex-col sm:flex-row items-start sm:items-center gap-8
-//                 ${index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"}`}
-//             >
-
-//               {/* Timeline Dot */}
-//               <div className="absolute left-2 sm:left-1/2 transform sm:-translate-x-1/2
-//                               w-6 h-6 rounded-full bg-lime-400 border-4 border-white dark:border-darkTheme z-10" />
-
-//               {/* Empty Space */}
-//               <div className="hidden sm:block w-1/2" />
-
-//               {/* Card */}
-//               <motion.div
-//                 whileHover={{ y: -4 }}
-//                 className="ml-12 sm:ml-0 w-full sm:w-1/2 rounded-2xl p-6
-//                            bg-white/80 dark:bg-white/5 backdrop-blur-lg
-//                            border border-gray-200 dark:border-white/10
-//                            shadow-lg hover:shadow-2xl transition-all duration-300"
-//               >
-
-//                 {/* Header */}
-//                 <div className="flex items-start gap-4 mb-5">
-
-//                   <div className="w-14 h-14 rounded-xl flex items-center justify-center
-//                                   bg-gray-100 dark:bg-darkHover border border-gray-200
-//                                   dark:border-white/10">
-
-//                     <Image
-//                       src={isDarkMode ? item.iconDark : item.icon}
-//                       alt={item.role}
-//                       className="w-7 h-7"
-//                     />
-
-//                   </div>
-
-//                   <div>
-//                     <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-//                       {item.role}
-//                     </h3>
-
-//                     <p className="text-base text-lime-600 dark:text-lime-400 font-medium">
-//                       {item.company}
-//                     </p>
-
-//                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-//                       {item.duration}
-//                     </p>
-//                   </div>
-
-//                 </div>
-
-//                 {/* Description */}
-//                 <p className="text-gray-700 dark:text-gray-300 leading-7 mb-5">
-//                   {item.description}
-//                 </p>
-
-//                 {/* Skills */}
-//                 <div className="flex flex-wrap gap-3">
-
-//                   {item.skills.map((skill, idx) => (
-//                     <span
-//                       key={idx}
-//                       className="px-4 py-2 rounded-full text-sm
-//                                  bg-gray-900 text-white
-//                                  dark:bg-white dark:text-black"
-//                     >
-//                       {skill}
-//                     </span>
-//                   ))}
-
-//                 </div>
-
-//               </motion.div>
-
-//             </motion.div>
-//           ))}
-
-//         </div>
-//       </div>
-//     </motion.section>
-//   );
-// };
-
-// export default Experience;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { assets } from "@/assets/assets";
-
-const experiences = [
+// ─────────────────────────────────────────────────────────────────────────────
+// EXPERIENCE DATA
+// Add videos later: drop <company>.mp4 in public/videos/ and set videoSrc below
+// ─────────────────────────────────────────────────────────────────────────────
+const EXPERIENCES = [
   {
-    role: "Software Development Intern",
-    company: "KreditBee",
-    duration: "May 2026 – Present",
-    description:
-      "Building scalable production-grade applications and backend systems while contributing to real-world software engineering workflows.",
-    skills: ["Full Stack", "Backend", "APIs", "Scalable Systems"],
-    icon: assets.code_icon,
-    iconDark: assets.code_icon_dark,
-    glow: "from-emerald-400/20 to-lime-400/20",
-  },
-  {
-    role: "Project Manager & Computer Vision Intern",
+    id: "markmyad",
     company: "MarkMyAd",
-    duration: "Feb 2026 – Present",
+    tagline: "AI-Powered Video Analytics",
+    role: "Project Head | Computer Vision & ML Intern",
+    employmentType: "Internship",
+    duration: "July 2026 – Present",
+    location: "Remote, India",
+    isCurrent: true,
     description:
-      "Led AI-powered video analytics projects focused on real-time object detection, tracking, and intelligent monitoring systems.",
-    skills: ["YOLO", "DeepSORT", "Computer Vision", "AI Systems"],
-    icon: assets.project_icon,
-    iconDark: assets.project_icon_dark,
-    glow: "from-orange-400/20 to-pink-400/20",
+      "Developing real-time video analytics pipelines using YOLO, DeepSORT, and OpenCV for automated object detection and multi-object tracking. Leading computer vision and ML development — driving model integration and deployment of production systems.",
+    responsibilities: [
+      "Developed real-time video analytics pipelines using YOLO, DeepSORT, and OpenCV",
+      "Optimized multi-object tracking pipelines for efficient real-time inference",
+      "Built CV solutions enabling automated detection and tracking at scale",
+      "Led ML development — model integration, testing, and production deployment",
+    ],
+    technologies: ["YOLO", "DeepSORT", "OpenCV", "Python", "Computer Vision", "Deep Learning"],
+    websiteUrl: "markmyad.com",
+    videoSrc: "/videos/markmyad.mp4",
+    accent: "#ea580c",
   },
   {
-    role: "Full Stack Development Intern",
+    id: "kreditbee",
+    company: "KreditBee",
+    tagline: "Generative AI & LLM Engineering",
+    role: "Software Engineer Intern (Generative AI)",
+    employmentType: "Internship",
+    duration: "May 2026 – July 2026",
+    location: "Bangalore, India",
+    isCurrent: false,
+    description:
+      "Engineered a Gemini-powered AI voice agent for automated customer conversations. Built an AI user simulator and LLM evaluator to automate testing, and benchmarked responses using embeddings and UMAP analysis.",
+    responsibilities: [
+      "Engineered Gemini-powered AI voice agent with context-aware LLM responses",
+      "Built AI user simulator and LLM evaluator for automated conversation testing",
+      "Benchmarked AI responses using embeddings, UMAP, and similarity analysis",
+      "Developed diverse customer interaction test scenarios at scale",
+    ],
+    technologies: ["Gemini API", "LLMs", "Voice AI", "Embeddings", "UMAP", "Python", "AI Agents"],
+    websiteUrl: "kreditbee.com",
+    videoSrc: "/videos/kreditbee.mp4",
+    accent: "#8b5cf6",
+  },
+  {
+    id: "jurident",
     company: "Valsco (Jurident)",
-    duration: "Dec 2025 – Feb 2026",
+    tagline: "Full Stack Engineering",
+    role: "Full Stack Development Intern",
+    employmentType: "Internship",
+    duration: "Feb 2026 – May 2026",
+    location: "Remote, India",
+    isCurrent: false,
     description:
-      "Developed scalable frontend and backend modules with optimized APIs and database performance for production-ready applications.",
-    skills: ["React", "FastAPI", "Node.js", "PostgreSQL"],
-    icon: assets.code_icon,
-    iconDark: assets.code_icon_dark,
-    glow: "from-cyan-400/20 to-blue-400/20",
+      "Built the complete full-stack application — React frontend paired with Node.js, FastAPI, and Firebase backend. Developed and optimized RESTful APIs and database queries ensuring low latency, scalability, and efficient data flow.",
+    responsibilities: [
+      "Built full-stack app with React frontend and Node.js / FastAPI / Firebase backend",
+      "Developed and optimized RESTful APIs ensuring low latency and scalability",
+      "Improved database query performance for efficient data flow",
+      "Collaborated with team via Git workflows and Agile practices",
+    ],
+    technologies: ["React", "Node.js", "FastAPI", "Firebase", "PostgreSQL", "Git"],
+    websiteUrl: "jurident.com",
+    videoSrc: "/videos/jurident.mp4",
+    accent: "#06b6d4",
   },
   {
-    role: "Software Development Intern",
+    id: "bluestock",
     company: "Bluestock Fintech",
+    tagline: "Fintech Platform Development",
+    role: "Software Development Intern",
+    employmentType: "Internship",
     duration: "June 2025 – July 2025",
+    location: "Remote, India",
+    isCurrent: false,
     description:
-      "Built and optimized a full-stack IPO platform with responsive UI, REST APIs, and scalable backend integrations.",
-    skills: ["REST APIs", "PostgreSQL", "Full Stack", "Git"],
-    icon: assets.edu_icon,
-    iconDark: assets.edu_icon_dark,
-    glow: "from-violet-400/20 to-indigo-400/20",
+      "Built a full-stack IPO web application using React.js, Node.js, and PostgreSQL with a responsive UI translated from Figma designs. Implemented REST APIs, database schema optimization, and Git-based version control workflows.",
+    responsibilities: [
+      "Built full-stack IPO web app with React.js, Node.js, and PostgreSQL",
+      "Created responsive UI from Figma designs matching production standards",
+      "Developed and tested RESTful APIs using Postman",
+      "Implemented PostgreSQL schema optimisation and Git workflows",
+    ],
+    technologies: ["React.js", "Node.js", "PostgreSQL", "REST APIs", "Figma", "Git", "Postman"],
+    websiteUrl: "bluestock.in",
+    videoSrc: "/videos/bluestock.mp4",
+    accent: "#ea580c",
   },
 ];
 
-const Experience = ({ isDarkMode }) => {
+// ─────────────────────────────────────────────────────────────────────────────
+// LAPTOP SCREEN AREA — percentages within the 2000×2000 laptop PNG container
+// Tune these four values until the video aligns with the transparent screen.
+// top/left/right = distance from that edge; bottom = distance from bottom edge.
+// ─────────────────────────────────────────────────────────────────────────────
+const SCREEN = {
+  top: "28.7%",
+  left: "18.3%",
+  right: "18.3%",
+  bottom: "31%",
+  radius: "0.4%",
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// VARIANT PRESETS
+// ─────────────────────────────────────────────────────────────────────────────
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 18 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.38, delay, ease: "easeOut" },
+});
+
+const STAGGER = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } },
+};
+const STAGGER_ITEM = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } },
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// VIDEO FALLBACK
+// ─────────────────────────────────────────────────────────────────────────────
+function VideoFallback({ exp }) {
+  const r = parseInt(exp.accent.slice(1, 3), 16);
+  const g = parseInt(exp.accent.slice(3, 5), 16);
+  const b = parseInt(exp.accent.slice(5, 7), 16);
+
   return (
-    <motion.section
-      id="experience"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.35 }}
-      className="relative w-full px-[8%] py-28 scroll-mt-20
-                 bg-gradient-to-b from-gray-100 to-white
-                 dark:from-darkTheme dark:to-darkHover overflow-hidden"
+    <div
+      className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden select-none"
+      style={{ background: "linear-gradient(135deg,#09090f 0%,#0d0d18 60%,#09090f 100%)" }}
     >
-
-      {/* Background Blurs */}
-      <motion.div
-        className="absolute top-10 left-10 w-40 h-40 bg-emerald-400 opacity-20 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ repeat: Infinity, duration: 7 }}
+      {/* Animated grid */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(${r},${g},${b},0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(${r},${g},${b},0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: "28px 28px",
+        }}
       />
 
-      <motion.div
-        className="absolute bottom-10 right-10 w-40 h-40 bg-cyan-400 opacity-20 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.25, 1], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ repeat: Infinity, duration: 8 }}
+      {/* Central glow */}
+      <div
+        className="absolute rounded-full blur-3xl"
+        style={{
+          width: "55%", height: "55%",
+          top: "22%", left: "22%",
+          background: `radial-gradient(circle, rgba(${r},${g},${b},0.18) 0%, transparent 70%)`,
+        }}
       />
 
-      {/* Heading */}
-      <motion.h4
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
-        className="text-center mb-3 text-lg font-Ovo tracking-wide"
-      >
-        Professional Journey
-      </motion.h4>
+      {/* Content */}
+      <div className="relative z-10 text-center px-6">
+        <p
+          className="text-[9px] uppercase tracking-[0.35em] mb-3 font-Outfit"
+          style={{ color: exp.accent }}
+        >
+          {exp.employmentType}
+        </p>
+        <h3 className="text-2xl font-bold text-white font-Outfit mb-1">{exp.company}</h3>
+        <p className="text-xs text-white/30 font-Outfit mb-7">{exp.tagline}</p>
 
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
-        className="text-center text-5xl md:text-6xl font-Ovo mb-6"
-      >
-        Experience
-      </motion.h2>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.35 }}
-        className="text-center max-w-3xl mx-auto mb-20 font-Ovo text-gray-700 dark:text-gray-300 text-lg leading-8"
-      >
-        Internship experiences across software engineering, AI-powered systems,
-        computer vision, and scalable full-stack development environments.
-      </motion.p>
-
-      {/* Timeline */}
-      <div className="relative max-w-6xl mx-auto">
-
-        {/* Center Line */}
-        <div className="hidden lg:block absolute left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-lime-400/70 to-cyan-400/70 -translate-x-1/2" />
-
-        <div className="flex flex-col gap-16 lg:gap-24">
-
-          {experiences.map((item, index) => (
-
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35 }}
-              className={`relative flex flex-col lg:flex-row items-center gap-10
-                ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
-            >
-
-              {/* Timeline Dot */}
-              <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2
-                              w-6 h-6 rounded-full bg-lime-400 border-4 border-white
-                              dark:border-darkTheme z-20 shadow-lg shadow-lime-400/50" />
-
-              {/* Empty Side */}
-              <div className="hidden lg:block w-1/2" />
-
-              {/* Experience Card */}
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="relative w-full lg:w-1/2 rounded-3xl overflow-hidden
-                           border border-white/20 dark:border-white/10
-                           bg-white/80 dark:bg-white/5 backdrop-blur-xl
-                           shadow-xl hover:shadow-2xl transition-all duration-300"
-              >
-
-                {/* Glow Layer */}
-                <div
-                  className={`absolute inset-0 opacity-60 bg-gradient-to-br ${item.glow}`}
-                />
-
-                {/* Card Content */}
-                <div className="relative z-10 p-8">
-
-                  {/* Top */}
-                  <div className="flex items-start gap-5 mb-6">
-
-                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center
-                                    bg-white/80 dark:bg-darkHover/80 border border-white/20
-                                    shadow-md">
-
-                      <Image
-                        src={isDarkMode ? item.iconDark : item.icon}
-                        alt={item.role}
-                        className="w-8 h-8"
-                      />
-
-                    </div>
-
-                    <div>
-
-                      <h3 className="text-2xl font-semibold text-gray-900 dark:text-white leading-tight">
-                        {item.role}
-                      </h3>
-
-                      <p className="text-lime-600 dark:text-lime-400 font-semibold mt-1 text-lg">
-                        {item.company}
-                      </p>
-
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                        {item.duration}
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-700 dark:text-gray-300 leading-8 mb-6 text-[15px] sm:text-base">
-                    {item.description}
-                  </p>
-
-                  {/* Skills */}
-                  <div className="flex flex-wrap gap-3">
-
-                    {item.skills.map((skill, idx) => (
-
-                      <span
-                        key={idx}
-                        className="px-4 py-2 rounded-full text-sm
-                                   bg-gray-900 text-white
-                                   dark:bg-white dark:text-black
-                                   shadow-sm"
-                      >
-                        {skill}
-                      </span>
-
-                    ))}
-
-                  </div>
-
-                </div>
-
-              </motion.div>
-
-            </motion.div>
-          ))}
-
+        <div className="flex items-center justify-center gap-2">
+          <motion.span
+            className="w-1.5 h-1.5 rounded-full"
+            style={{ background: exp.accent }}
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1.6, repeat: Infinity }}
+          />
+          <p className="text-[10px] text-white/25 font-Outfit tracking-wider">
+            Demo preview coming soon
+          </p>
         </div>
-
       </div>
 
-    </motion.section>
+      {/* Website URL bottom */}
+      <p className="absolute bottom-5 text-[9px] text-white/15 font-Outfit tracking-widest">
+        {exp.websiteUrl}
+      </p>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SCREEN CONTENT — only this animates on experience change (frame stays static)
+// ─────────────────────────────────────────────────────────────────────────────
+function ScreenContent({ exp }) {
+  const videoRef = useRef(null);
+  const hasVideo = Boolean(exp.videoSrc);
+
+  useEffect(() => {
+    if (!videoRef.current || !hasVideo) return;
+    videoRef.current.play().catch(() => {});
+    return () => { if (videoRef.current) videoRef.current.pause(); };
+  }, [hasVideo]);
+
+  return (
+    <motion.div
+      className="w-full h-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
+      {hasVideo ? (
+        <video
+          ref={videoRef}
+          src={exp.videoSrc}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      ) : (
+        <VideoFallback exp={exp} />
+      )}
+    </motion.div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// EXPERIENCE DETAILS (left side — desktop)
+// ─────────────────────────────────────────────────────────────────────────────
+function ExperienceDetails({ exp }) {
+  return (
+    <motion.div
+      variants={STAGGER}
+      initial="hidden"
+      animate="visible"
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
+      className="space-y-4"
+    >
+      {/* Status badge */}
+      <motion.div variants={STAGGER_ITEM}>
+        <span
+          className="inline-flex items-center gap-1.5 text-[11px] px-3 py-1 rounded-full font-Outfit font-medium"
+          style={{
+            background: `${exp.accent}18`,
+            color: exp.accent,
+            border: `1px solid ${exp.accent}35`,
+          }}
+        >
+          {exp.isCurrent && (
+            <motion.span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ background: exp.accent }}
+              animate={{ opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 1.4, repeat: Infinity }}
+            />
+          )}
+          {exp.isCurrent ? "Current Role" : "Past Experience"} · {exp.employmentType}
+        </span>
+      </motion.div>
+
+      {/* Company + role */}
+      <motion.div variants={STAGGER_ITEM}>
+        <h3 className="text-3xl xl:text-4xl font-Ovo text-gray-900 dark:text-white leading-tight">
+          {exp.company}
+        </h3>
+        <p
+          className="text-sm xl:text-base font-Outfit font-semibold mt-1.5"
+          style={{ color: exp.accent }}
+        >
+          {exp.role}
+        </p>
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 mt-1.5 text-xs text-gray-500 dark:text-gray-400 font-Outfit">
+          <span>{exp.duration}</span>
+          <span className="w-1 h-1 rounded-full bg-gray-400 dark:bg-gray-600" />
+          <span>{exp.location}</span>
+        </div>
+      </motion.div>
+
+      {/* Divider */}
+      <motion.div variants={STAGGER_ITEM} className="h-px bg-gray-200 dark:bg-white/10" />
+
+      {/* Description */}
+      <motion.p
+        variants={STAGGER_ITEM}
+        className="text-[13px] xl:text-[14px] leading-6 text-gray-600 dark:text-gray-300 font-Outfit"
+      >
+        {exp.description}
+      </motion.p>
+
+      {/* Responsibilities */}
+      <motion.div variants={STAGGER_ITEM}>
+        <p className="text-[10px] uppercase tracking-[0.25em] text-gray-400 dark:text-gray-500 font-Outfit mb-2">
+          Responsibilities
+        </p>
+        <ul className="space-y-1.5">
+          {exp.responsibilities.map((r, i) => (
+            <li
+              key={i}
+              className="flex items-start gap-2 text-[12px] xl:text-[13px] text-gray-600 dark:text-gray-300 font-Outfit leading-5"
+            >
+              <span
+                className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
+                style={{ background: exp.accent }}
+              />
+              {r}
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+
+      {/* Tech stack */}
+      <motion.div variants={STAGGER_ITEM}>
+        <div className="flex flex-wrap gap-1.5">
+          {exp.technologies.map((tech) => (
+            <span
+              key={tech}
+              className="text-[10px] px-2.5 py-0.5 rounded-full font-Outfit font-medium
+                         text-gray-600 dark:text-gray-300
+                         bg-gray-100 dark:bg-white/5
+                         border border-gray-200 dark:border-white/10"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// COMPANY TABS — named tabs replacing dots, click to jump
+// ─────────────────────────────────────────────────────────────────────────────
+function CompanyTabs({ activeIndex, sectionRef }) {
+  const scrollTo = useCallback(
+    (index) => {
+      if (!sectionRef.current) return;
+      const top = sectionRef.current.getBoundingClientRect().top + window.scrollY;
+      const scrollable = sectionRef.current.offsetHeight - window.innerHeight;
+      const perItem = scrollable / EXPERIENCES.length;
+      // +10% nudge so we land inside the slot, not on the exact boundary
+      window.scrollTo({ top: top + (index + 0.1) * perItem, behavior: "smooth" });
+    },
+    [sectionRef]
+  );
+
+  return (
+    <div className="flex items-end gap-6 mt-6 border-b border-gray-200 dark:border-white/10">
+      {EXPERIENCES.map((exp, i) => {
+        const isActive = i === activeIndex;
+        return (
+          <button
+            key={exp.id}
+            onClick={() => scrollTo(i)}
+            aria-label={`Jump to ${exp.company}`}
+            className="relative pb-3 text-sm font-Outfit font-medium transition-colors duration-200 focus:outline-none shrink-0"
+            style={{ color: isActive ? exp.accent : undefined }}
+          >
+            <span className={isActive ? "" : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"}>
+              {exp.company}
+            </span>
+            {isActive && (
+              <motion.div
+                layoutId="tab-underline"
+                className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
+                style={{ background: exp.accent }}
+                transition={{ type: "spring", stiffness: 380, damping: 32 }}
+              />
+            )}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MOBILE CARD
+// ─────────────────────────────────────────────────────────────────────────────
+function MobileCard({ exp, isLast }) {
+  const videoRef = useRef(null);
+  const hasVideo = Boolean(exp.videoSrc);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-60px" }}
+      className="mb-16"
+    >
+      {/* Laptop preview */}
+      <div
+        className="relative w-full mx-auto mb-8"
+        style={{ maxWidth: 400, filter: "drop-shadow(0 16px 36px rgba(0,0,0,0.4))" }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/laptoptrans.png"
+          alt="Laptop"
+          draggable={false}
+          className="relative w-full h-auto object-contain pointer-events-none select-none"
+          style={{ zIndex: 1 }}
+        />
+        <div
+          className="absolute overflow-hidden"
+          style={{
+            top: SCREEN.top,
+            left: SCREEN.left,
+            right: SCREEN.right,
+            bottom: SCREEN.bottom,
+            borderRadius: SCREEN.radius,
+            zIndex: 2,
+          }}
+        >
+          {hasVideo ? (
+            <video
+              ref={videoRef}
+              src={exp.videoSrc}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+            />
+          ) : (
+            <VideoFallback exp={exp} />
+          )}
+        </div>
+      </div>
+
+      {/* Details */}
+      <div className="space-y-4">
+        <span
+          className="inline-flex items-center gap-1.5 text-[11px] px-3 py-1.5 rounded-full font-Outfit font-medium"
+          style={{
+            background: `${exp.accent}18`,
+            color: exp.accent,
+            border: `1px solid ${exp.accent}35`,
+          }}
+        >
+          {exp.isCurrent && (
+            <motion.span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ background: exp.accent }}
+              animate={{ opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 1.4, repeat: Infinity }}
+            />
+          )}
+          {exp.isCurrent ? "Current" : "Past"} · {exp.employmentType}
+        </span>
+
+        <div>
+          <h3 className="text-3xl font-Ovo text-gray-900 dark:text-white">{exp.company}</h3>
+          <p
+            className="text-base font-Outfit font-semibold mt-1"
+            style={{ color: exp.accent }}
+          >
+            {exp.role}
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 font-Outfit mt-1">
+            {exp.duration} · {exp.location}
+          </p>
+        </div>
+
+        <p className="text-sm leading-7 text-gray-600 dark:text-gray-300 font-Outfit">
+          {exp.description}
+        </p>
+
+        <ul className="space-y-2">
+          {exp.responsibilities.map((r, i) => (
+            <li
+              key={i}
+              className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-300 font-Outfit leading-6"
+            >
+              <span
+                className="mt-2 w-1.5 h-1.5 rounded-full shrink-0"
+                style={{ background: exp.accent }}
+              />
+              {r}
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-wrap gap-2">
+          {exp.technologies.map((tech) => (
+            <span
+              key={tech}
+              className="text-[11px] px-3 py-1 rounded-full font-Outfit font-medium
+                         text-gray-600 dark:text-gray-300
+                         bg-gray-100 dark:bg-white/5
+                         border border-gray-200 dark:border-white/10"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {!isLast && <div className="mt-14 h-px bg-gray-200 dark:bg-white/10" />}
+    </motion.div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MAIN COMPONENT
+// ─────────────────────────────────────────────────────────────────────────────
+const Experience = ({ isDarkMode }) => {
+  const lightGrid = `linear-gradient(rgba(185,155,100,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(185,155,100,0.28) 1px, transparent 1px)`;
+  const darkGrid  = `linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)`;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const desktopRef = useRef(null);
+
+  // Scroll-driven active index — passive listener, cleaned up on unmount
+  useEffect(() => {
+    const onScroll = () => {
+      const el = desktopRef.current;
+      if (!el) return;
+      const scrollable = el.offsetHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      const scrolled = Math.max(0, -el.getBoundingClientRect().top);
+      const progress = Math.min(1, scrolled / scrollable);
+      const next = Math.min(
+        Math.floor(progress * EXPERIENCES.length),
+        EXPERIENCES.length - 1
+      );
+      setActiveIndex((prev) => (prev === next ? prev : next));
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // initialise on mount
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const active = EXPERIENCES[activeIndex];
+
+  return (
+    <section
+      id="experience"
+      className="relative scroll-mt-20"
+      style={{
+        backgroundColor: isDarkMode ? "#000000" : "#faf8f3",
+        backgroundImage: isDarkMode ? darkGrid : lightGrid,
+        backgroundSize: "40px 40px",
+      }}
+    >
+      {/* ══════════════════════════════════════════════════════
+          MOBILE LAYOUT  (visible below lg breakpoint)
+      ══════════════════════════════════════════════════════ */}
+      <div className="lg:hidden px-[8%] py-24">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <p className="text-sm font-Ovo tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">
+            Professional Journey
+          </p>
+          <h2 className="text-5xl font-Ovo text-gray-900 dark:text-white mb-6">
+            Experience
+          </h2>
+          <p className="max-w-xl mx-auto text-base font-Outfit text-gray-600 dark:text-gray-300 leading-7">
+            Internship experiences across Generative AI, computer vision, and full-stack engineering.
+          </p>
+        </div>
+
+        {EXPERIENCES.map((exp, i) => (
+          <MobileCard key={exp.id} exp={exp} isLast={i === EXPERIENCES.length - 1} />
+        ))}
+      </div>
+
+      {/* ══════════════════════════════════════════════════════
+          DESKTOP SCROLL-DRIVEN LAYOUT  (visible lg+)
+          This div is tall so there is scroll space to trigger each experience.
+      ══════════════════════════════════════════════════════ */}
+      <div
+        ref={desktopRef}
+        className="hidden lg:block"
+        style={{ height: `${EXPERIENCES.length * 60}vh` }}
+        aria-label="Experience timeline"
+      >
+        {/* Sticky panel — stays fixed to viewport while outer div scrolls */}
+        <div className="sticky top-0 h-screen overflow-hidden flex">
+
+          {/* Ambient background orbs driven by active accent */}
+          <motion.div
+            key={`orb-tl-${activeIndex}`}
+            className="absolute top-0 left-0 w-64 h-64 rounded-full blur-3xl pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.07, scale: [1, 1.15, 1] }}
+            transition={{ opacity: { duration: 0.6 }, scale: { duration: 7, repeat: Infinity } }}
+            style={{ background: active.accent }}
+          />
+          <motion.div
+            key={`orb-br-${activeIndex}`}
+            className="absolute bottom-0 right-0 w-56 h-56 rounded-full blur-3xl pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.05, scale: [1, 1.2, 1] }}
+            transition={{ opacity: { duration: 0.6 }, scale: { duration: 9, repeat: Infinity } }}
+            style={{ background: active.accent }}
+          />
+
+          {/* ── LEFT PANEL (42%) ── */}
+          <div className="w-[42%] flex flex-col justify-center px-10 xl:px-14 py-10 relative z-10">
+
+            {/* Animated company details */}
+            <AnimatePresence mode="wait">
+              <ExperienceDetails key={activeIndex} exp={active} />
+            </AnimatePresence>
+
+            {/* Company tabs navigation */}
+            <CompanyTabs activeIndex={activeIndex} sectionRef={desktopRef} />
+          </div>
+
+          {/* Vertical rule */}
+          <div
+            className="w-px self-stretch my-16 shrink-0"
+            style={{
+              background: `linear-gradient(to bottom, transparent, ${active.accent}20, transparent)`,
+            }}
+          />
+
+          {/* ── RIGHT PANEL (58%) ── */}
+          <div className="w-[58%] flex items-center justify-center px-4 xl:px-8 py-10 relative z-10">
+
+            {/* Section heading — bottom center of right panel */}
+            <div className="absolute bottom-10 left-0 right-0 text-center pointer-events-none">
+              <p className="text-[11px] font-Outfit uppercase tracking-[0.28em] text-gray-400 dark:text-gray-500 mb-1">
+                Professional Journey
+              </p>
+              <h2 className="text-4xl xl:text-5xl font-Ovo text-gray-900 dark:text-white leading-tight">
+                Experience
+              </h2>
+            </div>
+
+            <div
+              className="relative w-full"
+              style={{
+                maxWidth: 760,
+                filter: "drop-shadow(0 30px 70px rgba(0,0,0,0.5))",
+              }}
+            >
+              {/* Accent glow — transitions on accent change */}
+              <motion.div
+                key={`glow-${activeIndex}`}
+                className="absolute left-1/2 -translate-x-1/2 blur-3xl rounded-full pointer-events-none"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.08 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                style={{ width: "70%", height: "30%", bottom: "2%", background: active.accent }}
+              />
+
+              {/* Static laptop frame — never re-mounts */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/laptoptrans.png"
+                alt="Laptop mockup"
+                draggable={false}
+                className="relative w-full h-auto object-contain select-none pointer-events-none"
+                style={{ zIndex: 1 }}
+              />
+
+              {/* Only the screen content fades in/out on scroll */}
+              <div
+                className="absolute overflow-hidden"
+                style={{
+                  top: SCREEN.top,
+                  left: SCREEN.left,
+                  right: SCREEN.right,
+                  bottom: SCREEN.bottom,
+                  borderRadius: SCREEN.radius,
+                  zIndex: 2,
+                }}
+              >
+                <AnimatePresence mode="wait">
+                  <ScreenContent key={activeIndex} exp={active} />
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
