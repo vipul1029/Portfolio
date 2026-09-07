@@ -5,3 +5,40 @@
 *{
   font-family: Outfit;
 }
+
+html, body {
+  background-color: #faf8f3;
+}
+
+.dark html, .dark body, html.dark, body.dark {
+  background-color: #000000;
+}
+
+
+.phone-scroll::-webkit-scrollbar { display: none; }
+.phone-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes rotate-globe {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+@keyframes globe-glow-pulse {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 0.8; }
+}
+
+/* ── Dark/light mode circular reveal transition ── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: theme-circle-reveal 1.1s cubic-bezier(0.37, 0, 0.63, 1) forwards;
+}
+
+@keyframes theme-circle-reveal {
+  from { clip-path: circle(0% at var(--toggle-x) var(--toggle-y)); }
+  to   { clip-path: circle(150% at var(--toggle-x) var(--toggle-y)); }
+}
