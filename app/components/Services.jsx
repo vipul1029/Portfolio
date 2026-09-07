@@ -1,661 +1,456 @@
-
-// "use client";
-
-// import React from "react";
-// import { motion } from "framer-motion";
-// import Image from "next/image";
-// import { assets } from "@/assets/assets";
-
-// const Services = ({ isDarkMode }) => {
-//   const services = [
-//     {
-//       title: "Frontend Development",
-//       subtitle: "Modern, responsive UI",
-//       description:
-//         "Pixel-perfect, responsive interfaces using React, Next.js, Tailwind CSS, and modern JavaScript. Focused on clean design, performance, and smooth animations.",
-//       tag: "React • Next.js • Tailwind",
-//       icon: assets.code_icon,
-//       iconDark: assets.code_icon_dark,
-//     },
-//     {
-//       title: "Backend & APIs",
-//       subtitle: "Secure & scalable logic",
-//       description:
-//         "Building RESTful APIs, authentication, and database-backed features using Node.js, Express.js, MongoDB, and PostgreSQL.",
-//       tag: "Node.js • Express • DBs",
-//       icon: assets.project_icon,
-//       iconDark: assets.project_icon_dark,
-//     },
-//     {
-//       title: "Full-Stack Web Apps",
-//       subtitle: "End-to-end solutions",
-//       description:
-//         "From idea to deployment: complete web applications with auth, dashboards, real-time features, and integrations.",
-//       tag: "MERN • Next.js",
-//       icon: assets.project_icon,
-//       iconDark: assets.project_icon_dark,
-//     },
-//     {
-//       title: "Software Development",
-//       subtitle: "Robust & clean solutions",
-//       description:
-//         "Designing and developing reliable software systems with strong problem-solving, data structures, and algorithms at the core.",
-//       tag: "DSA • OOP • Problem Solving",
-//       icon: assets.edu_icon,
-//       iconDark: assets.edu_icon_dark,
-//     },
-//     {
-//       title: "AI & ML Solutions",
-//       subtitle: "Data-driven intelligence",
-//       description:
-//         "Machine learning models, data pipelines, and ML integration into applications using Python, Scikit-Learn, TensorFlow, and more.",
-//       tag: "ML • DS • Python",
-//       icon: assets.edu_icon,
-//       iconDark: assets.edu_icon_dark,
-//     },
-//     {
-//       title: "Portfolio & Personal Sites",
-//       subtitle: "Personal branding",
-//       description:
-//         "Custom-designed portfolio and personal branding websites for students, creators, and professionals with strong UI/UX.",
-//       tag: "Portfolios • Landing Pages",
-//       icon: assets.code_icon,
-//       iconDark: assets.code_icon_dark,
-//     },
-//     {
-//       title: "Freelance Projects & Collaborations",
-//       subtitle: "Let’s build together",
-//       description:
-//         "Open for collaborations, freelance projects, and hackathons. I love working on impactful ideas and real-world products.",
-//       tag: "Collab • Freelancing",
-//       icon: assets.project_icon,
-//       iconDark: assets.project_icon_dark,
-//     },
-//   ];
-
-//   const opportunities = [
-//     "Frontend Internship",
-//     "Backend Internship",
-//     "Full-Stack Internship",
-//     "Software Development Internship",
-//     "Machine Learning Internship",
-//     "Freelance Web Projects",
-//     "Startup / Product Collaboration",
-//     "Personal & Business Websites",
-//     "Open Source Contributions",
-//     "Hackathons & Tech Events",
-//   ];
-
-//   // WhatsApp & LinkedIn
-//   const whatsappLink = "https://wa.me/919523354658";
-//   const linkedinLink = "https://linkedin.com/in/vipul-kumar-7697a428a";
-
-//   return (
-//     <motion.section
-//       id="services"
-//       initial={{ opacity: 0 }}
-//       whileInView={{ opacity: 1 }}
-//       transition={{ duration: 1 }}
-//       className="relative w-full px-[12%] py-20 scroll-mt-20 
-//                  bg-gradient-to-b from-gray-100 to-white 
-//                  dark:from-darkTheme dark:to-darkHover"
-//     >
-//       {/* Floating background bubble */}
-//       <motion.div
-//         className="absolute -top-10 left-10 w-32 h-32 bg-purple-400 opacity-20 rounded-full blur-3xl"
-//         animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-//         transition={{ repeat: Infinity, duration: 7 }}
-//       />
-
-//       {/* Title */}
-//       <motion.h4
-//         initial={{ opacity: 0, y: -20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.5, delay: 0.2 }}
-//         className="text-center mb-2 text-lg font-Ovo"
-//       >
-//         What I Do
-//       </motion.h4>
-
-//       <motion.h2
-//         initial={{ opacity: 0, y: -20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.5, delay: 0.4 }}
-//         className="text-center text-5xl font-Ovo"
-//       >
-//         Services & Opportunities
-//       </motion.h2>
-
-//       {/* Intro text */}
-//       <motion.p
-//         initial={{ opacity: 0 }}
-//         whileInView={{ opacity: 1 }}
-//         transition={{ duration: 0.6, delay: 0.6 }}
-//         className="text-center max-w-3xl mx-auto mt-5 mb-12 font-Ovo 
-//                    text-gray-700 dark:text-gray-300"
-//       >
-//         I build modern, scalable web applications and AI-powered solutions.
-//         I&apos;m also open for internships (frontend, backend, fullstack,
-//         software, and ML), collaborations, freelancing, and personal/portfolio
-//         website projects.
-//       </motion.p>
-
-//       {/* Services grid */}
-//       <motion.div
-//         initial={{ opacity: 0 }}
-//         whileInView={{ opacity: 1 }}
-//         transition={{ duration: 0.8, delay: 0.8 }}
-//         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-10"
-//       >
-//         {services.map(
-//           ({ title, subtitle, description, tag, icon, iconDark }, index) => (
-//             <motion.div
-//               key={index}
-//               whileHover={{ y: -5, scale: 1.02 }}
-//               transition={{ duration: 0.25 }}
-//               className="border-[0.5px] border-gray-300 dark:border-white/40 
-//                          rounded-2xl p-6 bg-white/70 dark:bg-darkHover/40 
-//                          shadow-sm hover:shadow-lg hover:bg-lightHover 
-//                          dark:hover:bg-darkHover/70 duration-300 flex flex-col gap-3"
-//             >
-//               <div className="flex items-center gap-3">
-//                 <div
-//                   className="w-11 h-11 rounded-xl flex items-center justify-center 
-//                              bg-gray-100 dark:bg-darkTheme/60 border border-gray-200 
-//                              dark:border-white/30"
-//                 >
-//                   <Image
-//                     src={isDarkMode ? iconDark : icon}
-//                     alt={title}
-//                     className="w-7 h-7"
-//                   />
-//                 </div>
-//                 <div>
-//                   <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-//                     {title}
-//                   </h3>
-//                   <p className="text-sm text-gray-500 dark:text-gray-300">
-//                     {subtitle}
-//                   </p>
-//                 </div>
-//               </div>
-
-//               <p className="text-sm mt-3 text-gray-700 dark:text-gray-200 leading-relaxed">
-//                 {description}
-//               </p>
-
-//               <span
-//                 className="inline-flex mt-2 w-max text-xs px-3 py-1 rounded-full 
-//                              bg-gray-900 text-white dark:bg-white dark:text-black"
-//               >
-//                 {tag}
-//               </span>
-//             </motion.div>
-//           )
-//         )}
-//       </motion.div>
-
-//       {/* Opportunities chips */}
-//       <motion.div
-//         initial={{ opacity: 0, y: 20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.6, delay: 1 }}
-//         className="max-w-3xl mx-auto mt-10"
-//       >
-//         <p className="text-center mb-4 font-Ovo text-gray-700 dark:text-gray-200">
-//           I&apos;m actively open to:
-//         </p>
-//         <div className="flex flex-wrap justify-center gap-3">
-//           {opportunities.map((item, i) => (
-//             <span
-//               key={i}
-//               className="text-xs sm:text-sm px-4 py-2 rounded-full border border-gray-400 
-//                          dark:border-white/60 text-gray-800 dark:text-white 
-//                          bg-white/70 dark:bg-darkHover/60 hover:-translate-y-0.5 
-//                          hover:shadow-md duration-300"
-//             >
-//               {item}
-//             </span>
-//           ))}
-//         </div>
-//       </motion.div>
-
-//       {/* Contact CTAs inside Services section */}
-//       <motion.div
-//         initial={{ opacity: 0, y: 20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.6, delay: 1.2 }}
-//         className="max-w-3xl mx-auto mt-12 text-center"
-//       >
-//         <h3 className="text-2xl md:text-3xl font-Ovo mb-3 text-gray-800 dark:text-white">
-//           Want to work with me?
-//         </h3>
-//         <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-//           Reach out directly on WhatsApp, connect with me on LinkedIn, or use
-//           the contact form below. I&apos;m happy to discuss internships,
-//           collaborations, freelance projects, and custom websites.
-//         </p>
-
-//         <div className="flex flex-wrap justify-center gap-5 mt-6">
-//           {/* WhatsApp button */}
-//           <motion.a
-//             whileHover={{ scale: 1.05, y: -2 }}
-//             transition={{ duration: 0.2 }}
-//             href={whatsappLink}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="px-7 py-3 rounded-full text-sm md:text-base font-semibold 
-//                        bg-gradient-to-r from-green-500 to-emerald-500 
-//                        text-white shadow-md hover:shadow-xl 
-//                        hover:-translate-y-0.5 transition-all duration-300 
-//                        flex items-center gap-2"
-//           >
-//             <span>WhatsApp</span>
-//             <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-//               <Image
-//                 src={assets.right_arrow_white}
-//                 alt="Arrow"
-//                 className="w-3"
-//               />
-//             </span>
-//           </motion.a>
-
-//           {/* Contact section button */}
-//           <motion.a
-//             whileHover={{ scale: 1.05, y: -2 }}
-//             transition={{ duration: 0.2 }}
-//             href="#contact"
-//             className="px-7 py-3 rounded-full text-sm md:text-base font-semibold 
-//                        border border-gray-700 dark:border-white 
-//                        text-gray-900 dark:text-white 
-//                        bg-white/90 dark:bg-transparent 
-//                        hover:bg-gray-100 dark:hover:bg-darkHover/80 
-//                        shadow-sm hover:shadow-md hover:-translate-y-0.5 
-//                        transition-all duration-300 flex items-center gap-2"
-//           >
-//             <span>Contact Section</span>
-//             <span className="w-7 h-7 rounded-full border border-gray-500 dark:border-white flex items-center justify-center">
-//               <Image
-//                 src={assets.right_arrow_bold}
-//                 alt="Arrow"
-//                 className="w-3"
-//               />
-//             </span>
-//           </motion.a>
-
-//           {/* LinkedIn button */}
-//           <motion.a
-//             whileHover={{ scale: 1.05, y: -2 }}
-//             transition={{ duration: 0.2 }}
-//             href={linkedinLink}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="px-7 py-3 rounded-full text-sm md:text-base font-semibold 
-//                        bg-[#0A66C2] text-white shadow-md 
-//                        hover:shadow-xl hover:-translate-y-0.5 
-//                        transition-all duration-300 flex items-center gap-2"
-//           >
-//             <span>LinkedIn</span>
-//             <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-//               <Image
-//                 src={assets.right_arrow_white}
-//                 alt="Arrow"
-//                 className="w-3"
-//               />
-//             </span>
-//           </motion.a>
-//         </div>
-//       </motion.div>
-//     </motion.section>
-//   );
-// };
-
-// export default Services;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { assets } from "@/assets/assets";
 
-const Services = ({ isDarkMode }) => {
+const SERVICES = [
+  {
+    num: "01",
+    title: "Full-Stack Development",
+    description:
+      "End-to-end web applications with responsive UI, optimized backend systems, authentication, REST APIs, and database integration built for scale.",
+    tags: ["React", "Node.js", "MongoDB", "PostgreSQL"],
+  },
+  {
+    num: "02",
+    title: "Backend Engineering",
+    description:
+      "Secure, production-grade backend architectures and server-side logic with high-performance API design and database-driven systems.",
+    tags: ["Node.js", "FastAPI", "Express", "REST APIs"],
+  },
+  {
+    num: "03",
+    title: "Computer Vision",
+    description:
+      "Real-time AI vision pipelines — object detection, multi-object tracking, and video analytics using state-of-the-art deep learning models.",
+    tags: ["YOLO", "OpenCV", "DeepSORT", "Python"],
+  },
+  {
+    num: "04",
+    title: "Generative AI & LLMs",
+    description:
+      "LLM-powered applications, AI voice agents, RAG pipelines, and intelligent chatbots using Gemini, LangChain, and embeddings.",
+    tags: ["Gemini", "LangChain", "RAG", "AI Agents"],
+  },
+  {
+    num: "05",
+    title: "Machine Learning",
+    description:
+      "Building and deploying ML models for prediction, classification, and analytics — integrated into real-world production applications.",
+    tags: ["Python", "Scikit-learn", "XGBoost", "Flask"],
+  },
+  {
+    num: "06",
+    title: "AI-Powered Applications",
+    description:
+      "Combining scalable web architecture with AI to deliver intelligent, automated, and data-driven user experiences end-to-end.",
+    tags: ["AI Systems", "APIs", "Python", "React"],
+  },
+];
 
-  const services = [
-    {
-      title: "Full-Stack Development",
-      subtitle: "Modern scalable applications",
-      description:
-        "Building responsive and scalable full-stack applications with clean UI, optimized backend systems, authentication, APIs, and database integration.",
-      tag: "Web Applications",
-      icon: assets.code_icon,
-      iconDark: assets.code_icon_dark,
-    },
-    {
-      title: "Backend Engineering",
-      subtitle: "APIs & system design",
-      description:
-        "Developing secure backend architectures, RESTful APIs, database-driven systems, and optimized server-side logic for scalable applications.",
-      tag: "Backend Systems",
-      icon: assets.project_icon,
-      iconDark: assets.project_icon_dark,
-    },
-    {
-      title: "Computer Vision",
-      subtitle: "Real-time AI systems",
-      description:
-        "Building AI-powered computer vision solutions including object detection, tracking, and real-time analytics using deep learning techniques.",
-      tag: "AI Vision",
-      icon: assets.edu_icon,
-      iconDark: assets.edu_icon_dark,
-    },
-    {
-      title: "Machine Learning",
-      subtitle: "Data-driven intelligence",
-      description:
-        "Designing and integrating machine learning models for prediction, classification, analytics, and intelligent automation systems.",
-      tag: "ML Solutions",
-      icon: assets.edu_icon,
-      iconDark: assets.edu_icon_dark,
-    },
-    {
-      title: "Software Development",
-      subtitle: "Problem solving & systems",
-      description:
-        "Strong foundation in software engineering, object-oriented programming, data structures, algorithms, and scalable application development.",
-      tag: "Software Engineering",
-      icon: assets.project_icon,
-      iconDark: assets.project_icon_dark,
-    },
-    {
-      title: "AI-Powered Applications",
-      subtitle: "Intelligent user experiences",
-      description:
-        "Combining AI capabilities with scalable applications to build smart systems focused on automation, analytics, and enhanced user experiences.",
-      tag: "AI Applications",
-      icon: assets.code_icon,
-      iconDark: assets.code_icon_dark,
-    },
-  ];
-
-  const opportunities = [
+const OPPORTUNITIES = [
   "Frontend Internship",
   "Backend Internship",
   "Full-Stack Internship",
-  "Software Development Internship",
-  "Machine Learning Internship",
-  "Freelance Web Projects",
-  "Startup / Product Collaboration",
-  "Personal & Business Websites",
-  "Open Source Contributions",
-  "Hackathons & Tech Events",
+  "ML / AI Internship",
+  "Software Development",
+  "Freelance Projects",
+  "Startup Collaboration",
+  "Open Source",
+  "Hackathons",
 ];
-  const linkedinLink = "https://linkedin.com/in/vipul-kumar-7697a428a";
+
+const C       = "#FF4D00";
+const C_DARK  = "#CC3D00";
+const C_LIGHT = "#FF6A2A";
+const rgba    = (a) => `rgba(255,77,0,${a})`;
+
+const lightGrid = `linear-gradient(rgba(185,155,100,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(185,155,100,0.28) 1px, transparent 1px)`;
+
+const Services = ({ isDarkMode }) => {
+  const dm = isDarkMode;
 
   return (
-    <motion.section
+    <section
       id="services"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.35 }}
-      className="relative w-full px-[12%] py-20 scroll-mt-20 
-                 bg-gradient-to-b from-gray-100 to-white 
-                 dark:from-darkTheme dark:to-darkHover"
+      className="relative w-full scroll-mt-20 overflow-hidden"
+      style={dm
+        ? { background: "#080200" }
+        : { backgroundColor: "#faf8f3", backgroundImage: lightGrid, backgroundSize: "40px 40px" }
+      }
     >
+      {/* Noise grain — dark only */}
+      {dm && (
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.022]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            backgroundSize: "200px",
+          }}
+        />
+      )}
 
-      {/* Background Bubble */}
-      <motion.div
-        className="absolute -top-10 left-10 w-32 h-32 bg-purple-400 opacity-20 rounded-full blur-3xl"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ repeat: Infinity, duration: 7 }}
-      />
+      {/* Ambient glows */}
+      <div className="absolute pointer-events-none" style={{
+        top: "-12%", right: "-6%", width: 720, height: 720, borderRadius: "50%",
+        background: `radial-gradient(circle, ${rgba(dm ? 0.18 : 0.07)} 0%, transparent 65%)`,
+        filter: "blur(55px)",
+      }} />
+      <div className="absolute pointer-events-none" style={{
+        bottom: "-12%", left: "-6%", width: 520, height: 520, borderRadius: "50%",
+        background: `radial-gradient(circle, ${rgba(dm ? 0.12 : 0.05)} 0%, transparent 65%)`,
+        filter: "blur(55px)",
+      }} />
+      <div className="absolute pointer-events-none" style={{
+        top: "38%", left: "34%", width: 380, height: 380, borderRadius: "50%",
+        background: `radial-gradient(circle, ${rgba(dm ? 0.06 : 0.03)} 0%, transparent 70%)`,
+        filter: "blur(80px)",
+      }} />
 
-      {/* Section Heading */}
-      <motion.h4
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
-        className="text-center mb-2 text-lg font-Ovo"
-      >
-        What I Do
-      </motion.h4>
+      {/* Scan lines — dark only */}
+      {dm && (
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: `repeating-linear-gradient(0deg, ${rgba(0.04)} 0px, ${rgba(0.04)} 1px, transparent 1px, transparent 56px)`,
+        }} />
+      )}
 
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
-        className="text-center text-5xl font-Ovo"
-      >
-        Areas of Expertise
-      </motion.h2>
+      <div className="relative z-10 px-[8%] py-24">
 
-      {/* Intro Text */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.35 }}
-        className="text-center max-w-3xl mx-auto mt-5 mb-12 font-Ovo 
-                   text-gray-700 dark:text-gray-300 leading-8"
-      >
-        Focused on building scalable software systems, AI-powered applications,
-        and modern full-stack experiences with strong emphasis on performance,
-        usability, and real-world impact.
-      </motion.p>
-
-      {/* Services Grid */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.35 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-10"
-      >
-
-        {services.map(
-          ({ title, subtitle, description, tag, icon, iconDark }, index) => (
-
-            <motion.div
-              key={index}
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-              className="border-[0.5px] border-gray-300 dark:border-white/40 
-                         rounded-2xl p-6 bg-white/70 dark:bg-darkHover/40 
-                         shadow-sm hover:shadow-lg hover:bg-lightHover 
-                         dark:hover:bg-darkHover/70 duration-300 flex flex-col gap-3"
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
+          <p
+            className="font-Outfit text-[10px] font-light tracking-[0.45em] uppercase mb-3"
+            style={{ color: dm ? rgba(0.5) : rgba(0.65) }}
+          >
+            04 &middot; Services
+          </p>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+            <h2
+              className="font-Outfit font-black uppercase leading-[0.88] tracking-tight"
+              style={{ fontSize: "clamp(34px,5vw,72px)", color: dm ? "white" : "#0f172a" }}
             >
+              AREAS{" "}
+              <span style={{
+                backgroundImage: `linear-gradient(90deg, ${C_DARK}, ${C}, ${C_LIGHT})`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}>
+                OF
+              </span>
+              <br />
+              EXPERTISE
+              <span style={{ color: C }}>.</span>
+            </h2>
+            <p
+              className="font-Outfit text-[13.5px] max-w-[240px] leading-relaxed sm:text-right shrink-0"
+              style={{ color: dm ? "rgba(255,255,255,0.32)" : "#6b7280" }}
+            >
+              Building scalable software, AI systems, and full-stack products.
+            </p>
+          </div>
+        </motion.div>
 
-              {/* Card Header */}
-              <div className="flex items-center gap-3">
+        {/* Service cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+          {SERVICES.map((s, i) => (
+            <motion.div
+              key={s.num}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.07 }}
+              whileHover={{ y: -5 }}
+              className="group relative flex flex-col p-6 rounded-2xl overflow-hidden transition-all duration-300 cursor-default"
+              style={{
+                background: dm ? "rgba(255,255,255,0.022)" : "rgba(255,255,255,0.85)",
+                border: dm ? `1px solid ${rgba(0.1)}` : "1px solid rgba(160,130,90,0.2)",
+                boxShadow: dm ? "none" : "0 2px 12px rgba(0,0,0,0.04)",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.border     = dm ? `1px solid ${rgba(0.38)}` : "1px solid rgba(234,88,12,0.3)";
+                e.currentTarget.style.background = dm ? "rgba(255,255,255,0.038)" : "rgba(255,255,255,1)";
+                e.currentTarget.style.boxShadow  = dm
+                  ? `0 0 40px ${rgba(0.14)}, inset 0 1px 0 ${rgba(0.08)}`
+                  : "0 8px 32px rgba(234,88,12,0.1)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.border     = dm ? `1px solid ${rgba(0.1)}` : "1px solid rgba(160,130,90,0.2)";
+                e.currentTarget.style.background = dm ? "rgba(255,255,255,0.022)" : "rgba(255,255,255,0.85)";
+                e.currentTarget.style.boxShadow  = dm ? "none" : "0 2px 12px rgba(0,0,0,0.04)";
+              }}
+            >
+              {/* Top accent line on hover */}
+              <div
+                className="absolute inset-x-0 top-0 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: `linear-gradient(90deg, transparent, ${C}, transparent)` }}
+              />
 
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center 
-                             bg-gray-100 dark:bg-darkTheme/60 border border-gray-200 
-                             dark:border-white/30"
-                >
-                  <Image
-                    src={isDarkMode ? iconDark : icon}
-                    alt={title}
-                    className="w-7 h-7"
-                  />
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                    {title}
-                  </h3>
-
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    {subtitle}
-                  </p>
-                </div>
-
-              </div>
-
-              {/* Description */}
-              <p className="text-sm mt-3 text-gray-700 dark:text-gray-200 leading-relaxed">
-                {description}
-              </p>
-
-              {/* Tag */}
+              {/* Ghost number */}
               <span
-                className="inline-flex mt-2 w-max text-xs px-3 py-1 rounded-full 
-                           bg-gray-900 text-white dark:bg-white dark:text-black"
+                className="absolute top-3 right-4 font-Outfit font-black text-[52px] leading-none select-none pointer-events-none"
+                style={{ color: dm ? rgba(0.1) : "rgba(234,88,12,0.08)" }}
               >
-                {tag}
+                {s.num}
               </span>
 
+              {/* Dot */}
+              <div className="w-2 h-2 rounded-full mb-5 shrink-0" style={{
+                background: `linear-gradient(135deg, ${C_DARK}, ${C})`,
+                boxShadow: `0 0 8px ${rgba(dm ? 0.6 : 0.4)}`,
+              }} />
+
+              {/* Title */}
+              <h3
+                className="font-Outfit font-bold text-[15.5px] leading-snug mb-3 pr-8"
+                style={{ color: dm ? "rgba(255,255,255,0.88)" : "#0f172a" }}
+              >
+                {s.title}
+              </h3>
+
+              {/* Description */}
+              <p
+                className="font-Outfit text-[13px] leading-[1.8] flex-1 mb-5"
+                style={{ color: dm ? "rgba(255,255,255,0.36)" : "#6b7280" }}
+              >
+                {s.description}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5">
+                {s.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="font-Outfit text-[10px] font-medium px-2.5 py-0.5 rounded-full"
+                    style={{
+                      background: dm ? rgba(0.1) : "rgba(234,88,12,0.06)",
+                      border:     dm ? `1px solid ${rgba(0.25)}` : "1px solid rgba(234,88,12,0.2)",
+                      color:      dm ? rgba(0.85) : "#c2410c",
+                    }}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </motion.div>
-          )
-        )}
-
-      </motion.div>
-      {/* Opportunities */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.35 }}
-  className="max-w-4xl mx-auto mt-14"
->
-
-  <p className="text-center mb-5 font-Ovo text-gray-700 dark:text-gray-200 text-lg">
-    I&apos;m actively open to:
-  </p>
-
-  <div className="flex flex-wrap justify-center gap-4">
-
-    {opportunities.map((item, i) => (
-
-      <span
-        key={i}
-        className="text-sm px-5 py-3 rounded-full border border-gray-400 
-                   dark:border-white/60 text-gray-800 dark:text-white 
-                   bg-white/70 dark:bg-darkHover/60 
-                   hover:-translate-y-0.5 hover:shadow-md 
-                   transition-all duration-300"
-      >
-        {item}
-      </span>
-
-    ))}
-
-  </div>
-
-</motion.div>
-
-      {/* CTA Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35 }}
-        className="max-w-3xl mx-auto mt-14 text-center"
-      >
-
-        <h3 className="text-2xl md:text-3xl font-Ovo mb-3 text-gray-800 dark:text-white">
-          Let’s Build Something Impactful
-        </h3>
-
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-7">
-          Open to software engineering opportunities, AI/ML collaborations,
-          internships, and impactful product development.
-        </p>
-
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-5 mt-8">
-
- {/* WhatsApp Button */}
-  <motion.a
-    whileHover={{ scale: 1.05, y: -2 }}
-    transition={{ duration: 0.2 }}
-    href="https://wa.me/919523354658"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="px-7 py-3 rounded-full text-sm md:text-base font-semibold 
-               bg-gradient-to-r from-green-500 to-emerald-500 
-               text-white shadow-md hover:shadow-xl 
-               hover:-translate-y-0.5 transition-all duration-300 
-               flex items-center gap-2"
-  >
-
-    <span>WhatsApp</span>
-
-    <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-      <Image
-        src={assets.right_arrow_white}
-        alt="Arrow"
-        className="w-3"
-      />
-    </span>
-
-  </motion.a>
-  
-          {/* Contact Button */}
-          <motion.a
-            whileHover={{ scale: 1.05, y: -2 }}
-            transition={{ duration: 0.2 }}
-            href="#contact"
-            className="px-7 py-3 rounded-full text-sm md:text-base font-semibold 
-                       border border-gray-700 dark:border-white 
-                       text-gray-900 dark:text-white 
-                       bg-white/90 dark:bg-transparent 
-                       hover:bg-gray-100 dark:hover:bg-darkHover/80 
-                       shadow-sm hover:shadow-md hover:-translate-y-0.5 
-                       transition-all duration-300 flex items-center gap-2"
-          >
-
-            <span>Contact Me</span>
-
-            <span className="w-7 h-7 rounded-full border border-gray-500 dark:border-white flex items-center justify-center">
-              <Image
-                src={assets.right_arrow_bold}
-                alt="Arrow"
-                className="w-3"
-              />
-            </span>
-
-          </motion.a>
-
-          {/* LinkedIn Button */}
-          <motion.a
-            whileHover={{ scale: 1.05, y: -2 }}
-            transition={{ duration: 0.2 }}
-            href={linkedinLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-7 py-3 rounded-full text-sm md:text-base font-semibold 
-                       bg-[#0A66C2] text-white shadow-md 
-                       hover:shadow-xl hover:-translate-y-0.5 
-                       transition-all duration-300 flex items-center gap-2"
-          >
-
-            <span>LinkedIn</span>
-
-            <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
-              <Image
-                src={assets.right_arrow_white}
-                alt="Arrow"
-                className="w-3"
-              />
-            </span>
-
-          </motion.a>
-
+          ))}
         </div>
-      </motion.div>
-    </motion.section>
+
+        {/* Divider */}
+        <div className="flex items-center gap-4 mb-10">
+          <div className="h-px flex-1" style={{ background: dm
+            ? `linear-gradient(to right, transparent, ${rgba(0.22)})`
+            : "linear-gradient(to right, transparent, rgba(160,130,90,0.28))"
+          }} />
+          <p
+            className="font-Outfit text-[9.5px] font-semibold uppercase tracking-[0.42em] shrink-0"
+            style={{ color: dm ? rgba(0.45) : "#9ca3af" }}
+          >
+            Open To
+          </p>
+          <div className="h-px flex-1" style={{ background: dm
+            ? `linear-gradient(to left, transparent, ${rgba(0.22)})`
+            : "linear-gradient(to left, transparent, rgba(160,130,90,0.28))"
+          }} />
+        </div>
+
+        {/* Opportunities */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="flex flex-wrap justify-center gap-2.5 mb-20"
+        >
+          {OPPORTUNITIES.map((item, i) => (
+            <motion.span
+              key={item}
+              initial={{ opacity: 0, scale: 0.93 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.28, delay: i * 0.04 }}
+              whileHover={{ y: -2 }}
+              className="font-Outfit text-[12px] font-medium px-4 py-1.5 rounded-full transition-all duration-200 cursor-default"
+              style={{
+                background: dm ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.85)",
+                border:     dm ? `1px solid ${rgba(0.18)}` : "1px solid rgba(160,130,90,0.22)",
+                color:      dm ? "rgba(255,255,255,0.52)" : "#6b7280",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.border     = dm ? `1px solid ${rgba(0.55)}` : "1px solid rgba(234,88,12,0.38)";
+                e.currentTarget.style.color      = dm ? rgba(0.9) : "#c2410c";
+                e.currentTarget.style.background = dm ? rgba(0.08) : "rgba(234,88,12,0.05)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.border     = dm ? `1px solid ${rgba(0.18)}` : "1px solid rgba(160,130,90,0.22)";
+                e.currentTarget.style.color      = dm ? "rgba(255,255,255,0.52)" : "#6b7280";
+                e.currentTarget.style.background = dm ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.85)";
+              }}
+            >
+              {item}
+            </motion.span>
+          ))}
+        </motion.div>
+
+        {/* CTA block */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative rounded-3xl overflow-hidden"
+          style={{
+            background: dm
+              ? "linear-gradient(135deg,#0d0100 0%,#110300 55%,#0a0100 100%)"
+              : "rgba(255,255,255,0.92)",
+            border:    dm ? `1px solid ${rgba(0.18)}` : "1px solid rgba(160,130,90,0.2)",
+            boxShadow: dm
+              ? `0 32px 80px rgba(0,0,0,0.55), inset 0 1px 0 ${rgba(0.1)}`
+              : "0 8px 40px rgba(0,0,0,0.07)",
+          }}
+        >
+          {/* Top accent line */}
+          <div className="absolute inset-x-0 top-0 h-[1.5px] pointer-events-none"
+            style={{ background: `linear-gradient(90deg, transparent 0%, ${C} 40%, ${C_LIGHT} 60%, transparent 100%)` }} />
+
+          {/* Glow — top-left */}
+          <div className="absolute pointer-events-none" style={{
+            top: "-30%", left: "-8%", width: 500, height: 500, borderRadius: "50%",
+            background: `radial-gradient(circle, ${rgba(dm ? 0.16 : 0.06)} 0%, transparent 65%)`,
+            filter: "blur(60px)",
+          }} />
+          {/* Glow — bottom-right */}
+          <div className="absolute pointer-events-none" style={{
+            bottom: "-30%", right: "-6%", width: 380, height: 380, borderRadius: "50%",
+            background: `radial-gradient(circle, ${rgba(dm ? 0.1 : 0.04)} 0%, transparent 65%)`,
+            filter: "blur(50px)",
+          }} />
+
+          {/* Ghost "BUILD" watermark — dark only */}
+          {dm && (
+            <span className="absolute right-6 bottom-4 font-Outfit font-black uppercase select-none pointer-events-none leading-none"
+              style={{ fontSize: "clamp(60px,9vw,120px)", color: rgba(0.04), letterSpacing: "-0.04em" }}>
+              
+            </span>
+          )}
+
+          {/* Corner dots */}
+          <div className="absolute top-5 right-5 w-1.5 h-1.5 rounded-full pointer-events-none" style={{ background: rgba(dm ? 0.35 : 0.25) }} />
+          <div className="absolute bottom-5 left-5 w-1 h-1 rounded-full pointer-events-none" style={{ background: rgba(dm ? 0.2 : 0.15) }} />
+
+          {/* Content — two-column on lg+ */}
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center gap-7 lg:gap-0 p-7 sm:p-9">
+
+            {/* LEFT: text */}
+            <div className="flex-1 lg:pr-10">
+              <p className="font-Outfit text-[9.5px] font-semibold uppercase tracking-[0.44em] mb-3"
+                style={{ color: dm ? rgba(0.5) : rgba(0.65) }}>
+                Let&apos;s Connect
+              </p>
+              <h3
+                className="font-Outfit font-black uppercase leading-[0.9] tracking-tight mb-3"
+                style={{ fontSize: "clamp(22px,3vw,38px)", color: dm ? "white" : "#0f172a" }}
+              >
+                Let&apos;s Build Something{" "}
+                <span style={{
+                  backgroundImage: `linear-gradient(90deg, ${C_DARK}, ${C}, ${C_LIGHT})`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}>
+                  Impactful.
+                </span>
+              </h3>
+              <p className="font-Outfit text-[13px] leading-relaxed max-w-sm mb-5"
+                style={{ color: dm ? "rgba(255,255,255,0.35)" : "#6b7280" }}>
+                Open to software engineering roles, AI/ML collaborations, internships,
+                freelance projects, and impactful product development.
+              </p>
+
+              {/* Availability badge */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full"
+                style={{
+                  background: dm ? rgba(0.08) : "rgba(234,88,12,0.06)",
+                  border: dm ? `1px solid ${rgba(0.2)}` : "1px solid rgba(234,88,12,0.18)",
+                }}>
+                <motion.span
+                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                  style={{ background: C }}
+                  animate={{ opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 1.8, repeat: Infinity }}
+                />
+                <span className="font-Outfit text-[11px] font-medium"
+                  style={{ color: dm ? rgba(0.75) : "#c2410c" }}>
+                  Available for Internships &amp; Collaborations
+                </span>
+              </div>
+            </div>
+
+            {/* Vertical rule — desktop */}
+            <div className="hidden lg:block w-px self-stretch mx-2 shrink-0"
+              style={{ background: dm ? `linear-gradient(to bottom, transparent, ${rgba(0.2)}, transparent)` : "linear-gradient(to bottom, transparent, rgba(160,130,90,0.2), transparent)" }} />
+
+            {/* RIGHT: buttons */}
+            <div className="lg:pl-12 lg:w-[260px] flex flex-col gap-3 shrink-0">
+
+              <a
+                href="https://wa.me/919523354658"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-5 py-3 rounded-2xl font-Outfit font-semibold text-[13px] text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 group"
+                style={{
+                  background: `linear-gradient(135deg, ${C_DARK}, ${C})`,
+                  boxShadow:  `0 4px 20px ${rgba(dm ? 0.35 : 0.25)}`,
+                }}
+              >
+                <span>WhatsApp</span>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
+                  <path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+
+              <a
+                href="https://linkedin.com/in/vipul-kumar-7697a428a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-5 py-3 rounded-2xl font-Outfit font-semibold text-[13px] text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 group"
+                style={{ background: "#0A66C2", boxShadow: "0 4px 20px rgba(10,102,194,0.3)" }}
+              >
+                <span>LinkedIn</span>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
+                  <path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+
+              <a
+                href="#contact"
+                className="flex items-center justify-between px-5 py-3 rounded-2xl font-Outfit font-semibold text-[13px] transition-all duration-200 hover:-translate-y-0.5 group"
+                style={{
+                  background: dm ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)",
+                  border:     dm ? `1px solid ${rgba(0.25)}` : "1px solid rgba(160,130,90,0.28)",
+                  color:      dm ? "rgba(255,255,255,0.72)" : "#374151",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = dm ? rgba(0.55) : rgba(0.45); }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = dm ? rgba(0.25) : "rgba(160,130,90,0.28)"; }}
+              >
+                <span>Contact Form</span>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
+                  <path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+
+            </div>
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
   );
 };
 
